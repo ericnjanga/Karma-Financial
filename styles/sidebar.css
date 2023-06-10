@@ -1,0 +1,5 @@
+@layer components.sidebar {
+    .sidebar {
+        background-color: var(--karma-clr-highlight1);
+    }
+}
