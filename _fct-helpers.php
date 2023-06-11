@@ -1,3 +1,41 @@
+<?php
+    function getSubCategoryLink($subCat, $category) {
+        return esc_url(get_category_link(get_term_by('slug', $subCat, $category)->term_id));
+    }
+?>
+
+
+<?php
+    function getAppointmentModal() {
+        ?>
+            <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="appointmentModalLabel">Book an appointment</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <?php
+                                echo esc_html__( 'Click any link to schedule an appointment on Calendly for a convenient booking experience.', 'generic' );
+                            ?>
+                        </p>
+                        <?php dynamic_sidebar('sidebar-appointments'); ?>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        <?php
+    }
+?>
+
+
+
 
 <?php
     function getField($name) {
@@ -178,7 +216,7 @@
         // Display the hero images
         if ($light_theme_image && $dark_theme_image) {
             ?>
-            <div class="hero">
+            <div class="header">
                 <img class="img-theme-light" src="<?php echo $light_theme_image; ?>" alt="<?php echo $light_text_theme_image; ?>">
                 <img class="img-theme-dark" src="<?php echo $dark_theme_image; ?>" alt="<?php echo $dark_text_theme_image; ?>">
             </div>
@@ -187,6 +225,18 @@
             ?>
             <p>No hero images found.</p>
             <?php
+        }
+    }
+?>
+
+
+<?php
+    function displayFieldIcon($id) {
+        $icon = get_field('icon', $id);
+        if ($icon) {
+        ?>
+            <img src="<?php echo $icon; ?>">
+        <?php
         }
     }
 ?>
@@ -214,16 +264,13 @@
                     <?php foreach ($child_pages as $child_page) { ?>
                         <li class="card">
                             <div class="card-body">
-                                <?php 
-                                    $child_page_url = get_permalink($child_page->ID); 
-                                    // In case there is an icon associated
-                                    $icon = get_field('icon', $child_page->ID);
-                                ?>
-                                <?php if ($icon) { ?>
                                 <div>
-                                    <img src="<?php echo $icon; ?>">
+                                    <?php
+                                        displayFieldIcon($child_page->ID);
+                                        // Check if the child page is not the same as the current page
+                                        $child_page_url = get_permalink($child_page->ID);
+                                    ?>
                                 </div>
-                                <?php } ?>
                                 <h3 class="card-title">
                                     <a href="<?php echo $child_page_url; ?>">
                                         <?php echo $child_page->post_title; ?>

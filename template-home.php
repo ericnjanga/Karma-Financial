@@ -5,11 +5,11 @@
     get_header();
 ?>
 
-<header class="hero hero-home">
+<header class="header">
     <h1><?php echo getField('title'); ?></h1>
     <p><?php echo getField('introduction'); ?></p>
 
-    <div class="hero-img-wrapper">
+    <div class="header-img-wrapper">
         <?php
             displayHero();
         ?>

@@ -40,6 +40,12 @@
                 >
             </footer>
         </div>
+
+        <?php
+            // Place modals here for global access
+            getAppointmentModal();
+        ?>
+
         <?php wp_footer(); ?>
     </body>
 </html>

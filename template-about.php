@@ -5,7 +5,7 @@
     get_header();
 ?>
 
-<header class="hero">
+<header class="header">
     <h1><?php echo getField('title'); ?></h1>
     <p><?php echo getField('introduction'); ?></p>
     <hr>
