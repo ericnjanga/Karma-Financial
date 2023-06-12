@@ -8,6 +8,7 @@
 <header class="header">
     <h1><?php echo getField('title'); ?></h1>
     <p><?php echo getField('introduction'); ?></p>
+    <p><a href="#services" class="btn btn-primary">Our services</a></p>
 
     <div class="header-img-wrapper">
         <?php
@@ -17,37 +18,60 @@
 </header>
 
 
+<section class="awards">
+    <p class="pre-title">Awards</p>
+    <blockquote>
+        Our professionalism and work ethic is recognized and trusted by Canada’s top financial institutions.
+    </blockquote>
+
+    <footer>
+        <a href="" class="btn btn-secondary">Learn more</a>
+        <a href="" class="btn btn-tertiary">Our partners</a>
+    </footer>
+
+    <div class="card">
+        <div class="card-body">
+            <?php displayAward(3); ?>
+        </div>
+    </div>
+</section>
+
+
+
  
 
 
-<h2>services we provide</h2>
+<h2 class="underlined">services we provide</h2>
+<div id="services">
 <?php
     displayPageExcerpts('services');
 ?>
+</div>
 
 
-<h2>In partnership with</h2>
+<h2 class="underlined">Partners</h2>
 <?php
     displayPartners();
 ?>
 
 
-<div class="card">
-    <div class="card-body">
-        <h2 class="card-title">Awards &amp; recognition</h2>
-        <p>Our contribution and achievements have been recognized and celebrated.</p>
-        <a class="btn btn-secondary btn-sm" href="#">Start slideshow</a>
-        <?php displayAward(1); ?>
-    </div>
+
+<h2 class="underlined">Testimonials</h2>
+<div>
+    <?php displayTestimonial(3); ?>
 </div>
 
-<div class="card">
-    <div class="card-body">
-        <h2 class="card-title">Testimonials</h2>
-        <?php displayTestimonial(1); ?>
-        <hr>
-        <a class="btn btn-secondary btn-sm" href="/about">More testimonials</a>
-    </div>
+
+
+<h2 class="underlined">News and resources</h2>
+<div>
+    <?php latestPosts('', 2); ?>
+    <?php 
+        display_learn_more_box(
+            'We have more resources available', 
+            'Learn more', 
+            '#'); 
+    ?>
 </div>
 
 

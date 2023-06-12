@@ -1,4 +1,23 @@
 <?php
+    function display_learn_more_box($text, $ctaText, $ctaLink) {
+        ?>
+            <div class="bx-learn-more">
+                <blockquote class="underlined">
+                    <?php echo $text; ?>
+                </blockquote>
+                <p>
+                    <a href="<?php echo $ctaLink; ?>" class="btn btn-secondary">
+                        <?php echo $ctaText; ?>
+                    </a>
+                </p>
+            </div>  
+        <?php
+    }
+?>
+
+
+
+<?php
     function getSubCategoryLink($subCat, $category) {
         return esc_url(get_category_link(get_term_by('slug', $subCat, $category)->term_id));
     }
@@ -206,19 +225,13 @@
         global $post;
 
         // Get the light theme image URL
-        $light_theme_image = get_field('image_light_theme', $post->ID);
-        $light_text_theme_image = get_field('image_text_light_theme', $post->ID);
-
-        // Get the dark theme image URL
-        $dark_theme_image = get_field('image_dark_theme', $post->ID);
-        $dark_text_theme_image = get_field('image_text_dark_theme', $post->ID);
-
+        $theme_image = get_field('image_theme', $post->ID);
+        $text_theme_image = get_field('image_text_theme', $post->ID); 
         // Display the hero images
-        if ($light_theme_image && $dark_theme_image) {
+        if ($theme_image) {
             ?>
             <div class="header">
-                <img class="img-theme-light" src="<?php echo $light_theme_image; ?>" alt="<?php echo $light_text_theme_image; ?>">
-                <img class="img-theme-dark" src="<?php echo $dark_theme_image; ?>" alt="<?php echo $dark_text_theme_image; ?>">
+                <img class="img-hero" src="<?php echo $theme_image["url"]; ?>" alt="<?php echo $theme_image["alt"]; ?>">
             </div>
             <?php
         } else {
@@ -298,7 +311,6 @@
 ?>
 
 
-
 <?php
     function latestPostTitles($category_slug = '', $count = 5) {
 
@@ -324,6 +336,39 @@
         endif;
     }
 ?>
+
+
+<?php
+    function latestPosts($category_slug = '', $count = 5) {
+
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => $count,
+            'category_name' => $category_slug,
+        );
+
+        $query = new WP_Query( $args );
+
+        if ( $query->have_posts() ) :
+            ?>
+            <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                <article>
+                    <?php $categories = get_the_category(); ?>
+                    <?php if ( ! empty( $categories ) ) : ?>
+                        <p class="pre-title"><a href="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>"><?php echo esc_html( $categories[0]->name ); ?></a></p>
+                    <?php endif; ?>
+                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <p><?php echo wp_trim_words(get_the_content(), 40); ?> ...</p>
+                </article>
+            <?php endwhile; ?>
+            <?php
+            wp_reset_postdata();
+        else :
+            echo 'No posts found.';
+        endif;
+    }
+?>
+
 
 <?php
     function displayChildrenPageTitle($parent = '') {
