@@ -1,8 +1,39 @@
-@layer components.header {
-    .main-header {
-        /* padding: 30px;
-        border: 5px solid;
+:root {
+    --karma-navbar--h1-bot-mar: 0;
+    --karma-navbar--logo-max-height: 30px;
+    --karma-navbar--toggler-bdr-radius: 0px;
+    --karma-navbar-font-size: 1.1rem;
+    --karma-navbar-letter-spacing: 0.2ch;
+}
 
-        display: flex; */
+
+@layer components.header {
+    .main-header h1 {
+        margin: var(--karma-navbar--h1-bot-mar);
+    }
+    .main-header img {
+        max-height: var(--karma-navbar--logo-max-height);
+    }
+    .main-header .navbar {
+        font-family: var(--karma-font-family-headings);
+        text-transform: uppercase;
+        letter-spacing: var(--karma-navbar-letter-spacing);
+        font-size: var(--karma-navbar-font-size); 
+    }
+    .main-header .navbar .dropdown-menu {
+        border-width: 0;
+        background-color: var(--karma-clr-bg-neutral-100);
+    }
+    .main-header .navbar a.nav-link,
+    .main-header .navbar a.dropdown-item {
+        color: var(--karma-clr-txt-neutral-400);
+    }
+    .navbar-toggler {
+        border-radius: var(--karma-navbar--toggler-bdr-radius);
+        border-color: var(--karma-clr-txt-neutral-800);
+    }
+    .navbar-toggler-icon{
+        background-image: var(--karma-navbar-toggler-icon-bg);
     }
 }
+

@@ -63,7 +63,7 @@ function generic_enqueue() {
     /* CSS reset --- this cancel google fonts (Don't know why yet) */
     // wp_enqueue_style( 'css-reset', 'https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css', array(), null );
 
-    wp_enqueue_style( 'custom-properties', get_template_directory_uri() . '/styles/custom-properties.css' );
+    wp_enqueue_style( 'variables', get_template_directory_uri() . '/styles/variables.css' );
     wp_enqueue_style( 'theme-switch', get_template_directory_uri() . '/styles/theme-switch.css' );
     wp_enqueue_style( 'header', get_template_directory_uri() . '/styles/header.css' );
     wp_enqueue_style( 'hero', get_template_directory_uri() . '/styles/hero.css' );

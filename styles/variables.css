@@ -1,9 +1,15 @@
 @layer base {
-    
+
+    /**
+     * GLOBAL CUSTOM PROPPERTIES (VARIABLES)
+     * ------------
+    */
+
     /* Light theme */
     @media (prefers-color-scheme: light) {
         :root { /* Colours */
             --karma-clr-body-background: #fff;
+            --karma-clr-bg-neutral-100: #f6f6f6;
             --karma-clr-txt-neutral-800: #1E1E1E;
             --karma-clr-txt-neutral-400: #696969;
             --karma-clr-footer-background: #0F0F0E;
@@ -16,12 +22,17 @@
             --karma-hero-img-light-display: block;
             --karma-hero-img-dark-display: none;
         }
+
+        :root { /* Navbar */
+            --karma-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
     }
     
     /* Dark theme */
     @media (prefers-color-scheme: dark) {
         :root { /* Colours */
             --karma-clr-body-background: #1A1812;
+            --karma-clr-bg-neutral-100: #292828;
             --karma-clr-txt-neutral-800: #E2E2E2;
             --karma-clr-txt-neutral-400: #959595;
             --karma-clr-footer-background: #24221C;
@@ -33,6 +44,10 @@
         :root { /* Hero images */
             --karma-hero-img-light-display: none;
             --karma-hero-img-dark-display: block;
+        }
+
+        :root { /* Navbar */
+            --karma-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
     }
 }
