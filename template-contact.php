@@ -5,9 +5,11 @@
     get_header();
 ?>
 
-<header class="header">
-    <h1><?php echo getField('title'); ?></h1>
-    <hr>
+<header class="hero">
+    <div class="text-wrapper">
+        <h1 class="underlined"><?php echo getField('title'); ?></h1>
+        <?php edit_post_link(); ?>
+    </div>
 </header>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

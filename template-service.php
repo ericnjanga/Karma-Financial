@@ -5,14 +5,17 @@
     get_header();
 ?>
 
-<header class="header">
-    <h1 class="entry-title" itemprop="name"><?php the_title(); ?></h1> 
-    <?php edit_post_link(); ?>
-    <hr>
-    <div>
-        <?php displayFieldIcon(get_the_ID()); ?>
+<header class="hero">
+    <div class="text-wrapper">
+        <h1 class="underlined"><?php the_title(); ?></h1>
+        <?php edit_post_link(); ?>
+        <div>
+            <?php displayFieldIcon(get_the_ID()); ?>
+        </div>
     </div>
 </header>
+
+
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

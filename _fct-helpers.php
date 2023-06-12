@@ -2,7 +2,7 @@
     function display_learn_more_box($text, $ctaText, $ctaLink) {
         ?>
             <div class="bx-learn-more">
-                <blockquote class="underlined">
+                <blockquote class="blockquote underlined">
                     <?php echo $text; ?>
                 </blockquote>
                 <p>

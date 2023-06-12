@@ -5,11 +5,16 @@
     get_header();
 ?>
 
-<header class="header">
-    <h1><?php echo getField('title'); ?></h1>
-    <p><?php echo getField('introduction'); ?></p>
-    <hr>
+<header class="hero">
+    <div class="text-wrapper">
+        <h1 class="underlined"><?php echo getField('title'); ?></h1>
+        <?php edit_post_link(); ?>
+    </div>
 </header>
+
+
+
+<p><?php echo getField('introduction'); ?></p>
 
 <div class="entry-content" itemprop="mainContentOfPage">
     <?php the_content(); ?>

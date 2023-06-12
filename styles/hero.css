@@ -1,6 +1,22 @@
-
-.header-img-wrapper {
-    overflow: hidden;
-    max-height: 200px;
+:root {
+    --karma-hero--padding: 20px;
+    --karma-hero-img-spacer: 30px;
+    --karma-hero-txt-wrapper-max-width: 80%;
 }
 
+@layer components.hero {
+    .hero {
+        text-align: center;
+        padding-top: var(--karma-hero--padding);
+        padding-bottom: var(--karma-hero--padding);
+    }
+    .hero .text-wrapper {
+        margin: 0 auto;
+        max-width: var(--karma-hero-txt-wrapper-max-width);
+    }
+    .hero-img-wrapper {
+        margin-top: var(--karma-hero-img-spacer);
+        overflow: hidden;
+        max-height: 200px;
+    }
+}

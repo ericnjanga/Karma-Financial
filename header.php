@@ -230,7 +230,7 @@
 
 
 
-        <div id="container">
+        <div id="container" class="container">
             <main id="content" role="main">
 
             <?php

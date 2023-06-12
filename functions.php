@@ -59,7 +59,7 @@ function generic_enqueue() {
 
     /* Font families */
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Maitree:wght@400;600;700&family=Merriweather:wght@400;700&family=Oswald&display=swap', array(), null );
-
+    
     /* CSS reset --- this cancel google fonts (Don't know why yet) */
     // wp_enqueue_style( 'css-reset', 'https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css', array(), null );
 
@@ -67,6 +67,9 @@ function generic_enqueue() {
     wp_enqueue_style( 'theme-switch', get_template_directory_uri() . '/styles/theme-switch.css' );
     wp_enqueue_style( 'header', get_template_directory_uri() . '/styles/header.css' );
     wp_enqueue_style( 'hero', get_template_directory_uri() . '/styles/hero.css' );
+    wp_enqueue_style( 'button', get_template_directory_uri() . '/styles/button.css' );
+    wp_enqueue_style( 'headings', get_template_directory_uri() . '/styles/headings.css' );
+    wp_enqueue_style( 'blockquote', get_template_directory_uri() . '/styles/blockquote.css' );
     wp_enqueue_style( 'menu', get_template_directory_uri() . '/styles/menu.css' );
     wp_enqueue_style( 'sidebar', get_template_directory_uri() . '/styles/sidebar.css' );
     wp_enqueue_style( 'footer', get_template_directory_uri() . '/styles/footer.css' );

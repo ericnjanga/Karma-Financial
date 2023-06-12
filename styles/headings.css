@@ -1,0 +1,26 @@
+:root {
+    --karma-headings-underlined-max-width: 150px;
+}
+
+
+@layer base.headings {
+    h1.underlined {
+        position: relative;
+    }
+    h1.underlined::after {
+        display: block;
+        content: '';
+        height: 1px;
+        margin: 20px auto;
+        width: var(--karma-headings-underlined-max-width);
+        background-color: var(--karma-clr-line-separator);
+    }
+
+    .pre-title {
+        margin: 0;
+        color: var(--karma-clr-primary-neutral-900);
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-family: var(--karma-font-family-headings);
+    }
+}

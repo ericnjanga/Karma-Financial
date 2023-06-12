@@ -5,12 +5,15 @@
     get_header();
 ?>
 
-<header class="header">
-    <h1><?php echo getField('title'); ?></h1>
-    <p><?php echo getField('introduction'); ?></p>
-    <p><a href="#services" class="btn btn-primary">Our services</a></p>
+<header class="hero">
+    <div class="text-wrapper">
+        <h1 class="underlined"><?php echo getField('title'); ?></h1>
+        <?php edit_post_link(); ?>
+        <p><?php echo getField('introduction'); ?></p>
+        <p><a href="#services" class="btn btn-primary btn-icon btn-arrow-down">Our services</a></p>
+    </div>
 
-    <div class="header-img-wrapper">
+    <div class="hero-img-wrapper">
         <?php
             displayHero();
         ?>
@@ -18,9 +21,12 @@
 </header>
 
 
+
+
+
 <section class="awards">
     <p class="pre-title">Awards</p>
-    <blockquote>
+    <blockquote class="blockquote">
         Our professionalism and work ethic is recognized and trusted by Canada’s top financial institutions.
     </blockquote>
 
