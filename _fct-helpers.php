@@ -142,48 +142,36 @@
 ?>
 
 <?php
-    function displayPartners() {
-        global $post;
-
-        // Get the light theme logo URLs
-        $logo_1_light_theme = get_field('logo_1_light_theme', $post->ID);
-        $logo_2_light_theme = get_field('logo_2_light_theme', $post->ID);
-        $logo_3_light_theme = get_field('logo_3_light_theme', $post->ID);
-
-        // Get the dark theme logo URLs
-        $logo_1_dark_theme = get_field('logo_1_dark_theme', $post->ID);
-        $logo_2_dark_theme = get_field('logo_2_dark_theme', $post->ID);
-        $logo_3_dark_theme = get_field('logo_3_dark_theme', $post->ID);
-
-        // Display the hero images and logos
-        if ($logo_1_light_theme && $logo_2_light_theme && $logo_3_light_theme && 
-        $logo_1_dark_theme && $logo_2_dark_theme && $logo_3_dark_theme) {
+    function displayClientLogos($count = -1) {
+        $args = array(
+            'post_type' => 'client-logo',
+            'posts_per_page' => $count,
+        );
+    
+        $query = new WP_Query($args);
+    
+        if ($query->have_posts()) {
             ?>
-            <div class="img-group">
-                <div class="img-theme-light">
-                    <img src="<?php echo $logo_1_light_theme; ?>">
-                </div>
-                <div class="img-theme-light">
-                    <img src="<?php echo $logo_2_light_theme; ?>">
-                </div>
-                <div class="img-theme-light">
-                    <img src="<?php echo $logo_3_light_theme; ?>">
-                </div>
-                
-                <div class="img-theme-dark">
-                    <img src="<?php echo $logo_1_dark_theme; ?>">
-                </div>
-                <div class="img-theme-dark">
-                    <img src="<?php echo $logo_2_dark_theme; ?>">
-                </div>
-                <div class="img-theme-dark">
-                    <img src="<?php echo $logo_3_dark_theme; ?>">
-                </div>
-            </div>
+                <ul class="logo-grid">
+                    <?php
+                        while ($query->have_posts()) {
+                            $query->the_post();
+                            $post_ID = get_the_ID();
+                            $logo_light = get_field('logo_light', $post_ID);
+                            $logo_dark = get_field('logo_dark', $post_ID);
+                            ?>
+                                <li class="border-solid">
+                                    <img src="<?php echo $logo_light; ?>" class="img-fluid img-theme-light border-decoration" alt="...">
+                                    <img src="<?php echo $logo_dark; ?>" class="img-fluid img-theme-dark border-decoration" alt="...">
+                                </li>
+                            <?php
+                        }
+                    ?>
+                </ul>
             <?php
         } else {
             ?>
-            <p>No hero images or logos found.</p>
+                <p>No client logos found.</p>
             <?php
         }
     }

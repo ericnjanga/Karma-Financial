@@ -22,7 +22,6 @@
     </header>
 
 
-
     <section class="section-awards">
         <article>
             <p class="pre-title">Awards</p>
@@ -41,43 +40,32 @@
         </div>
     </section>
 
+
+    <h2 class="underlined">services we provide</h2>
+    <div id="services">
+        <?php
+            displayPageExcerpts('services');
+        ?>
+    </div>
+
+
+    <h2 class="underlined">Partners</h2>
+    <?php
+        displayClientLogos();
+    ?>
+
+
+    <h2 class="underlined">Testimonials</h2>
+    <div>
+        <?php displayTestimonial(2, true); ?>
+    </div>
+
+
+    <h2 class="underlined">News and resources</h2>
+    <div>
+        <?php latestPosts('', 2, true); ?>
+    </div>
 </div>
 
 
-
-
-
-
- 
-
-
-<h2 class="underlined">services we provide</h2>
-<div id="services">
-<?php
-    displayPageExcerpts('services');
-?>
-</div>
-
-
-<h2 class="underlined">Partners</h2>
-<?php
-    displayPartners();
-?>
-
-
-
-<h2 class="underlined">Testimonials</h2>
-<div>
-    <?php displayTestimonial(2, true); ?>
-</div>
-
-
-
-<h2 class="underlined">News and resources</h2>
-<div>
-    <?php latestPosts('', 2, true); ?>
-</div>
-
-
- 
 <?php get_footer(); ?>

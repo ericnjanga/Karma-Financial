@@ -13,7 +13,7 @@
         height: 1px;
         margin: 20px auto;
         width: var(--karma-headings-underlined-max-width);
-        background-color: var(--karma-clr-line-separator);
+        background-color: var(--karma-clr-primary-neutral-600);
     }
 
     .pre-title {

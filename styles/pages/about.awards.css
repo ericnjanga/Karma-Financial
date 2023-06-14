@@ -1,5 +1,5 @@
 :root {
-    --karma-award-container-dtc: 1fr 1fr;
+    --karma-award-container-dtc: repeat(2, 1fr);
 }
 
 
@@ -22,15 +22,15 @@
 @layer page.about.awards {
     .page-template-template-about .award-container {
         @container (min-width: 1141px) {
-            --karma-award-container-dtc: 1fr 1fr 1fr 1fr 1fr;
+            --karma-award-container-dtc: repeat(5, 1fr);
         }
 
         @container (min-width: 961px) and (max-width: 1140px) {
-            --karma-award-container-dtc: 1fr 1fr 1fr 1fr; 
+            --karma-award-container-dtc: repeat(4, 1fr); 
         }
 
         @container (min-width: 721px) and (max-width: 960px) {
-            --karma-award-container-dtc: 1fr 1fr 1fr;
+            --karma-award-container-dtc: repeat(3, 1fr);
         }
 
         /* @container (min-width: 541px) and (max-width: 720px) {

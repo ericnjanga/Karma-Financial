@@ -1,0 +1,40 @@
+:root {
+    --karma-logo-grid-display: grid;
+    --karma-logo-grid-dtc: repeat(3, 1fr);
+    --karma-logo-grid-gap: 20px;
+}
+
+@layer components.logo-grid {
+    .logo-grid {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    .logo-grid {
+        display: var(--karma-logo-grid-display);
+        grid-template-columns: var(--karma-logo-grid-dtc);
+        gap: var(--karma-logo-grid-gap);
+    }
+}
+
+@layer components.logo-grid {
+    .logo-grid {
+        @container (min-width: 1141px) {
+            --karma-logo-grid-dtc: repeat(7, 1fr);
+        }
+        
+        @container (min-width: 961px) and (max-width: 1140px) {
+            --karma-logo-grid-dtc: repeat(6, 1fr);
+        }
+        
+        @container (min-width: 721px) and (max-width: 960px) {
+            --karma-logo-grid-dtc: repeat(5, 1fr);
+        }
+        
+        @container (min-width: 541px) and (max-width: 720px) {
+            --karma-logo-grid-dtc: repeat(4, 1fr);
+        }
+    
+        /* @container (max-width: 540px) {} */
+    }
+}

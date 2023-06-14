@@ -66,6 +66,7 @@ function generic_enqueue() {
     wp_enqueue_style( 'variables', get_template_directory_uri() . '/styles/base/variables.css' );
     wp_enqueue_style( 'blockquote', get_template_directory_uri() . '/styles/base/blockquote.css' );
     wp_enqueue_style( 'headings', get_template_directory_uri() . '/styles/base/headings.css' );
+    wp_enqueue_style( 'decorations', get_template_directory_uri() . '/styles/base/decorations.css' );
 
     wp_enqueue_style( 'theme-switch', get_template_directory_uri() . '/styles/theme-switch.css' );
     wp_enqueue_style( 'header', get_template_directory_uri() . '/styles/header.css' );
@@ -75,6 +76,7 @@ function generic_enqueue() {
 
     wp_enqueue_style( 'award', get_template_directory_uri() . '/styles/components/award.css' );
     wp_enqueue_style( 'boxes', get_template_directory_uri() . '/styles/components/boxes.css' );
+    wp_enqueue_style( 'logo-grid', get_template_directory_uri() . '/styles/components/logo-grid.css' );
 
     wp_enqueue_style( 'menu', get_template_directory_uri() . '/styles/menu.css' );
     wp_enqueue_style( 'sidebar', get_template_directory_uri() . '/styles/sidebar.css' );

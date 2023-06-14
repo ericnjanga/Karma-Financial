@@ -1,12 +1,4 @@
 
-@layer components.transparent {
-    .transparent {
-        background-color: var(--karma-clr-transparent);
-    }
-    .transparent-complementary {
-        background-color: var(--karma-clr-complementary-800);
-    }
-}
 
 @layer components.learn-more {
     .box-learn-more {

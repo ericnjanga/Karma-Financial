@@ -1,0 +1,16 @@
+
+@layer base.decorations.transparent {
+    .transparent {
+        background-color: var(--karma-clr-transparent);
+    }
+    .transparent-complementary {
+        background-color: var(--karma-clr-complementary-800);
+    }
+}
+
+@layer base.decorations.border-solid {
+    .border-solid {
+        border: 1px solid var(--karma-clr-primary-neutral-800);
+    }
+}
+
