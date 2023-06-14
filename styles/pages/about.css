@@ -1,0 +1,112 @@
+:root {
+    --karma-award-container-dtc: 1fr 1fr;
+}
+
+
+@layer pages.about {
+    /**
+     * Display awards as a 2 columns grid
+    */
+    .page-template-template-about .award-container {
+        display: var(--karma-award-container-display);
+        grid-template-columns: var(--karma-award-container-dtc);
+    }
+    .award-container {
+        gap: var(--karma-award-container-gap);
+    }
+}
+
+
+@layer pages.about {
+    @container (min-width: 1141px) {
+        .page-template-template-about .award-container {
+            border: 10px solid blue;
+            --karma-award-container-dtc: 1fr 1fr 1fr 1fr 1fr;
+        }
+    }
+
+    @container (min-width: 961px) and (max-width: 1140px) {
+        .page-template-template-about .award-container {
+            border: 10px solid orange;
+            --karma-award-container-dtc: 1fr 1fr 1fr 1fr;
+        }
+    }
+
+    @container (min-width: 721px) and (max-width: 960px) {
+        /* :root {
+            --karma-award-container-dtc: 1fr 1fr 1fr;
+        } */
+        .page-template-template-about .award-container {
+            --karma-award-container-dtc: 1fr 1fr 1fr;
+            border: 10px solid red;
+        }
+    }
+
+    @container (min-width: 541px) and (max-width: 720px) {
+        .page-template-template-about .award-container {
+            border: 10px solid turquoise;
+        }
+    }
+
+    @container (max-width: 540px) {
+        .page-template-template-about .award-container {
+            border: 10px dashed green;
+        }
+        
+        /* .page-template-template-about  .award {
+            border: 10px solid green;
+        } */
+    }
+
+
+
+
+
+
+    /**
+    * Hide all awards, except the first 4 and last one
+    * (Elts displayed: 5)
+    */
+    @container (min-width: 1141px) {
+        .page-template-template-about .award-container .award:not(:first-child):not(:nth-child(-n+4)):not(:nth-last-child(1)) {
+            display: none;
+        }
+        .award-container {
+            border: 10px solid blue;
+        }
+    }
+
+    /**
+    * Hide all awards, except the first 3 and last one
+    * (Elts displayed: 4)
+    */
+    @container (min-width: 961px) and (max-width: 1140px) {
+        .page-template-template-about .award-container .award:not(:first-child):not(:nth-child(-n+3)):not(:nth-last-child(1)) {
+            display: none;
+        }
+        .award-container {
+            border: 10px solid orange;
+        }
+    }
+
+    /**
+    * Hide all awards, except the first 2 and last one
+    * (Elts displayed: 3)
+    */
+    @container (min-width: 721px) and (max-width: 960px) {
+        .page-template-template-about .award-container .award:not(:first-child):not(:nth-child(2)):not(:last-child) {
+            display: none;
+        }
+    }
+
+    /**
+    * Hide all awards, except the first and last one 
+    * (Elts displayed: 2)
+    */
+    @container (max-width: 720px) {
+        .page-template-template-about .award-container .award:not(:first-child):not(:last-child) {
+            display: none;
+        }
+    }
+
+}

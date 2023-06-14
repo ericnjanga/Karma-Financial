@@ -26,14 +26,16 @@
 
 
 
-<div class="card">
-    <div class="card-body">
-        <h2 class="card-title">Awards &amp; recognition</h2>
-        <p>Our contribution and achievements have been recognized and celebrated.</p>
-        <a class="btn btn-secondary btn-sm" href="#">Start slideshow</a>
-        <?php displayAward(3); ?>
-    </div>
-</div>
+<section class="section-awards">
+    <article>
+        <p class="pre-title">Awards &amp; recognition</p>
+        <blockquote class="blockquote">
+            Our professionalism and work ethic is recognized and trusted by Canada’s top financial institutions.
+        </blockquote>
+    </article>
+
+    <?php displayAward(5, true); ?>
+</section>
 
 <div class="card">
     <div class="card-body">

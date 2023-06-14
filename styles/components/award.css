@@ -1,0 +1,47 @@
+:root {
+    --karma-award-img-width: 100%;
+    --karma-award-figure-mrg: 0;
+    --karma-award-figure-padding: 10px;
+    --karma-page-home-awcnt-img-max-w: 380px;
+    --karma-page-home-awcnt-img-w: 80%;
+}
+
+
+@layer components.award {
+    .award {
+        text-align: center;
+    }
+    .award-figure {
+        margin: var(--karma-award-figure-mrg)!important; /* couldn't override styles.min with @layers */
+    }
+    .award-img {
+        max-width: var(--karma-page-home-awcnt-img-max-w);
+        width: var(--karma-page-home-awcnt-img-w);
+        filter: drop-shadow(0px 4.02498px 10.0625px rgba(0, 0, 0, 0.25));
+    }
+    .award-figure-wrapper {
+        padding: var(--karma-award-figure-padding);
+    }
+    .award-caption {
+        margin-top: 7px;
+    }
+}
+
+
+
+    /**
+    * Hide all awards, except the first 4 and last one
+    * (Elts displayed: 5)
+    */
+
+@layer components.award {
+    @container (min-width: 350px) {
+        .award-figure-wrapper {
+            --karma-award-figure-padding: 25px;
+        }
+    }
+}
+
+
+@layer components.award {
+}

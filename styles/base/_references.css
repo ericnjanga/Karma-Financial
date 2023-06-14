@@ -1,0 +1,54 @@
+
+
+/**
+ *  MAIN CONTAINER BREAKPOINTS
+ * <div class="container"></div> width in relationship to viewport
+ * - .container's width remains fixed until the viewport space allows it to reach the next width
+ * (NOTE: @container property is not yet recognize by VSCode, so #$transition-breakpoint {} doesn't work)
+ * ---------
+     width 1: 540px 
+     width 2: 720px
+     width 3: 960px
+     width 4: 1140px
+*/
+.yy-container {
+    @container (min-width: 1141px) {
+    }
+ 
+    @container (min-width: 961px) and (max-width: 1140px) {
+    }
+ 
+    @container (min-width: 721px) and (max-width: 960px) {
+    }
+ 
+    @container (min-width: 541px) and (max-width: 720px) {
+    }
+
+    @container (max-width: 540px) {
+    }
+}
+
+
+
+/**
+ *  BROWSER BREAKPOINTS
+ * ---------
+*/
+.browser-query {
+
+    @media (min-width: 1400px) {
+        // ...
+    }
+    @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+        // ...
+    }
+    @media (min-width: 992px) and (max-width: (1200px - 1)) {
+        // ...
+    }
+    @media (min-width: 768px) and (max-width: (992px - 1)) {
+        // ...
+    }
+    @media (min-width: 576px) and (max-width: (768px - 1)) {
+        // ...
+    }
+}

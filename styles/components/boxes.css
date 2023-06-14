@@ -1,0 +1,19 @@
+
+@layer components.transparent {
+    .transparent {
+        background-color: var(--karma-clr-transparent);
+    }
+    .box-content-centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box-learn-more {
+        position: relative;
+        display: grid;
+        place-items: center;
+    }
+    .box-learn-more__content {
+        position: absolute;
+    }
+}

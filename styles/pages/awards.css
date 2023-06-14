@@ -1,0 +1,15 @@
+
+
+
+@layer pages.awards {
+    /**
+     * Display awards as a 2 columns grid
+    */
+    .page-template-template-grid-awards .award-container {
+        display: var(--karma-award-container-display);
+        grid-template-columns: var(--karma-award-container-dtc);
+    }
+    .award-container {
+        gap: var(--karma-award-container-gap);
+    }
+}

@@ -75,32 +75,74 @@
 ?>
 
 <?php
-    function displayAward($count = -1) {
+    function displayAward($count = -1, $addMore = false) {
         $args = array(
             'post_type' => 'award',
             'posts_per_page' => $count,
         );
+        $imageSize = 'medium';
     
         $query = new WP_Query($args);
-    
-        if ($query->have_posts()) {
-            while ($query->have_posts()) {
-                $query->the_post();
-                ?>
-                <div class="award-item">
-                    <figure>
-                        <?php if (has_post_thumbnail()) {
-                            the_post_thumbnail('thumbnail');
-                        } ?>
-                        <figcaption><?php the_title(); ?></figcaption>
-                    </figure>
+        ?>
+            <div class="bx-container">
+                <div class="award-container">
+                    <?php
+                        if ($query->have_posts()) {
+                            while ($query->have_posts()) {
+                                $query->the_post();
+                                ?>
+                                <div class="award bx-container">
+                                    <figure class="award-figure">
+                                        <div class="award-figure-wrapper transparent">
+                                            <?php if (has_post_thumbnail()) { 
+                                                the_post_thumbnail($imageSize, ['class' => 'img-fluid award-img']);
+                                            } ?>
+                                        </div>
+                                        <figcaption class="award-caption"><?php the_title(); ?></figcaption>
+                                    </figure>
+                                </div>
+                                <?php
+                            }
+
+
+                            if ($addMore == true) {
+                                // ...
+                                $image_title = 'award - transparent 3';
+                                // $image_title = 'award - 2013 – Rookie of the Year Award';
+                                $image = get_page_by_title($image_title, OBJECT, 'attachment');
+
+                                if ($image) {
+                                    $image_attributes = wp_get_attachment_image_src($image->ID, $imageSize);
+                                    $image_markup = wp_get_attachment_image($image->ID, $imageSize);
+
+                                    // Add the desired classes to the image markup
+                                    $image_markup = str_replace('class="', 'class="img-fluid award-img ', $image_markup);
+
+                                    ?>
+                                        <div class="award bx-container box-learn-more">    <!--  box-content-centered -->
+
+                                            <div class="award-learn-more box-learn-more__content">
+                                                <p>We have received more awards.</p>
+                                                <hr>
+                                                <a href="" class="btn btn-secondary">More</a>
+                                            </div>
+                                            <figure class="award-figure">
+                                                <div class="award-figure-wrapper transparent">
+                                                    <?php echo $image_markup; ?>
+                                                </div>
+                                                <figcaption class="award-caption">2013 – Mortgage AIO Leader</figcaption>
+                                            </figure>
+                                        </div>
+                                    <?php
+                                }
+                            }
+                        } else {
+                            echo '<p>No awards found.</p>';
+                        }
+                    ?>
                 </div>
-                <?php
-            }
-        } else {
-            echo '<p>No awards found.</p>';
-        }
-    
+            </div>
+        <?php
         wp_reset_postdata();
     }
 ?>
