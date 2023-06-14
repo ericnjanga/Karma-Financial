@@ -3,11 +3,12 @@
     .transparent {
         background-color: var(--karma-clr-transparent);
     }
-    .box-content-centered {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .transparent-complementary {
+        background-color: var(--karma-clr-complementary-800);
     }
+}
+
+@layer components.learn-more {
     .box-learn-more {
         position: relative;
         display: grid;
@@ -15,5 +16,27 @@
     }
     .box-learn-more__content {
         position: absolute;
+        z-index: 1;
+        max-width: 80%;
+    }
+    .box-learn-more__content p {
+        max-width: 200px;
+    }
+    .box-learn-more__content hr {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 50%;
+    }
+    .box-learn-more__bg-wrapper {
+        position: absolute;
+        top: 0;
+    }
+    .box-learn-more__bg {
+        position: relative;
+        display: grid;
+        place-items: center;
+    }
+    .box-learn-more__caption { /* For now, we hide captions for the learn more component */
+        visibility: hidden;
     }
 }

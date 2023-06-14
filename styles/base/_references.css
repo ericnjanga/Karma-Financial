@@ -13,19 +13,24 @@
 */
 .yy-container {
     @container (min-width: 1141px) {
+        border: 10px solid orange;
     }
  
     @container (min-width: 961px) and (max-width: 1140px) {
+        border: 10px solid green;
     }
  
     @container (min-width: 721px) and (max-width: 960px) {
+        border: 10px solid lime;
     }
  
     @container (min-width: 541px) and (max-width: 720px) {
+        border: 10px solid blue;
     }
 
     @container (max-width: 540px) {
-    }
+        border: 10px solid turquoise;
+    } 
 }
 
 

@@ -37,7 +37,7 @@
         </article>
 
         <div class="complementary">
-            <?php displayAward(5); ?>
+            <?php displayAward(5, false, 'transparent-complementary'); ?>
         </div>
     </section>
 
@@ -68,20 +68,14 @@
 
 <h2 class="underlined">Testimonials</h2>
 <div>
-    <?php displayTestimonial(3); ?>
+    <?php displayTestimonial(2, true); ?>
 </div>
 
 
 
 <h2 class="underlined">News and resources</h2>
 <div>
-    <?php latestPosts('', 2); ?>
-    <?php 
-        display_learn_more_box(
-            'We have more resources available', 
-            'Learn more', 
-            '#'); 
-    ?>
+    <?php latestPosts('', 2, true); ?>
 </div>
 
 

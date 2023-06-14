@@ -10,7 +10,7 @@
 }
 
 
-@layer pages.home.awards {
+@layer page.home.awards {
 
     .home .section-awards {
         display: var(--karma-page-home-awsct-display);
@@ -57,7 +57,7 @@
 /**
  * Layout structure
 */
-@layer pages.home.awards {
+@layer page.home.awards {
     .home .section-awards {
         @container (min-width: 1141px) {
             --karma-page-home-awsct-display: grid;

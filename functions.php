@@ -82,6 +82,7 @@ function generic_enqueue() {
 
     wp_enqueue_style( 'page-home', get_template_directory_uri() . '/styles/pages/home.css' );
     wp_enqueue_style( 'page-about', get_template_directory_uri() . '/styles/pages/about.css' );
+    wp_enqueue_style( 'page-about-awards', get_template_directory_uri() . '/styles/pages/about.awards.css' );
     wp_enqueue_style( 'page-awards', get_template_directory_uri() . '/styles/pages/awards.css' );
 
 
