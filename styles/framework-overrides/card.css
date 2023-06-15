@@ -1,0 +1,8 @@
+:root {
+    --karma-card-padd30: 30px;
+}
+
+
+.card-body-padd30 {
+    padding: var(--karma-card-padd30);
+}

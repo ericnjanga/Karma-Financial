@@ -79,6 +79,8 @@ function generic_enqueue() {
     wp_enqueue_style( 'sidebar', get_template_directory_uri() . '/styles/components/sidebar.css' );
     wp_enqueue_style( 'footer', get_template_directory_uri() . '/styles/components/footer.css' );
 
+    wp_enqueue_style( 'bootstrap-cards', get_template_directory_uri() . '/styles/framework-overrides/card.css' );
+
     wp_enqueue_style( 'page-home', get_template_directory_uri() . '/styles/pages/home.css' );
     wp_enqueue_style( 'page-about', get_template_directory_uri() . '/styles/pages/about.css' );
     wp_enqueue_style( 'page-about-awards', get_template_directory_uri() . '/styles/pages/about.awards.css' );

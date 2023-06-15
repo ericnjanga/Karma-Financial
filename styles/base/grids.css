@@ -9,12 +9,16 @@
 
     --karma-grid-22222-dtc: repeat(2, 1fr);
     --karma-grid-22222-gap: 20px;
+
+    --karma-grid-1xxxx-dtc: repeat(1, 1fr);
+    --karma-grid-1xxxx-gap: 20px;
 }
 
 @layer components.grids {
     .grid-34567,
     .grid-22345,
-    .grid-22222 {
+    .grid-22222,
+    .grid-1xxxx {
         display: var(--karma-grid-display);
     }
 }
@@ -130,6 +134,50 @@
      
         @container (min-width: 541px) and (max-width: 720px) {
             --karma-grid-22222-gap: 30px;
+        }
+    
+        /* @container (max-width: 540px) {
+        }  */
+    }
+}
+
+
+
+
+
+/**
+ * 
+ * Mobile 1st   : 1 columns
+ * Breakpoint 1 : x columns
+ * Breakpoint 2 : x columns
+ * Breakpoint 3 : x columns
+ * Breakpoint 4 : x columns
+ * ----------------
+*/
+@layer components.grids.grid-1xxxx {
+    .grid-1xxxx {
+        grid-template-columns: var(--karma-grid-1xxxx-dtc);
+        gap: var(--karma-grid-1xxxx-gap);
+    }
+    .grid-1xxxx {
+        @container (min-width: 1141px) {
+            --karma-grid-1xxxx-dtc: repeat(3, 1fr);
+            /* --karma-grid-1xxxx-gap: 100px; */
+        }
+     
+        @container (min-width: 961px) and (max-width: 1140px) {
+            --karma-grid-1xxxx-dtc: repeat(3, 1fr);
+            /* --karma-grid-1xxxx-gap: 60px; */
+        }
+     
+        @container (min-width: 721px) and (max-width: 960px) {
+            --karma-grid-1xxxx-dtc: repeat(3, 1fr);
+            /* --karma-grid-1xxxx-gap: 40px; */
+        }
+     
+        @container (min-width: 541px) and (max-width: 720px) {
+            --karma-grid-1xxxx-dtc: repeat(1, 1fr);
+            /* --karma-grid-1xxxx-gap: 30px; */
         }
     
         /* @container (max-width: 540px) {

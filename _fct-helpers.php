@@ -214,7 +214,15 @@
 
 
 <?php
-    function displayServicesExcerpts() {
+    function displayServicesExcerpts(
+        $gridClass  = '', 
+    ) {
+        // Inforce default value adoption on all parameters
+        // (this doesn't seem to work during the function's declaration)
+        if ($gridClass === null) {
+            $gridClass = '';
+        } 
+
         global $post;
         // Get the parent page ID
         $parent_page = get_page_by_path('services');
@@ -229,14 +237,16 @@
         // Display the titles and excerpts of the child pages
         if ($child_pages) {
             ?>
-                <ul class="list-unstyled">
+                <ul class="<?php echo $gridClass; ?> list-unstyled">
                     <?php foreach ($child_pages as $child_page) { ?>
                         <li>
                             <div class="card card-neutral bdr-no-radius">
-                                <div class="card-body">
+                                <div class="card-header">
+                                    <?php displayFieldIcon($child_page->ID); ?>
+                                </div>
+                                <div class="card-body card-body-padd30">
                                     <div>
                                         <?php
-                                            displayFieldIcon($child_page->ID);
                                             // Check if the child page is not the same as the current page
                                             $child_page_url = get_permalink($child_page->ID);
                                         ?>
@@ -340,7 +350,25 @@
 
 
 <?php
-    function displayTestimonial($count = -1, $addMore = false) {
+    function displayTestimonial(
+        $gridClass  = '', 
+        $count = -1, 
+        $addMore = false
+    ) {
+        // Inforce default value adoption on all parameters
+        // (this doesn't seem to work during the function's declaration)
+        if ($gridClass === null) {
+            $gridClass = '';
+        } 
+        if ($count === null) {
+            $count = -1;
+        } 
+        if ($addMore === null) {
+            $addMore = false;
+        } 
+        // Default values enforcement
+
+
         $args = array(
             'post_type' => 'testimonial',
             'posts_per_page' => $count,
@@ -351,14 +379,18 @@
     
         if ($query->have_posts()) {
             ?>
-            <ul class="list-unstyled">
+            <ul class="<?php echo $gridClass; ?> list-unstyled">
                 <?php
                 while ($query->have_posts()) {
                     $query->the_post();
                     ?>
                         <li>
                             <div class="card card-primary bdr-no-radius">
-                                <div class="card-body">
+                                <div class="card-header">
+                                    <img src="http://karma-financial.local/wp-content/uploads/2023/06/Budgeting.png">
+                                    <?php //displayFieldIcon($child_page->ID); ?>
+                                </div>
+                                <div class="card-body card-body-padd30">
                                     <p><?php the_content(); ?></p>
                                     <p><b><?php the_title() ?></b></p>
                                     <?php
@@ -392,7 +424,7 @@
 
 <?php
     function displayAward(
-        $gridClass  = '***', 
+        $gridClass  = '', 
         $count      = -1, 
         $addMore    = false, 
         $colorClass = 'transparent'
