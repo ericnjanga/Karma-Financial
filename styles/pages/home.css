@@ -26,7 +26,7 @@
     /**
      * Hide all awards, except the first one
     */
-    .home .award-container .award:not(:first-child) {
+    .home .awards-container .award:not(:first-child) {
         display: none;
     }
 
@@ -34,11 +34,11 @@
     /**
      * Decorate the container to match home page design
     */
-    .home .award-container {
+    .home .awards-container {
         position: relative;
         /* padding: var(--karma-page-home-awcnt-padd); */
     }
-    .home .award-container:after { /* Create background decorator */
+    .home .awards-container:after { /* Create background decorator */
         /* position: absolute;
         top: 0;
         right: 0;
@@ -48,7 +48,7 @@
         background-color: var(--karma-clr-complementary-800);
         z-index: 0; */
     }
-    .home .award-container .award { /* make sure awards stay on top of background */
+    .home .awards-container .award { /* make sure awards stay on top of background */
         /* position: relative;
         z-index: 1; */
     }

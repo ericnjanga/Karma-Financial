@@ -8,9 +8,22 @@
     }
 }
 
-@layer base.decorations.border-solid {
-    .border-solid {
+@layer base.decorations.borders {
+    .bdr-solid {
         border: 1px solid var(--karma-clr-primary-neutral-800);
+    }
+    .bdr-no-radius {
+        border-radius: 0;
     }
 }
 
+
+
+@layer base.decorations.cards {
+    .card-primary {
+        background-color: var(--karma-clr-highlight1);
+    }
+    .card-neutral {
+        background-color: var(--karma-clr-transparent);
+    }
+}

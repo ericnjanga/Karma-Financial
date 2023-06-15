@@ -13,5 +13,5 @@
 
 
 <div>
-    <?php displayAward(); ?>
+    <?php displayAward('grid-22222', null, null, null); ?>
 </div>

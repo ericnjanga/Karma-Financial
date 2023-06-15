@@ -85,10 +85,3 @@
 }
 
 
-
-@layer components {
-    :root {
-        --karma-award-container-display: grid;
-        --karma-award-container-gap: 20px;
-    }
-}

@@ -36,7 +36,7 @@
         </article>
 
         <div class="complementary">
-            <?php displayAward(5, false, 'transparent-complementary'); ?>
+            <?php displayAward(null, 5, false, 'transparent-complementary'); ?>
         </div>
     </section>
 
@@ -44,7 +44,7 @@
     <h2 class="underlined">services we provide</h2>
     <div id="services">
         <?php
-            displayPageExcerpts('services');
+            displayServicesExcerpts();
         ?>
     </div>
 

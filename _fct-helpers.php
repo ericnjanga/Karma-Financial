@@ -152,7 +152,7 @@
     
         if ($query->have_posts()) {
             ?>
-                <ul class="logo-grid list-unstyled">
+                <ul class="grid-34567 list-unstyled">
                     <?php
                         while ($query->have_posts()) {
                             $query->the_post();
@@ -160,7 +160,7 @@
                             $logo_light = get_field('logo_light', $post_ID);
                             $logo_dark = get_field('logo_dark', $post_ID);
                             ?>
-                                <li class="border-solid">
+                                <li class="bdr-solid">
                                     <img src="<?php echo $logo_light; ?>" class="img-fluid img-theme-light border-decoration" alt="...">
                                     <img src="<?php echo $logo_dark; ?>" class="img-fluid img-theme-dark border-decoration" alt="...">
                                 </li>
@@ -214,11 +214,10 @@
 
 
 <?php
-    function displayPageExcerpts($parent = '') {
+    function displayServicesExcerpts() {
         global $post;
-
         // Get the parent page ID
-        $parent_page = get_page_by_path($parent);
+        $parent_page = get_page_by_path('services');
         $parent_page_id = $parent_page->ID;
 
         // Retrieve the child pages of the parent page
@@ -233,7 +232,7 @@
                 <ul class="list-unstyled">
                     <?php foreach ($child_pages as $child_page) { ?>
                         <li>
-                            <div class="card">
+                            <div class="card card-neutral bdr-no-radius">
                                 <div class="card-body">
                                     <div>
                                         <?php
@@ -358,7 +357,7 @@
                     $query->the_post();
                     ?>
                         <li>
-                            <div class="card">
+                            <div class="card card-primary bdr-no-radius">
                                 <div class="card-body">
                                     <p><?php the_content(); ?></p>
                                     <p><b><?php the_title() ?></b></p>
@@ -392,7 +391,28 @@
 
 
 <?php
-    function displayAward($count = -1, $addMore = false, $colorClass='transparent') {
+    function displayAward(
+        $gridClass  = '***', 
+        $count      = -1, 
+        $addMore    = false, 
+        $colorClass = 'transparent'
+    ) {
+        // Inforce default value adoption on all parameters
+        // (this doesn't seem to work during the function's declaration)
+        if ($gridClass === null) {
+            $gridClass = '';
+        } 
+        if ($count === null) {
+            $count = -1;
+        } 
+        if ($addMore === null) {
+            $addMore = false;
+        } 
+        if ($colorClass === null) {
+            $colorClass = 'transparent';
+        }
+        // Default values enforcement
+
         $args = array(
             'post_type' => 'award',
             'posts_per_page' => $count,
@@ -402,7 +422,7 @@
         $query = new WP_Query($args);
         ?>
             <div class="bx-container">
-                <div class="award-container">
+                <div class="<?php echo $gridClass; ?> awards-container">
                     <?php
                         if ($query->have_posts()) {
                             while ($query->have_posts()) {
@@ -423,7 +443,6 @@
 
                             if ($addMore == true) {
                                 display_learn_more_box('We have received more awards.', 'awards ++', '#ctalink-awards');
-                                // display_learn_more_box($text, $ctaText, $ctaLink);
                             }
                         } else {
                             echo '<p>No awards found.</p>';
