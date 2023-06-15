@@ -152,7 +152,7 @@
     
         if ($query->have_posts()) {
             ?>
-                <ul class="logo-grid">
+                <ul class="logo-grid list-unstyled">
                     <?php
                         while ($query->have_posts()) {
                             $query->the_post();
@@ -230,30 +230,32 @@
         // Display the titles and excerpts of the child pages
         if ($child_pages) {
             ?>
-                <ul>
+                <ul class="list-unstyled">
                     <?php foreach ($child_pages as $child_page) { ?>
-                        <li class="card">
-                            <div class="card-body">
-                                <div>
-                                    <?php
-                                        displayFieldIcon($child_page->ID);
-                                        // Check if the child page is not the same as the current page
-                                        $child_page_url = get_permalink($child_page->ID);
+                        <li>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div>
+                                        <?php
+                                            displayFieldIcon($child_page->ID);
+                                            // Check if the child page is not the same as the current page
+                                            $child_page_url = get_permalink($child_page->ID);
+                                        ?>
+                                    </div>
+                                    <h3 class="card-title">
+                                        <a href="<?php echo $child_page_url; ?>">
+                                            <?php echo $child_page->post_title; ?>
+                                        </a>
+                                    </h3>
+                                    <?php 
+                                        // Retrieve and display the excerpt custom field
+                                        $excerpt = get_field('excerpt', $child_page->ID);
+                                        if ($excerpt) {
+                                            echo '<p class="card-text">' . $excerpt . '</p>';
+                                        }
                                     ?>
+                                    <a href="<?php echo $child_page_url; ?>" class="btn btn-secondary btn-sm">Learn more</a>
                                 </div>
-                                <h3 class="card-title">
-                                    <a href="<?php echo $child_page_url; ?>">
-                                        <?php echo $child_page->post_title; ?>
-                                    </a>
-                                </h3>
-                                <?php 
-                                    // Retrieve and display the excerpt custom field
-                                    $excerpt = get_field('excerpt', $child_page->ID);
-                                    if ($excerpt) {
-                                        echo '<p class="card-text">' . $excerpt . '</p>';
-                                    }
-                                ?>
-                                <a href="<?php echo $child_page_url; ?>" class="btn btn-secondary btn-sm">Learn more</a>
                             </div>
                         </li>
                     <?php } ?>
@@ -280,7 +282,7 @@
 
         if ( $query->have_posts() ) :
             ?>
-                <ul>
+                <ul class="list-unstyled">
                     <?php 
                         while ( $query->have_posts() ) {
                             $query->the_post(); 
@@ -349,21 +351,32 @@
         $query = new WP_Query($args);
     
         if ($query->have_posts()) {
-            while ($query->have_posts()) {
-                $query->the_post();
-                ?>
-                    <div class="award-item--">
-                        <p><?php the_content(); ?></p>
-                        <p><b><?php the_title() ?></b></p>
-                        <?php
-                            $job_title = getFieldByID('job_title', get_the_ID());
-                            if (!empty($job_title)) {
-                                echo '<p>' . $job_title . '</p>';
-                            }
-                        ?>
-                    </div>
+            ?>
+            <ul class="list-unstyled">
                 <?php
-            }
+                while ($query->have_posts()) {
+                    $query->the_post();
+                    ?>
+                        <li>
+                            <div class="card">
+                                <div class="card-body">
+                                    <p><?php the_content(); ?></p>
+                                    <p><b><?php the_title() ?></b></p>
+                                    <?php
+                                        $job_title = getFieldByID('job_title', get_the_ID());
+                                        if (!empty($job_title)) {
+                                            echo '<p>' . $job_title . '</p>';
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                        </li>
+                    <?php
+                }
+                ?>
+            </ul>
+
+            <?php
 
             if ($addMore == true) {
                 display_learn_more_box('More happy customers have spoken.', 'Testimno ++', '#ctalink-testimo');
@@ -441,7 +454,7 @@
         // Display the titles of the child pages
         if ($child_pages) {
             ?>
-                <ul>
+                <ul class="list-unstyled">
                     <?php foreach ($child_pages as $child_page) { ?>
                         <?php
                             // Check if the child page is not the same as the current page
@@ -502,15 +515,21 @@
         $categories = get_categories(); // Retrieve all post categories
 
         if ($categories) {
-            echo '<ul>';
-            foreach ($categories as $category) {
-                $category_title = $category->name;
-                $category_url = get_category_link($category->term_id);
-                echo '<li><a href="' . $category_url . '">' . $category_title . '</a></li>';
-            }
-            echo '</ul>';
+            ?>
+                <ul class="list-unstyled">
+                    <?php
+                        foreach ($categories as $category) {
+                            $category_title = $category->name;
+                            $category_url = get_category_link($category->term_id);
+                            echo '<li><a href="' . $category_url . '">' . $category_title . '</a></li>';
+                        }
+                    ?>
+                </ul>
+            <?php
         } else {
-            echo 'No post categories found.';
+            ?>
+                <p>No post categories found.</p>
+            <?php
         }
     }
 ?>
