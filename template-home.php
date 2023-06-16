@@ -44,7 +44,7 @@
     <h2 class="underlined">services we provide</h2>
     <div id="services">
         <?php
-            displayServicesExcerpts('grid-1xxxx');
+            displayServicesExcerpts('grid grid-1xxxx');
         ?>
     </div>
 
@@ -57,7 +57,7 @@
 
     <h2 class="underlined">Testimonials</h2>
     <div>
-        <?php displayTestimonial('grid-1xxxx', 2, true); ?>
+        <?php displayTestimonial('grid grid-1xxxx', 2, true); ?>
     </div>
 
 

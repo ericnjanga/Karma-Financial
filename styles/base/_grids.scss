@@ -22,10 +22,7 @@
 }
 
 @layer grids {
-    .grid-34567,
-    .grid-22345,
-    .grid-22222,
-    .grid-1xxxx {
+    .grid {
         display: var(--karma-grid-display);
     }
 }

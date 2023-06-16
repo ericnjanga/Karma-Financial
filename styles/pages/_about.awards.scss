@@ -31,3 +31,15 @@
         }
     }
 }
+
+
+
+
+
+// Making sure cards inside grids occupies 
+// the cell's full height
+.page-template-template-about {
+    .grid .card {
+        height: 100%;
+    }
+}

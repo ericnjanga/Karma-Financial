@@ -34,7 +34,7 @@
         </blockquote>
     </article>
 
-    <?php displayAward('grid-22345', 5, true, null); ?>
+    <?php displayAward('grid grid-22345', 5, true, null); ?>
 </section>
 
 <div class="card">
