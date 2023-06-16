@@ -63,7 +63,7 @@
 
     <h2 class="underlined">News and resources</h2>
     <div>
-        <?php latestPosts('', 2, true); ?>
+        <?php latestPosts('grid grid-1xxxx', '', 2, true); ?>
     </div>
 </div>
 

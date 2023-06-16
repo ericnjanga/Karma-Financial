@@ -14,7 +14,7 @@
             $image_markup = str_replace('class="', 'class="img-fluid award-img ', $image_markup);
 
             ?>
-                <div class="award bx-container box-learn-more">
+                <div class="box-learn-more text-center bx-container">
                     <figure class="award-figure box-learn-more__bg-wrapper">
                         <div class="award-figure-wrapper transparent box-learn-more__bg">
                             <div class="award-learn-more box-learn-more__content">
@@ -311,34 +311,47 @@
 
 
 <?php
-    function latestPosts($category_slug = '', $count = 5, $addMore = false) {
+    function latestPosts($gridClass  = '', $category_slug = '', $count = 5, $addMore = false) {
         $args = array(
             'post_type' => 'post',
             'posts_per_page' => $count,
             'category_name' => $category_slug,
         );
+
+        // Inforce default value adoption on all parameters
+        // (this doesn't seem to work during the function's declaration)
+        if ($gridClass === null) {
+            $gridClass = '';
+        } 
+
         $imageSize = 'medium';
 
         $query = new WP_Query( $args );
 
         if ( $query->have_posts() ) {
-            while ( $query->have_posts() ) {
-                $query->the_post(); 
-                ?>
-                    <article>
-                        <?php $categories = get_the_category(); ?>
-                        <?php if ( ! empty( $categories ) ) : ?>
-                            <p class="pre-title heading-ff"><a href="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>"><?php echo esc_html( $categories[0]->name ); ?></a></p>
-                        <?php endif; ?>
-                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                        <p><?php echo wp_trim_words(get_the_content(), 40); ?> ...</p>
-                    </article>
-                <?php 
-            }
-
+            ?>
+                <ul class="<?php echo $gridClass; ?> list-unstyled">
+                    <?php
+                        while ( $query->have_posts() ) {
+                            $query->the_post(); 
+                            ?>
+                                <li>
+                                    <article>
+                                        <?php $categories = get_the_category(); ?>
+                                        <?php if ( ! empty( $categories ) ) : ?>
+                                            <p class="pre-title heading-ff"><a href="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>"><?php echo esc_html( $categories[0]->name ); ?></a></p>
+                                        <?php endif; ?>
+                                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                        <p><?php echo wp_trim_words(get_the_content(), 40); ?> ...</p>
+                                    </article>
+                                </li>
+                            <?php 
+                        }
+                    ?>
+                </ul>
+            <?php
             if ($addMore == true) {
                 display_learn_more_box('New resources added monthly.', 'post ++', '#ctalink-posts');
-                // display_learn_more_box($text, $ctaText, $ctaLink);
             }
 
             wp_reset_postdata();
@@ -413,8 +426,13 @@
                     }
 
                     if ($addMore == true) {
-                        display_learn_more_box('More happy customers have spoken.', 'Testimno ++', '#ctalink-testimo');
-                        // display_learn_more_box($text, $ctaText, $ctaLink);
+                        ?>
+                            <li>
+                                <?php
+                                    display_learn_more_box('More happy customers have spoken.', 'Testimno ++', '#ctalink-testimo');
+                                ?>
+                            </li>
+                        <?php
                     }
                 ?>
             </ul>
@@ -467,16 +485,16 @@
                             while ($query->have_posts()) {
                                 $query->the_post();
                                 ?>
-                                <div class="award bx-container">
-                                    <figure class="award-figure">
-                                        <div class="award-figure-wrapper <?php echo $colorClass; ?>">
-                                            <?php if (has_post_thumbnail()) { 
-                                                the_post_thumbnail($imageSize, ['class' => 'img-fluid award-img']);
-                                            } ?>
-                                        </div>
-                                        <figcaption class="award-caption"><?php the_title(); ?></figcaption>
-                                    </figure>
-                                </div>
+                                    <div class="award bx-container">
+                                        <figure class="award-figure">
+                                            <div class="award-figure-wrapper <?php echo $colorClass; ?>">
+                                                <?php if (has_post_thumbnail()) { 
+                                                    the_post_thumbnail($imageSize, ['class' => 'img-fluid award-img']);
+                                                } ?>
+                                            </div>
+                                            <figcaption class="award-caption"><?php the_title(); ?></figcaption>
+                                        </figure>
+                                    </div>
                                 <?php
                             }
 
