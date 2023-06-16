@@ -21,7 +21,7 @@
     --karma-grid-1xxxx-gap: 20px;
 }
 
-@layer components.grids {
+@layer grids {
     .grid-34567,
     .grid-22345,
     .grid-22222,
@@ -43,14 +43,14 @@
  * Breakpoint 4 : 7 columns
  * ----------------
 */
-@layer components.grids.grid-34567 {
+@layer grids.grid-34567 {
     .grid-34567 {
         grid-template-columns: var(--karma-grid-34567-dtc);
         gap: var(--karma-grid-34567-gap);
     }
 }
 
-@layer components.grids.grid-34567 {
+@layer grids.grid-34567 {
     .grid-34567 {
         @container (min-width: 1141px) {
             --karma-grid-34567-dtc: repeat(7, 1fr);
@@ -85,7 +85,7 @@
  * Breakpoint 4 : 5 columns
  * ----------------
 */
-@layer components.grids.grid-22345 {
+@layer grids.grid-22345 {
     .grid-22345 {
         grid-template-columns: var(--karma-grid-22345-dtc);
         gap: var(--karma-grid-34567-gap);
@@ -121,7 +121,7 @@
  * Breakpoint 4 : 2 columns
  * ----------------
 */
-@layer components.grids.grid-22222 {
+@layer grids.grid-22222 {
     .grid-22222 {
         grid-template-columns: var(--karma-grid-22222-dtc);
         gap: var(--karma-grid-22222-gap);
@@ -161,7 +161,7 @@
  * Breakpoint 4 : x columns
  * ----------------
 */
-@layer components.grids.grid-1xxxx {
+@layer grids.grid-1xxxx {
     .grid-1xxxx {
         grid-template-columns: var(--karma-grid-1xxxx-dtc);
         gap: var(--karma-grid-1xxxx-gap);

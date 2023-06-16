@@ -10,8 +10,7 @@
 }
 
 
-@layer page.home.awards {
-
+@layer home.awards {
     .home .section-awards {
         display: var(--karma-page-home-awsct-display);
         grid-template-columns: var(--karma-page-home-awsct-gtc);
@@ -54,10 +53,11 @@
     }
 }
 
+
 /**
  * Layout structure
 */
-@layer page.home.awards {
+@layer home.awards {
     .home .section-awards {
         @container (min-width: 1141px) {
             --karma-page-home-awsct-display: grid;

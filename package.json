@@ -1,0 +1,33 @@
+{
+  "name": "generic--karma-financial",
+  "version": "1.0.0",
+  "description": "Custom WordPress template, built for the Karma Financial corporation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-scss": "webpack --watch --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericnjanga/Karma-Financial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericnjanga/Karma-Financial/issues"
+  },
+  "homepage": "https://github.com/ericnjanga/Karma-Financial#readme",
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "sass": "^1.63.4",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.59.1",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.0"
+  }
+}

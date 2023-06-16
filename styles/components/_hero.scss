@@ -4,7 +4,7 @@
     --karma-hero-txt-wrapper-max-width: 80%;
 }
 
-@layer components.hero {
+@layer hero {
     .hero {
         text-align: center;
         padding-top: var(--karma-hero--padding);

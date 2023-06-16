@@ -2,7 +2,7 @@
 * Toggle awards display based on parent container's width
 * (Elts displayed: 5)
 */
-@layer page.about.awards {
+@layer about.awards {
     /** Hide all awards, except the first 4 and last one (Elts displayed: 5) */
     @container (min-width: 1141px) {
         .page-template-template-about .awards-container .award:not(:first-child):not(:nth-child(-n+4)):not(:nth-last-child(1)) {

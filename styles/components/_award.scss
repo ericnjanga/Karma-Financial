@@ -7,7 +7,7 @@
 }
 
 
-@layer components.award {
+@layer award {
     .award {
         text-align: center;
     }
@@ -33,14 +33,10 @@
 * Hide all awards, except the first 4 and last one
 * (Elts displayed: 5)
 */
-@layer components.award {
+@layer award {
     @container (min-width: 350px) {
         .award-figure-wrapper {
             --karma-award-figure-padding: 25px;
         }
     }
-}
-
-
-@layer components.award {
 }

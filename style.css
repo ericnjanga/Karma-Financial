@@ -1,5 +1,5 @@
 /*
-Theme Name: Generic
+Theme Name: Generic (for Karma Financial)
 Theme URI: https://generic.tools/
 Author: Bryan Hadaway
 Author URI: https://calmestghost.com/
@@ -16,33 +16,3 @@ Text Domain: generic
 Generic WordPress Theme © 2015-2022 GenericTools
 Generic is distributed under the terms of the GNU GPL
 */
-
-@layer 
-framework,
-utilities,
-base,
-components;
- 
-
-@layer base {
-
-    /* CSS reset */
-    /* @import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'); */
-    body {
-        font-family: var(--karma-font-family-body);
-        color: var(--karma-clr-txt-neutral-400);
-        background-color: var(--karma-clr-body-background);
-    }
-
-    /**
-    *
-    * CONTAINER QUERIES
-    * --------------------------------------------------
-    */
-    @layer utilities {
-        .bx-container {
-            container-type: inline-size;
-        }
-    }
-}
- 

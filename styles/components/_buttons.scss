@@ -1,13 +1,11 @@
 :root {
-    --karma-btn-padding-vertical: 15px ;
+    --karma-btn-padding-vertical: 15px;
     --karma-btn-padding-horizontal: 30px;
     --karma-btn-letter-spacing: 0.2ch;
     --karma-btn-icon-padding: 15px;
 }
 
-
-
-@layer components.buttons {
+@layer buttons {
     .btn-primary,
     .btn-secondary,
     .btn-tertiary {
@@ -26,22 +24,17 @@
     .btn-primary:hover {
         background-color: var(--karma-clr-primary-darken);
     }
-}
 
 
-
-@layer components.buttons {
+    
     .btn-secondary {
         background-color: var(--karma-clr-primary-neutral-500);
     }
     .btn-secondary:hover {
         background-color: var(--karma-clr-primary-neutral-400);
     }
-}
 
-
-
-@layer components.buttons {
+    
     .btn-tertiary {
         color: var(--karma-clr-txt-neutral-400);
         background-color: var(--karma-clr-body-background);
@@ -50,12 +43,9 @@
     .btn-tertiary:hover {
         background-color: var(--karma-clr-body-background-darken);
     }
-}
 
 
 
-/* btn-icon btn-arrow-down */
-@layer components.buttons {
     .btn-icon {
         position: relative;
         display: inline-block;

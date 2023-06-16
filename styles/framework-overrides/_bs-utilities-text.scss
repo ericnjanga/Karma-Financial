@@ -3,6 +3,8 @@
 /**
  * https://getbootstrap.com/docs/5.3/utilities/text/#font-size
 */
-.fs-7 {
-    font-size: 0.9rem!important;
+@layer text {
+    .fs-7 {
+        font-size: 0.9rem!important;
+    }
 }

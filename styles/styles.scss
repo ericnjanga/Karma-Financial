@@ -1,0 +1,58 @@
+
+@layer framework {
+    @import '../node_modules/bootstrap/scss/bootstrap';
+}
+
+@layer base {
+    @import 'base/variables';
+    @import 'base/headings';
+    @import 'base/decorators';
+    @import 'base/grids';
+    @import 'base/theme-switch';
+}
+
+@layer components {
+    @import 'components/header';
+    @import 'components/hero';
+    @import 'components/buttons';
+    @import 'components/award';
+    @import 'components/boxes';
+    @import 'components/menu';
+    @import 'components/sidebar';
+    @import 'components/footer';
+    @import 'components/blockquote';
+}
+
+@layer framework-overrides {
+    @import 'framework-overrides/bs-components-card';
+    @import 'framework-overrides/bs-utilities-text';
+}
+
+@layer pages {
+    @import 'pages/home';
+    @import 'pages/about';
+    @import 'pages/about.awards';
+}
+
+@layer base {
+
+    /* CSS reset */
+    /* @import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'); */
+    body {
+        font-family: var(--karma-font-family-body);
+        color: var(--karma-clr-txt-neutral-400);
+        background-color: var(--karma-clr-body-background);
+    }
+
+    /**
+    *
+    * CONTAINER QUERIES
+    * --------------------------------------------------
+    */
+    @layer utilities {
+        .bx-container {
+            container-type: inline-size;
+        }
+    }
+}
+

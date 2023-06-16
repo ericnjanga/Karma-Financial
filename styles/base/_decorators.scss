@@ -5,7 +5,7 @@
  * ---------
 */
 
-@layer base.decorations.transparent {
+@layer decorators.transparent {
     .transparent {
         background-color: var(--karma-clr-transparent);
     }
@@ -14,7 +14,7 @@
     }
 }
 
-@layer base.decorations.borders {
+@layer decorators.borders {
     .bdr-solid {
         border: 1px solid var(--karma-clr-primary-neutral-800);
     }
