@@ -1,4 +1,10 @@
 
+/**
+ * Applies the necessary decorations with precision:
+ * (background transparency, border colors
+ * ---------
+*/
+
 @layer base.decorations.transparent {
     .transparent {
         background-color: var(--karma-clr-transparent);
@@ -17,13 +23,3 @@
     }
 }
 
-
-
-@layer base.decorations.cards {
-    .card-primary {
-        background-color: var(--karma-clr-highlight1);
-    }
-    .card-neutral {
-        background-color: var(--karma-clr-transparent);
-    }
-}

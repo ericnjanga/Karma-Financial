@@ -29,11 +29,10 @@
 
 
 
-    /**
-    * Hide all awards, except the first 4 and last one
-    * (Elts displayed: 5)
-    */
-
+/**
+* Hide all awards, except the first 4 and last one
+* (Elts displayed: 5)
+*/
 @layer components.award {
     @container (min-width: 350px) {
         .award-figure-wrapper {

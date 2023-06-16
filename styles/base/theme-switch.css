@@ -1,4 +1,8 @@
 
+/**
+ * Classes allowing an easy toggle of elements appearance between "light" and "dark" theme
+ * ---------
+*/
 
 .img-theme-light {
     display: var(--karma-hero-img-light-display);

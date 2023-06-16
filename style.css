@@ -34,14 +34,6 @@ components;
         background-color: var(--karma-clr-body-background);
     }
 
-    h1, h2, h3, h4, h5, h6, .main-nav {
-        font-family: var(--karma-font-family-headings);
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        color: var(--karma-clr-txt-neutral-800);
-    }
-
     /**
     *
     * CONTAINER QUERIES
@@ -53,7 +45,4 @@ components;
         }
     }
 }
-
-
-
  

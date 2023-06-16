@@ -24,7 +24,7 @@
 
     <section class="section-awards">
         <article>
-            <p class="pre-title">Awards</p>
+            <p class="pre-title heading-ff">Awards</p>
             <blockquote class="blockquote">
                 Our professionalism and work ethic is recognized and trusted by Canada’s top financial institutions.
             </blockquote>

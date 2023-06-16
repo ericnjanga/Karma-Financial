@@ -1,10 +1,10 @@
+
+/**
+    * GLOBAL CUSTOM PROPPERTIES (VARIABLES)
+    * ------------
+*/
+
 @layer base {
-
-    /**
-     * GLOBAL CUSTOM PROPPERTIES (VARIABLES)
-     * ------------
-    */
-
     /* Light theme */
     @media (prefers-color-scheme: light) {
         :root { /* Colours */
@@ -14,8 +14,9 @@
             --karma-clr-txt-neutral-800: #1E1E1E;
             --karma-clr-txt-neutral-400: #696969;
             --karma-clr-footer-background: #0F0F0E;
-            --karma-clr-highlight1-background: #1A1812;
-            --karma-clr-highlight1: #F0EDE1;
+            --karma-clr-primary-100-background: #1A1812;
+            --karma-clr-primary-100: #F0EDE1;
+            --karma-clr-primary-200: #E0D1A0;
             --karma-clr-primary: #FFCD3A;
             --karma-clr-primary-darken: #d5aa2a;
             --karma-clr-primary-neutral-900: #977003;
@@ -48,8 +49,9 @@
             --karma-clr-txt-neutral-800: #E2E2E2;
             --karma-clr-txt-neutral-400: #959595;
             --karma-clr-footer-background: #24221C;
-            --karma-clr-highlight1-background: #1A1812;
-            --karma-clr-highlight1: #242321;
+            --karma-clr-primary-100-background: #1A1812;
+            --karma-clr-primary-100: #242321;
+            --karma-clr-primary-200: #E0D1A0;
             --karma-clr-primary: #FFCD3A;
             --karma-clr-primary-darken: #d5aa2a;
             --karma-clr-primary-neutral-900: #977003;
