@@ -240,8 +240,8 @@
                 <ul class="<?php echo $gridClass; ?> list-unstyled">
                     <?php foreach ($child_pages as $child_page) { ?>
                         <li>
-                            <div class="card card-neutral card-padd30 bdr-no-radius">
-                                <div class="card-header">
+                            <div class="card card-neutral card-padd30 bdr-no-radius bdr-none">
+                                <div class="card-header bdr-no-bottom no-bg">
                                     <?php displayFieldIcon($child_page->ID, 'card-header-icon'); ?>
                                 </div>
                                 <div class="card-body">
@@ -385,14 +385,14 @@
                     $query->the_post();
                     ?>
                         <li>
-                            <div class="card card-primary card-padd30 bdr-no-radius">
-                                <div class="card-header d-flex">
+                            <div class="card card-primary card-padd30 bdr-no-radius bdr-none dpw1">
+                                <div class="card-header d-flex bdr-no-bottom no-bg">
                                     
 
 
                                     <svg xmlns="http://www.w3.org/2000/svg" class="card-header-icon" height="48" viewBox="0 -960 960 960" width="48"><path d="M626-533q22.5 0 38.25-15.75T680-587q0-22.5-15.75-38.25T626-641q-22.5 0-38.25 15.75T572-587q0 22.5 15.75 38.25T626-533Zm-292 0q22.5 0 38.25-15.75T388-587q0-22.5-15.75-38.25T334-641q-22.5 0-38.25 15.75T280-587q0 22.5 15.75 38.25T334-533Zm146 272q66 0 121.5-35.5T682-393h-52q-23 40-63 61.5T480.5-310q-46.5 0-87-21T331-393h-53q26 61 81 96.5T480-261Zm0 181q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 340q142.375 0 241.188-98.812Q820-337.625 820-480t-98.812-241.188Q622.375-820 480-820t-241.188 98.812Q140-622.375 140-480t98.812 241.188Q337.625-140 480-140Z"/></svg>
 
-                                    <div class="d-flex flex-column">
+                                    <div class="d-flex flex-column mr-15">
                                         <b class="fs-5 heading-ff"><?php the_title() ?></b>
                                         <?php
                                             $job_title = getFieldByID('job_title', get_the_ID());

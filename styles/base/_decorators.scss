@@ -5,12 +5,15 @@
  * ---------
 */
 
-@layer decorators.transparent {
+@layer decorators.backgrounds {
     .transparent {
         background-color: var(--karma-clr-transparent);
     }
     .transparent-complementary {
         background-color: var(--karma-clr-complementary-800);
+    }
+    .no-bg {
+        background-color: transparent;
     }
 }
 
@@ -21,5 +24,16 @@
     .bdr-no-radius {
         border-radius: 0;
     }
+    .bdr-no-bottom {
+        border-bottom: 0px;
+    }
+    .bdr-none {
+        border: 0px;
+    }
 }
 
+@layer decorators.dropdown {
+    .dpw1 {
+        box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.35);
+    }
+}

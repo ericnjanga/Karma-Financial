@@ -8,3 +8,13 @@
         font-size: 0.9rem!important;
     }
 }
+
+
+/**
+ * https://getbootstrap.com/docs/5.3/utilities/spacing/
+*/
+@layer spacing {
+    .mr-15 {
+        margin-left: 15px;
+    }
+}
