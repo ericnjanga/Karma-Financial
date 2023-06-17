@@ -59,7 +59,7 @@
     <div>
         <?php displayTestimonial('grid grid-11233 testimonial-list', 2, true); ?>
     </div>
-
+    
 
     <h2 class="underlined">News and resources</h2>
     <div>

@@ -37,11 +37,9 @@
     <?php displayAward('grid grid-22345', 5, true, null); ?>
 </section>
 
-<div class="card">
-    <div class="card-body">
-        <h2 class="card-title">Testimonials</h2>
-        <?php displayTestimonial(); ?>
-    </div>
-</div>
+
+    <h2 class="card-title">Testimonials</h2>
+    <?php displayTestimonial('grid grid-11233 testimonial-list', 4, true); ?>
+
 
 <?php get_footer(); ?>
