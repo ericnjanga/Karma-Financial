@@ -8,16 +8,16 @@
 :root {
     --karma-grid-display: grid;
 
-    --karma-grid-34567-dtc: repeat(3, 1fr);
+    --karma-grid-34567-gtc: repeat(3, 1fr);
     --karma-grid-34567-gap: 20px;
 
-    --karma-grid-22345-dtc: repeat(2, 1fr);
+    --karma-grid-22345-gtc: repeat(2, 1fr);
     --karma-grid-22345-gap: 20px;
 
-    --karma-grid-22222-dtc: repeat(2, 1fr);
+    --karma-grid-22222-gtc: repeat(2, 1fr);
     --karma-grid-22222-gap: 20px;
 
-    --karma-grid-1xxxx-dtc: repeat(1, 1fr);
+    --karma-grid-1xxxx-gtc: repeat(1, 1fr);
     --karma-grid-1xxxx-gap: 20px;
 }
 
@@ -42,7 +42,7 @@
 */
 @layer grids.grid-34567 {
     .grid-34567 {
-        grid-template-columns: var(--karma-grid-34567-dtc);
+        grid-template-columns: var(--karma-grid-34567-gtc);
         gap: var(--karma-grid-34567-gap);
     }
 }
@@ -50,19 +50,19 @@
 @layer grids.grid-34567 {
     .grid-34567 {
         @container (min-width: 1141px) {
-            --karma-grid-34567-dtc: repeat(7, 1fr);
+            --karma-grid-34567-gtc: repeat(7, 1fr);
         }
         
         @container (min-width: 961px) and (max-width: 1140px) {
-            --karma-grid-34567-dtc: repeat(6, 1fr);
+            --karma-grid-34567-gtc: repeat(6, 1fr);
         }
         
         @container (min-width: 721px) and (max-width: 960px) {
-            --karma-grid-34567-dtc: repeat(5, 1fr);
+            --karma-grid-34567-gtc: repeat(5, 1fr);
         }
         
         @container (min-width: 541px) and (max-width: 720px) {
-            --karma-grid-34567-dtc: repeat(4, 1fr);
+            --karma-grid-34567-gtc: repeat(4, 1fr);
         }
     
         /* @container (max-width: 540px) {} */
@@ -84,20 +84,20 @@
 */
 @layer grids.grid-22345 {
     .grid-22345 {
-        grid-template-columns: var(--karma-grid-22345-dtc);
+        grid-template-columns: var(--karma-grid-22345-gtc);
         gap: var(--karma-grid-34567-gap);
     }
     .grid-22345 {
         @container (min-width: 1141px) {
-            --karma-grid-22345-dtc: repeat(5, 1fr);
+            --karma-grid-22345-gtc: repeat(5, 1fr);
         }
 
         @container (min-width: 961px) and (max-width: 1140px) {
-            --karma-grid-22345-dtc: repeat(4, 1fr); 
+            --karma-grid-22345-gtc: repeat(4, 1fr); 
         }
 
         @container (min-width: 721px) and (max-width: 960px) {
-            --karma-grid-22345-dtc: repeat(3, 1fr);
+            --karma-grid-22345-gtc: repeat(3, 1fr);
         }
 
         /* @container (min-width: 541px) and (max-width: 720px) {
@@ -120,7 +120,7 @@
 */
 @layer grids.grid-22222 {
     .grid-22222 {
-        grid-template-columns: var(--karma-grid-22222-dtc);
+        grid-template-columns: var(--karma-grid-22222-gtc);
         gap: var(--karma-grid-22222-gap);
     }
     .grid-22222 {
@@ -160,27 +160,27 @@
 */
 @layer grids.grid-1xxxx {
     .grid-1xxxx {
-        grid-template-columns: var(--karma-grid-1xxxx-dtc);
+        grid-template-columns: var(--karma-grid-1xxxx-gtc);
         gap: var(--karma-grid-1xxxx-gap);
     }
     .grid-1xxxx {
         @container (min-width: 1141px) {
-            --karma-grid-1xxxx-dtc: repeat(3, 1fr);
+            --karma-grid-1xxxx-gtc: repeat(3, 1fr);
             /* --karma-grid-1xxxx-gap: 100px; */
         }
      
         @container (min-width: 961px) and (max-width: 1140px) {
-            --karma-grid-1xxxx-dtc: repeat(3, 1fr);
+            --karma-grid-1xxxx-gtc: repeat(3, 1fr);
             /* --karma-grid-1xxxx-gap: 60px; */
         }
      
         @container (min-width: 721px) and (max-width: 960px) {
-            --karma-grid-1xxxx-dtc: repeat(2, 1fr);
+            --karma-grid-1xxxx-gtc: repeat(2, 1fr);
             /* --karma-grid-1xxxx-gap: 40px; */
         }
      
         @container (min-width: 541px) and (max-width: 720px) {
-            --karma-grid-1xxxx-dtc: repeat(1, 1fr);
+            --karma-grid-1xxxx-gtc: repeat(1, 1fr);
             /* --karma-grid-1xxxx-gap: 30px; */
         }
     

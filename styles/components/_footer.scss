@@ -1,5 +1,148 @@
+:root {
+    --karma-footer-padding: 40px 30px;
+    --karma-footer-mgr-bottom: 20px;
+    --karma-footer-gtc: repeat(1, 1fr);
+    --karma-footer-gtr: repeat(10, auto);
+    --karma-footer-gap: 20px;
+    --karma-footer-row-gap: 30px;
+    --karma-footer-appointment-gcol: 10px;
+    --karma-footer-social-media-gcol: 10px;
+    --karma-footer-sep2-gcol: 1 / span 1;
+    --karma-footer-logo-max-w: 100px;
+    --karma-footer-logo-row: 10;
+    --karma-footer-logo-col: 1;
+    --karma-footer-copyright-row: 100px;
+    --karma-footer-copyright-col: 1;
+    --karma-footer-row3-ul-display: block;
+    --karma-footer-row3-ul-just-cont: center;
+    --karma-footer-row3-ul-gap: 50px;
+    --karma-footer-row3-ul-txt-align: left;
+}
+
 @layer footer {
-    .main-footer {
-        background-color: var(--karma-clr-footer-background);
+    
+    @layer aesthetics {
+        .main-footer { // Basic styling ...
+            margin-bottom: var(--karma-footer-mgr-bottom);
+            padding: var(--karma-footer-padding);
+            background-color: var(--karma-clr-footer-background);
+    
+            ul { // Unstyle nav list
+                margin: 0;
+                padding: 0 0 0 14px;
+                li {
+                    margin-bottom: 0.7rem;
+                }
+            }
+            hr {
+                margin: 0;
+            }
+    
+            h3 {
+                color: var(--karma-clr-footer-headings);
+            }
+            a {
+                text-decoration: none;
+                color: var(--karma-clr-footer-links);
+                &:hover {
+                    color: var(--karma-clr-primary);
+                    text-decoration: underline;
+                }
+            }
+            .appointment {
+                grid-column: var(--karma-footer-appointment-gcol);
+            }
+            .social-media {
+                grid-column: var(--karma-footer-social-media-gcol);
+            }
+            .appointment, .social-media {
+                text-align: var(--karma-footer-row3-ul-txt-align);
+                ul {
+                    display: var(--karma-footer-row3-ul-display);
+                    gap: var(--karma-footer-row3-ul-gap);
+                    justify-content: var(--karma-footer-row3-ul-just-cont);
+                }
+            }
+            .sep-1 {
+                grid-column: var(--karma-footer-sep2-gcol);
+            }
+            .sep-2 {
+                grid-column: var(--karma-footer-sep2-gcol);
+            }
+            .logo {
+                max-width: var(--karma-footer-logo-max-w);
+                grid-column: var(--karma-footer-logo-col);
+                grid-row: var(--karma-footer-logo-row);
+            }
+            #copyright {
+                grid-column: var(--karma-footer-copyright-col);
+            }
+        }
     }
 } 
+
+
+@layer footer {
+    // Layout ...
+    @layer layout {
+        .main-footer {
+            display: grid;
+            grid-template-columns: var(--karma-footer-gtc);
+            grid-template-rows: var(--karma-footer-gtr);
+            gap: var(--karma-footer-gap);
+            row-gap: var(--karma-footer-row-gap);
+        }
+    }
+
+    @layer layout {
+        .main-footer {
+            @container (min-width: 1141px) {
+                --karma-footer-gap: 40px;
+                --karma-footer-gtc: repeat(4, 1fr);
+                --karma-footer-sep2-gcol: 1 / span 4;
+                --karma-footer-gtr: repeat(3, auto);
+                --karma-footer-logo-row: 5;
+                --karma-footer-copyright-col: 4;
+                --karma-footer-social-media-gcol: 1 / span 2;
+                --karma-footer-appointment-gcol: 3 / span 2;
+
+                // social media & appointments
+                --karma-footer-row3-ul-display: flex;
+                --karma-footer-row3-ul-txt-align: center;
+                
+                --karma-footer-mgr-bottom: 50px;
+            }
+        
+            @container (min-width: 961px) and (max-width: 1140px) {
+                --karma-footer-gap: 40px;
+                --karma-footer-gtc: repeat(2, 1fr);
+                --karma-footer-sep2-gcol: 1 / span 2;
+                --karma-footer-gtr: repeat(5, auto);
+                --karma-footer-logo-row: 6;
+                --karma-footer-copyright-col: 2;
+                --karma-footer-mgr-bottom: 50px;
+            }
+        
+            @container (min-width: 721px) and (max-width: 960px) {
+                --karma-footer-gap: 40px;
+                --karma-footer-gtc: repeat(2, 1fr);
+                --karma-footer-sep2-gcol: 1 / span 2;
+                --karma-footer-gtr: repeat(5, auto);
+                --karma-footer-logo-row: 6;
+                --karma-footer-copyright-col: 2;
+                --karma-footer-mgr-bottom: 40px;
+            }
+        
+            @container (min-width: 541px) and (max-width: 720px) {
+                --karma-footer-gtc: repeat(2, 1fr);
+                --karma-footer-sep2-gcol: 1 / span 2;
+                --karma-footer-gtr: repeat(7, auto);
+                --karma-footer-logo-row: 6;
+                --karma-footer-copyright-col: 2;
+                --karma-footer-mgr-bottom: 40px;
+            }
+
+            // @container (max-width: 540px) {} 
+        }
+    }
+}

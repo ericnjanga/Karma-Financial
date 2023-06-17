@@ -280,7 +280,7 @@
 
 
 <?php
-    function latestPostTitles($category_slug = '', $count = 5) {
+    function latestPostTitles($listClass = '', $category_slug = '', $count = 5) {
         $args = array(
             'post_type' => 'post',
             'posts_per_page' => $count,
@@ -291,7 +291,7 @@
 
         if ( $query->have_posts() ) :
             ?>
-                <ul class="list-unstyled">
+                <ul class="<?php echo $listClass; ?>">
                     <?php 
                         while ( $query->have_posts() ) {
                             $query->the_post(); 
@@ -513,8 +513,9 @@
 ?>
 
 
+
 <?php
-    function displayChildrenPageTitle($parent = '') {
+    function displayChildrenPageTitle($listClass = '', $parent = '') {
         global $post;
 
         // Get the parent page ID
@@ -530,7 +531,7 @@
         // Display the titles of the child pages
         if ($child_pages) {
             ?>
-                <ul class="list-unstyled">
+                <ul class="<?php echo $listClass; ?>">
                     <?php foreach ($child_pages as $child_page) { ?>
                         <?php
                             // Check if the child page is not the same as the current page
