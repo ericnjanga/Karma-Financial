@@ -16,6 +16,8 @@
 
 <p><?php echo getField('introduction'); ?></p>
 
+<hr>
+
 <div class="entry-content" itemprop="mainContentOfPage">
     <?php the_content(); ?>
 </div>
