@@ -1,4 +1,5 @@
 :root {
+    // Default settings (mobile first) ...
     --karma-footer-padding: 40px 30px;
     --karma-footer-mgr-bottom: 20px;
     --karma-footer-gtc: repeat(1, 1fr);
@@ -20,7 +21,8 @@
 }
 
 @layer footer {
-    
+
+    // Default styling ...
     @layer aesthetics {
         .main-footer { // Basic styling ...
             margin-bottom: var(--karma-footer-mgr-bottom);
@@ -96,11 +98,15 @@
 
     @layer layout {
         .main-footer {
+
+            // 2 columns, 3 rows
             @container (min-width: 1141px) {
-                --karma-footer-gap: 40px;
                 --karma-footer-gtc: repeat(4, 1fr);
-                --karma-footer-sep2-gcol: 1 / span 4;
                 --karma-footer-gtr: repeat(3, auto);
+                
+                --karma-footer-padding: 70px 50px;
+                --karma-footer-gap: 40px;
+                --karma-footer-sep2-gcol: 1 / span 4;
                 --karma-footer-logo-row: 5;
                 --karma-footer-copyright-col: 4;
                 --karma-footer-social-media-gcol: 1 / span 2;
@@ -109,37 +115,44 @@
                 // social media & appointments
                 --karma-footer-row3-ul-display: flex;
                 --karma-footer-row3-ul-txt-align: center;
-                
+
                 --karma-footer-mgr-bottom: 50px;
             }
         
+            // 2 columns, 5 rows
             @container (min-width: 961px) and (max-width: 1140px) {
-                --karma-footer-gap: 40px;
                 --karma-footer-gtc: repeat(2, 1fr);
-                --karma-footer-sep2-gcol: 1 / span 2;
                 --karma-footer-gtr: repeat(5, auto);
+
+                --karma-footer-padding: 70px 50px;
+                --karma-footer-gap: 40px;
+                --karma-footer-sep2-gcol: 1 / span 2;
                 --karma-footer-logo-row: 6;
                 --karma-footer-copyright-col: 2;
                 --karma-footer-mgr-bottom: 50px;
             }
         
+            // 2 columns, 5 rows
             @container (min-width: 721px) and (max-width: 960px) {
-                --karma-footer-gap: 40px;
                 --karma-footer-gtc: repeat(2, 1fr);
-                --karma-footer-sep2-gcol: 1 / span 2;
                 --karma-footer-gtr: repeat(5, auto);
+
+                --karma-footer-padding: 70px 50px;
+                --karma-footer-gap: 40px;
+                --karma-footer-sep2-gcol: 1 / span 2;
                 --karma-footer-logo-row: 6;
                 --karma-footer-copyright-col: 2;
                 --karma-footer-mgr-bottom: 40px;
             }
-        
+            
+            // 2 columns, 7 rows
             @container (min-width: 541px) and (max-width: 720px) {
                 --karma-footer-gtc: repeat(2, 1fr);
-                --karma-footer-sep2-gcol: 1 / span 2;
                 --karma-footer-gtr: repeat(7, auto);
+
+                --karma-footer-sep2-gcol: 1 / span 2;
                 --karma-footer-logo-row: 6;
                 --karma-footer-copyright-col: 2;
-                --karma-footer-mgr-bottom: 40px;
             }
 
             // @container (max-width: 540px) {} 
