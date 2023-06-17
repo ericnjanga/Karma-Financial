@@ -34,17 +34,6 @@ add_action('after_setup_theme', 'register_custom_navwalker');
 
 
 
-
-// Bootstrap Library ...
-function enqueue_bootstrap() {
-    /**
-     * NOTE:
-     * I've wrapped the bootstrap CDN code around a CSS layer to make sure bootstrap doesn't override my styles
-     */
-    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/styles/framework/bootstrap@5.3.0.min.css' );
-}
-add_action('wp_enqueue_scripts', 'enqueue_bootstrap');
-
 function enqueue_bootstrap_js() {
     wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', array(), '5.3.0', true);
 }

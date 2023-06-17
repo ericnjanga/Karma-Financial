@@ -28,7 +28,7 @@
 
 
 
-<section class="section-awards">
+<section class="section-awards transparent-complementary">
     <article>
         <p class="pre-title heading-ff">Awards &amp; recognition</p>
         <blockquote class="blockquote">
