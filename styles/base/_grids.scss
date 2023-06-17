@@ -17,8 +17,8 @@
     --karma-grid-22222-gtc: repeat(2, 1fr);
     --karma-grid-22222-gap: 20px;
 
-    --karma-grid-1xxxx-gtc: repeat(1, 1fr);
-    --karma-grid-1xxxx-gap: 20px;
+    --karma-grid-11233-gtc: repeat(1, 1fr);
+    --karma-grid-11233-gap: 20px;
 }
 
 @layer grids {
@@ -152,36 +152,36 @@
 /**
  * 
  * Mobile 1st   : 1 columns
- * Breakpoint 1 : x columns
- * Breakpoint 2 : x columns
- * Breakpoint 3 : x columns
- * Breakpoint 4 : x columns
+ * Breakpoint 1 : 1 columns 
+ * Breakpoint 2 : 2 columns 
+ * Breakpoint 3 : 3 columns 
+ * Breakpoint 4 : 3 columns
  * ----------------
 */
-@layer grids.grid-1xxxx {
-    .grid-1xxxx {
-        grid-template-columns: var(--karma-grid-1xxxx-gtc);
-        gap: var(--karma-grid-1xxxx-gap);
+@layer grids.grid-11233 {
+    .grid-11233 {
+        grid-template-columns: var(--karma-grid-11233-gtc);
+        gap: var(--karma-grid-11233-gap);
     }
-    .grid-1xxxx {
+    .grid-11233 {
         @container (min-width: 1141px) {
-            --karma-grid-1xxxx-gtc: repeat(3, 1fr);
-            /* --karma-grid-1xxxx-gap: 100px; */
+            --karma-grid-11233-gtc: repeat(3, 1fr);
+            --karma-grid-11233-gap: 40px;
         }
      
         @container (min-width: 961px) and (max-width: 1140px) {
-            --karma-grid-1xxxx-gtc: repeat(3, 1fr);
-            /* --karma-grid-1xxxx-gap: 60px; */
+            // border: 20px solid pink;
+            --karma-grid-11233-gtc: repeat(3, 1fr);
+            --karma-grid-11233-gap: 40px;
         }
      
         @container (min-width: 721px) and (max-width: 960px) {
-            --karma-grid-1xxxx-gtc: repeat(2, 1fr);
-            /* --karma-grid-1xxxx-gap: 40px; */
+            --karma-grid-11233-gtc: repeat(2, 1fr);
+            --karma-grid-11233-gap: 40px;
         }
      
         @container (min-width: 541px) and (max-width: 720px) {
-            --karma-grid-1xxxx-gtc: repeat(1, 1fr);
-            /* --karma-grid-1xxxx-gap: 30px; */
+            --karma-grid-11233-gtc: repeat(1, 1fr);
         }
     
         /* @container (max-width: 540px) {

@@ -30,6 +30,9 @@
 
 @layer pages {
     @import 'pages/home';
+    @import 'pages/home.awards';
+    @import 'pages/home.testimonials';
+    @import 'pages/home.latest-posts';
     @import 'pages/about';
     @import 'pages/about.awards';
 }

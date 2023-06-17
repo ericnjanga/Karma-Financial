@@ -1,0 +1,22 @@
+
+/**
+* Toggle posts display based on parent container's width
+* (Elts displayed: 5)
+ * -------------
+ * Mobile 1st   : 
+ * Breakpoint 1 : 
+ * Breakpoint 2 : 
+ * Breakpoint 3 : Hide 2nd elts, and only display 2 elts
+ * Breakpoint 4 : 
+ * Breakpoint 5 : 
+ * ----------------
+*/
+@layer home.latest-posts {
+    @container (min-width: 721px) and (max-width: 960px) {
+        .home {
+            .posts-list li:not(:first-child):not(:last-child) {
+                display: none;
+            }
+        }
+    }
+}

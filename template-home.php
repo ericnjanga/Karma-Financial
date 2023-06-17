@@ -44,7 +44,7 @@
     <h2 class="underlined">services we provide</h2>
     <div id="services">
         <?php
-            displayServicesExcerpts('grid grid-1xxxx');
+            displayServicesExcerpts('grid grid-11233');
         ?>
     </div>
 
@@ -57,13 +57,13 @@
 
     <h2 class="underlined">Testimonials</h2>
     <div>
-        <?php displayTestimonial('grid grid-1xxxx', 2, true); ?>
+        <?php displayTestimonial('grid grid-11233 testimonial-list', 2, true); ?>
     </div>
 
 
     <h2 class="underlined">News and resources</h2>
     <div>
-        <?php latestPosts('grid grid-1xxxx', '', 2, true); ?>
+        <?php latestPosts('grid grid-11233 posts-list', '', 2, true); ?>
     </div>
 </div>
 

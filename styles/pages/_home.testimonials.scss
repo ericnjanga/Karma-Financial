@@ -1,0 +1,26 @@
+/**
+* Toggle testimonials display based on parent container's width
+* (Elts displayed: 5)
+*/
+
+/**
+* Toggle testimonials display based on parent container's width
+* (Elts displayed: 5)
+ * -------------
+ * Mobile 1st   : Hide 2nd post, and only display 2 elts
+ * Breakpoint 1 : Hide 2nd post, and only display 2 elts
+ * Breakpoint 2 : Hide 2nd post, and only display 2 elts
+ * Breakpoint 3 : Hide 2nd post, and only display 2 elts
+ * Breakpoint 4 : 
+ * Breakpoint 5 : 
+ * ----------------
+*/
+@layer home.testimonials {
+    @container (max-width: 960px) {
+        .home {
+            .testimonial-list li:not(:first-child):not(:last-child) {
+                display: none;
+            }
+        }
+    }
+}

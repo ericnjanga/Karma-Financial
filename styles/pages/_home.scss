@@ -1,16 +1,4 @@
 
-:root {
-    --karma-page-home-awsct-display: block;
-    --karma-page-home-awsct-gtc: minmax(0, 530px) 1fr;
-    --karma-page-home-awsct-gap: 40px;
-    --karma-page-home-awsct-intro-toppad: 0px;
-    --karma-page-home-awsct-intro-botpad: 40px;
-    --karma-page-home-awsct-intro-max-w: 530px;
-    --karma-page-home-awcnt-padd: 60px;
-}
-
-
-
 // Making sure cards inside grids occupies 
 // the cell's full height
 .home {
@@ -21,79 +9,35 @@
 
 
 
-@layer home.awards {
-    .home .section-awards {
-        display: var(--karma-page-home-awsct-display);
-        grid-template-columns: var(--karma-page-home-awsct-gtc);
-        gap: var(--karma-page-home-awsct-gap);
-    }
-    .home .section-awards article {
-        max-width: var(--karma-page-home-awsct-intro-max-w);
-        padding-top: var(--karma-page-home-awsct-intro-toppad);
-        padding-bottom: var(--karma-page-home-awsct-intro-botpad);
-    }
-
-    /**
-     * Hide all awards, except the first one
-    */
-    .home .awards-container .award:not(:first-child) {
-        display: none;
-    }
-
-
-    /**
-     * Decorate the container to match home page design
-    */
-    .home .awards-container {
-        position: relative;
-        /* padding: var(--karma-page-home-awcnt-padd); */
-    }
-    .home .awards-container:after { /* Create background decorator */
-        /* position: absolute;
-        top: 0;
-        right: 0;
-        content: '';
-        width: 100%;
-        height: 100%;
-        background-color: var(--karma-clr-complementary-800);
-        z-index: 0; */
-    }
-    .home .awards-container .award { /* make sure awards stay on top of background */
-        /* position: relative;
-        z-index: 1; */
-    }
-}
-
 
 /**
- * Layout structure
+ * Make sure learn more boxes occupy the container's full space
 */
-@layer home.awards {
-    .home .section-awards {
-        @container (min-width: 1141px) {
-            --karma-page-home-awsct-display: grid;
-            --karma-page-home-awsct-intro-toppad: 150px;
-            --karma-page-home-awsct-gap: 150px;
-            --karma-page-home-awcnt-padd: 90px;
+:root {
+    --karma-learn-more-height: 100%;
+    --karma-learn-more-nax-height: 100%;
+}
+@layer home {
+    .home {
+        .grid {
+            .box-learn-more {
+                height: var(--karma-learn-more-height);
+                max-height: var(--karma-learn-more-nax-height);
+                .box-learn-more__bg-wrapper {
+                    width: var(--karma-learn-more-height);
+                    height: var(--karma-learn-more-height);
+                    max-height: var(--karma-learn-more-nax-height);
+                    .box-learn-more__bg {
+                        height: var(--karma-learn-more-height);
+                        max-height: var(--karma-learn-more-nax-height);
+                    }
+                }
+
+                // Limit box height within a certain space
+                @container (max-width: 720px) {
+                    --karma-learn-more-nax-height: 350px;
+                }
+            }
         }
-     
-        @container (min-width: 961px) and (max-width: 1140px) {
-            --karma-page-home-awsct-display: grid;
-            --karma-page-home-awsct-intro-toppad: 100px;
-            --karma-page-home-awcnt-padd: 80px;
-        }
-     
-        @container (min-width: 721px) and (max-width: 960px) {
-            --karma-page-home-awsct-display: grid;
-            --karma-page-home-awsct-intro-toppad: 50px;
-        }
-     
-        @container (min-width: 541px) and (max-width: 720px) {
-            --karma-page-home-awcnt-padd: 80px;
-        }
-    
-        /* @container (max-width: 540px) {
-            border: 5px solid purple;
-        } */
     }
 }
