@@ -12,7 +12,7 @@
     </div>
 </header>
 
-<section class="main-content-wrapper">
+<main class="main-content-wrapper" role="main">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="entry-content" itemprop="mainContentOfPage">
@@ -22,6 +22,6 @@
             </div>
         </article>
     <?php endwhile; endif; ?>
-</section>
+</main>
 
 <?php get_footer(); ?>

@@ -18,13 +18,13 @@
     </div>
 </header>
 
-<section class="main-content-wrapper">
+<main class="main-content-wrapper" role="main">
     <?php get_template_part( 'entry' ); ?>
     <hr>
     <footer class="footer">
         <?php get_template_part( 'nav', 'below-single' ); ?>
     </footer>
-</section>
+</main>
 
 <?php endwhile; endif; ?>
 

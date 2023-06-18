@@ -14,12 +14,11 @@
     </div>
 </header>
 
-
-<section class="main-content-wrapper">
+<main class="main-content-wrapper" role="main">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <?php get_template_part( 'entry' ); ?>
     <?php endwhile; endif; ?>
     <?php get_template_part( 'nav', 'below' ); ?>
-</section>
+</main>
 
 <?php get_footer(); ?>

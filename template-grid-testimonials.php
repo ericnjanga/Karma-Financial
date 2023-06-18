@@ -12,6 +12,6 @@
 </header>
 
 
-<div class="card">
+<section class="card">
     <?php displayTestimonial(); ?>
-</div>
+</section>
