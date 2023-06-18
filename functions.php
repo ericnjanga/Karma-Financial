@@ -160,7 +160,7 @@ add_action( 'widgets_init', 'generic_widgets_init' );
 function generic_widgets_init() {
 
 register_sidebar( array(
-    'name' => esc_html__( 'Sidebar Widget Area', 'generic' ),
+    'name' => esc_html__( 'General Widget Area', 'generic' ),
     'id' => 'primary-widget-area',
     'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
     'after_widget' => '</li>',

@@ -23,6 +23,10 @@
     @import 'components/blockquote';
 }
 
+@layer component-groups {
+    @import 'component-groups/grip-main-and-sidebar';
+}
+
 @layer framework-overrides {
     @import 'framework-overrides/bs-components-card';
     @import 'framework-overrides/bs-utilities';

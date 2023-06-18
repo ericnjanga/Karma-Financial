@@ -201,7 +201,7 @@
 
 
 <?php
-    function displayFieldIcon($id, $eltClass) {
+    function displayFieldIcon($id, $eltClass='') {
         $icon = get_field('icon', $id);
         if ($icon) {
         ?>
