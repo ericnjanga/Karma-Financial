@@ -41,7 +41,6 @@
     <?php wp_body_open(); ?>
     <div id="wrapper" class="hfeed">
         <header class="main-header" id="header" role="banner">
-
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
 
@@ -97,11 +96,9 @@
                     </div>
                 </div>
             </nav>
-
         </header>
 
         <div id="container" class="container bx-container">
-            <main id="content" role="main">
             <?php
                 // Inject helpers (needed all over the application)
                 include '_fct-helpers.php';

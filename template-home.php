@@ -6,7 +6,7 @@
 ?>
 
 
-<header class="hero">
+<header class="hero" role="region">
     <div class="text-wrapper">
         <h1 class="underlined"><?php echo getField('title'); ?></h1>
         <?php edit_post_link(); ?>
@@ -21,50 +21,47 @@
     </div>
 </header>
 
+<main class="main-content-wrapper" role="main">
+    <section class="section-awards">
+        <article>
+            <p class="pre-title heading-ff">Awards</p>
+            <blockquote class="blockquote">
+                Our professionalism and work ethic is recognized and trusted by Canada’s top financial institutions.
+            </blockquote>
 
-<section class="section-awards">
-    <article>
-        <p class="pre-title heading-ff">Awards</p>
-        <blockquote class="blockquote">
-            Our professionalism and work ethic is recognized and trusted by Canada’s top financial institutions.
-        </blockquote>
+            <footer class="section-awards__footer">
+                <a href="" class="btn btn-secondary">Learn more</a>
+                <a href="" class="btn btn-tertiary">Our partners</a>
+            </footer>
+        </article>
 
-        <footer class="section-awards__footer">
-            <a href="" class="btn btn-secondary">Learn more</a>
-            <a href="" class="btn btn-tertiary">Our partners</a>
-        </footer>
-    </article>
+        <div class="complementary">
+            <?php displayAward(null, 5, false, 'transparent-complementary'); ?>
+        </div>
+    </section>
 
-    <div class="complementary">
-        <?php displayAward(null, 5, false, 'transparent-complementary'); ?>
+    <h2 class="underlined">services we provide</h2>
+    <div id="services">
+        <?php
+            displayServicesExcerpts('grid grid-11233');
+        ?>
     </div>
-</section>
 
-
-<h2 class="underlined">services we provide</h2>
-<div id="services">
+    <h2 class="underlined">Partners</h2>
     <?php
-        displayServicesExcerpts('grid grid-11233');
+        displayClientLogos();
     ?>
-</div>
 
+    <h2 class="underlined">Testimonials</h2>
+    <div>
+        <?php displayTestimonial('grid grid-11233 testimonial-list', 2, true); ?>
+    </div>
 
-<h2 class="underlined">Partners</h2>
-<?php
-    displayClientLogos();
-?>
-
-
-<h2 class="underlined">Testimonials</h2>
-<div>
-    <?php displayTestimonial('grid grid-11233 testimonial-list', 2, true); ?>
-</div>
-
-
-<h2 class="underlined">News and resources</h2>
-<div>
-    <?php latestPosts('grid grid-11233 posts-list', '', 2, true); ?>
-</div>
+    <h2 class="underlined">News and resources</h2>
+    <div>
+        <?php latestPosts('grid grid-11233 posts-list', '', 2, true); ?>
+    </div>
+</main>
 
 
 <?php get_footer(); ?>
