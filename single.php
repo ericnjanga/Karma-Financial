@@ -19,19 +19,8 @@
 </header>
 
 <section class="main-content-wrapper">
-
-
-    
-
-
     <?php get_template_part( 'entry' ); ?>
-
-
-<hr>
-
-    <?php // if ( comments_open() && !post_password_required() ) { comments_template( '', true ); } ?>
-    
-
+    <hr>
     <footer class="footer">
         <?php get_template_part( 'nav', 'below-single' ); ?>
     </footer>
