@@ -4,26 +4,23 @@
  * -----------------
 */
 :root {
-    // Mobile fist
+    // (Mobile fist)
+    // - sidebar widths:
+    --karma-sidebar-width-collapsed: 45px;
+    --karma-sidebar-width-expanded-small: 250px;
+    --karma-sidebar-width-expanded-medium: 300px;
+    --karma-sidebar-width-expanded-large: 415px;
+
     --karma-global-wrapper-display: grid;
-    --karma-global-wrapper-sidebar-closed-gtc: 1fr 45px;
-    --karma-global-wrapper-sidebar-open-gtc: 50px 1fr; // 1fr 250px;
-    --karma-hero-grid-column: 1 / span 2;
-    --karma-global-wrapper-row-gap: 20px;
+    --karma-global-wrapper-gtc: 1fr var(--karma-sidebar-width-collapsed);    // By default: Shrinks sidebar down (the main content expands) ...              
+
+    --karma-hero-grid-column: 1 / span 2;                   // The hero occupies all columns (1st row only)
+    --karma-global-wrapper-row-gap: 20px;                   // Rows gap
+
+    --karma-global-wrapper-btn-sidebar-trigger-display: block;
 }
 
 
-
-.hero {
-    border: 1px solid red;
-}
-.main-content-wrapper {
-    overflow: hidden;
-    border: 1px solid green;
-}
-.sidebar {
-    border: 1px solid orange;
-}
 
 // Apply only the grid on the following pages:
 .blog, 
@@ -31,21 +28,94 @@
 .archive, // Including sub pages like category, author, ...
 .page-template-template-service,
 .page-template-template-contact {
-    .karma-global-container {
+
+    /**
+     * Parameters setup (mobile first)
+     * ------------
+    */
+    .karma-global-container { 
+        // Setup grid
         display: var(--karma-global-wrapper-display);
-        grid-template-columns: var(--karma-global-wrapper-sidebar-closed-gtc);
+        grid-template-columns: var(--karma-global-wrapper-gtc);
         grid-column-gap: var(--karma-global-wrapper-row-gap);
+
+        // Set up the sidebar expansion parameters
+        &.sidebar-is-open {
+            // Expands sidebar left (the main content shrinks) ...
+            @media (max-width: (992px - 1)) {
+                --karma-global-wrapper-gtc: 1fr var(--karma-sidebar-width-expanded-small);
+            }
+        }
+
+        // Set up the hero's column occupancy
+        .hero {
+            grid-column: var(--karma-hero-grid-column);
+        }
+        
+        // Expand sidebar left
+        .btn-sidebar-trigger {
+            display: var(--karma-global-wrapper-btn-sidebar-trigger-display);
+        }
     }
-    .karma-global-container.sidebar-is-open {
-        grid-template-columns: var(--karma-global-wrapper-sidebar-open-gtc);
+
+
+    /**
+     * Responsiveness
+     * ------------
+    */
+    .karma-global-container {
+        @media (min-width: 1400px) {
+            --karma-global-wrapper-btn-sidebar-trigger-display: none;
+            // Expands sidebar left (the main content shrinks) ...
+            --karma-global-wrapper-gtc: 1fr var(--karma-sidebar-width-expanded-large);
+            --karma-global-wrapper-row-gap: 170px;
+        }
+
+        @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+            --karma-global-wrapper-btn-sidebar-trigger-display: none; // Sidebar cannot be collapsed 
+            --karma-global-wrapper-gtc: 1fr var(--karma-sidebar-width-expanded-medium); // Sidebar expanded and adjust main content's width
+            --karma-global-wrapper-row-gap: 90px;   // Row columns gap
+        }
+
+        // From this breakpoint up, sidebar cannot be collapsed 
+        // Keep sidebar expanded and adjust main content's width
+        // Increase gap between row columns 
+        @media (min-width: 992px) and (max-width: (1200px - 1)) {
+            --karma-global-wrapper-btn-sidebar-trigger-display: none; // Sidebar cannot be collapsed 
+            --karma-global-wrapper-gtc: 1fr var(--karma-sidebar-width-expanded-medium); // Sidebar expanded and adjust main content's width
+            --karma-global-wrapper-row-gap: 50px;   // Row columns gap
+        }
+
+        // Increase gap between row columns 
+        @media (min-width: 768px) and (max-width: (992px - 1)) {
+            --karma-global-wrapper-row-gap: 50px;
+        }
+
+        // Increase gap between row columns 
+        @media (min-width: 576px) and (max-width: (768px - 1)) {
+            --karma-global-wrapper-row-gap: 40px;
+        }
     }
-    .hero {
-        grid-column: var(--karma-hero-grid-column);
-    }
+
+} // Select pages
+
+
+
+
+.hero {
+    border: 3px solid red;
 }
-
-
-
+.main-content-wrapper {
+    overflow: hidden;
+    border: 3px solid green;
+}
+.sidebar {
+    border: 3px solid orange;
+}
 .yyy {
-    border: 10px solid purple;
+    border: 3px solid purple;
 }
+
+
+
+
