@@ -13,7 +13,7 @@
 
 <main class="main-content-wrapper" role="main">
     <div>
-        <?php displayAward('grid grid-11222', null, null, null); ?>
+        <?php displayAward('grid grid-11222 pt-5 pb-5', null, null, null); ?>
     </div>
 </main>
 

@@ -7,7 +7,7 @@
 
 <header class="hero">
     <div class="text-wrapper">
-        <h1 class="underlined">??++??<?php echo getField('title'); ?></h1>
+        <h1 class="underlined"><?php echo getField('title'); ?></h1>
         <?php edit_post_link(); ?>
     </div>
 </header>

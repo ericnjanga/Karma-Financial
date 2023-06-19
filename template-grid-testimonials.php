@@ -12,9 +12,7 @@
 </header>
 
 <main class="main-content-wrapper" role="main">
-    <section class="card">
-        <?php displayTestimonial('grid grid-11222'); ?>
-    </section>
+    <?php displayTestimonial('grid grid-11222 pt-5 pb-5'); ?>
 </main>
 
 <?php get_footer(); ?>
