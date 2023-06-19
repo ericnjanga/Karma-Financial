@@ -14,10 +14,11 @@
     --karma-global-wrapper-display: grid;
     --karma-global-wrapper-gtc: 1fr var(--karma-sidebar-width-collapsed);    // By default: Shrinks sidebar down (the main content expands) ...              
 
-    --karma-hero-grid-column: 1 / span 2;                   // The hero occupies all columns (1st row only)
-    --karma-global-wrapper-row-gap: 20px;                   // Rows gap
+    --karma-hero-grid-column: 1 / span 2;                       // The hero occupies all columns (1st row only)
+    --karma-global-wrapper-row-gap: 20px;                       // Rows gap
 
-    --karma-global-wrapper-btn-sidebar-trigger-display: block;
+    --karma-global-wrapper-btn-sidebar-trigger-display: block;      // Make trigger button visible
+    --karma-global-wrapper-sidebar-content-wrapper-display: none;   // Hide the sidebar content
 }
 
 
@@ -44,6 +45,7 @@
             // Expands sidebar left (the main content shrinks) ...
             @media (max-width: (992px - 1)) {
                 --karma-global-wrapper-gtc: 1fr var(--karma-sidebar-width-expanded-small);
+                --karma-global-wrapper-sidebar-content-wrapper-display: block;
             }
         }
 
@@ -51,11 +53,17 @@
         .hero {
             grid-column: var(--karma-hero-grid-column);
         }
-        
-        // Expand sidebar left
-        .btn-sidebar-trigger {
-            display: var(--karma-global-wrapper-btn-sidebar-trigger-display);
+
+        .sidebar {
+            .content-wrapper {
+                display: var(--karma-global-wrapper-sidebar-content-wrapper-display);
+            }
+            // Expand sidebar left
+            .btn-sidebar-trigger {
+                display: var(--karma-global-wrapper-btn-sidebar-trigger-display);
+            }
         }
+        
     }
 
 
@@ -69,12 +77,14 @@
             // Expands sidebar left (the main content shrinks) ...
             --karma-global-wrapper-gtc: 1fr var(--karma-sidebar-width-expanded-large);
             --karma-global-wrapper-row-gap: 170px;
+            --karma-global-wrapper-sidebar-content-wrapper-display: block;  // Show the sidebar content
         }
 
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
             --karma-global-wrapper-btn-sidebar-trigger-display: none; // Sidebar cannot be collapsed 
             --karma-global-wrapper-gtc: 1fr var(--karma-sidebar-width-expanded-medium); // Sidebar expanded and adjust main content's width
             --karma-global-wrapper-row-gap: 90px;   // Row columns gap
+            --karma-global-wrapper-sidebar-content-wrapper-display: block;  // Show the sidebar content
         }
 
         // From this breakpoint up, sidebar cannot be collapsed 
@@ -84,6 +94,7 @@
             --karma-global-wrapper-btn-sidebar-trigger-display: none; // Sidebar cannot be collapsed 
             --karma-global-wrapper-gtc: 1fr var(--karma-sidebar-width-expanded-medium); // Sidebar expanded and adjust main content's width
             --karma-global-wrapper-row-gap: 50px;   // Row columns gap
+            --karma-global-wrapper-sidebar-content-wrapper-display: block;  // Show the sidebar content
         }
 
         // Increase gap between row columns 
@@ -112,7 +123,7 @@
 .sidebar {
     border: 3px solid orange;
 }
-.yyy {
+.content-wrapper {
     border: 3px solid purple;
 }
 

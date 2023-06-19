@@ -20,28 +20,28 @@
             <?php 
                 // Services page template ...
                 if ($template_slug === 'template-service.php') { ?>
-                <div class="yyy rrr">
+                <div class="content-wrapper rrr">
                     <?php include 'sidebar-template-services.php'; ?>
                 </div>
 
             <?php } 
                 // Contact page template ...
                 elseif ($template_slug === 'template-contact.php') { ?>
-                <div class="yyy aaa">
+                <div class="content-wrapper aaa">
                     <?php include 'sidebar-template-contact.php'; ?>
                 </div>
 
             <?php } 
                 // Blog and article pages ...
                 elseif (is_home() || is_single()) { ?>
-                <div class="yyy bbb">
+                <div class="content-wrapper bbb">
                     <?php include 'sidebar-template-blog.php'; ?>
                 </div>
                 
             <?php } 
                 // Any other pages ...
                 else { ?>
-                <div class="yyy ccc">
+                <div class="content-wrapper ccc">
                     <?php include 'sidebar-template-blog.php'; ?>
                     <?php //dynamic_sidebar( 'primary-widget-area' ); ?>
                 </div>
