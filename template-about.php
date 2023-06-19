@@ -13,19 +13,22 @@
 </header>
 
 <main class="main-content-wrapper" role="main">
-    <p><?php echo getField('introduction'); ?></p>
 
-    <hr>
+    <section class="pt-5 pb-5">
+        <p><?php echo getField('introduction'); ?></p>
 
-    <div class="entry-content" itemprop="mainContentOfPage">
-        <?php the_content(); ?>
-    </div>
+        <hr>
 
-    <div>
-        <?php displayEmployee(1); ?>
-    </div>
+        <div class="entry-content" itemprop="mainContentOfPage">
+            <?php the_content(); ?>
+        </div>
 
-    <section class="section-awards transparent-complementary">
+        <div>
+            <?php displayEmployee(1); ?>
+        </div>
+    </section>
+
+    <section id="section-awards" class="section-awards transparent-complementary pt-5 pb-5">
         <article>
             <p class="pre-title heading-ff">Awards &amp; recognition</p>
             <blockquote class="blockquote">
@@ -36,8 +39,10 @@
         <?php displayAward('grid grid-22345', 5, true, null); ?>
     </section>
 
-    <h2>Testimonials</h2>
-    <?php displayTestimonial('grid grid-11233 testimonial-list', 4, true); ?>
+    <section class="pt-5 pb-5">
+        <h2>Testimonials</h2>
+        <?php displayTestimonial('grid grid-11233 testimonial-list', 4, true); ?>
+    </section>
 </main>
 
 <?php get_footer(); ?>

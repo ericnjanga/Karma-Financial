@@ -1,4 +1,21 @@
 <?php
+    function getPagePermalink($title = '') {
+        $page_title = $title; // Replace with the actual page title you want to retrieve the permalink for
+
+        $page = get_page_by_title($page_title); // Get the page object by title
+        $permalink = '';
+
+        if ($page) {
+            $permalink = get_permalink($page->ID); // Get the permalink from the page object
+        }
+
+        return $permalink;
+    }
+
+
+
+
+
     function display_learn_more_box($class='', $text='', $ctaText='', $ctaLink='') {
         // ...
         $image_title = 'award - transparent 3';
@@ -75,7 +92,6 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                     </div>
                 </div>
@@ -348,10 +364,11 @@
                             <?php 
                         }
                         if ($addMore == true) {
+                            $link_blog = getPagePermalink('blog');
                             ?>
                                 <li>
                                     <?php
-                                        display_learn_more_box('', 'New resources added monthly.', 'post ++', '#ctalink-posts');
+                                        display_learn_more_box('', 'New resources added monthly.', 'More articles', $link_blog);
                                     ?>
                                 </li>
                             <?php
@@ -429,10 +446,11 @@
                     }
 
                     if ($addMore == true) {
+                            $link_testimonials = getPagePermalink('testimonials');
                         ?>
                             <li>
                                 <?php
-                                    display_learn_more_box('testimonial', 'More happy customers have spoken.', 'Testimno ++', '#ctalink-testimo');
+                                    display_learn_more_box('testimonial', 'More happy customers have spoken.', 'More testimonials', $link_testimonials);
                                 ?>
                             </li>
                         <?php
@@ -502,7 +520,8 @@
                             }
 
                             if ($addMore == true) {
-                                display_learn_more_box('award', 'We have received more awards.', 'awards ++', '#ctalink-awards');
+                                $link_awards = getPagePermalink('awards');
+                                display_learn_more_box('award', 'We have received more awards.', 'More awards', $link_awards);
                             }
                         } else {
                             echo '<p>No awards found.</p>';
