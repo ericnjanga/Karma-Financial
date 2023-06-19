@@ -17,6 +17,9 @@
     --karma-grid-22222-gtc: repeat(2, 1fr);
     --karma-grid-22222-gap: 20px;
 
+    --karma-grid-11222-gtc: 1fr;
+    --karma-grid-11222-gap: 20px;
+
     --karma-grid-11233-gtc: repeat(1, 1fr);
     --karma-grid-11233-gap: 20px;
 }
@@ -138,6 +141,49 @@
      
         @container (min-width: 541px) and (max-width: 720px) {
             --karma-grid-22222-gap: 30px;
+        }
+    
+        /* @container (max-width: 540px) {
+        }  */
+    }
+}
+
+
+
+
+
+/**
+ * 
+ * Mobile 1st   : 1 column
+ * Breakpoint 1 : 1 column
+ * Breakpoint 2 : 2 columns
+ * Breakpoint 3 : 2 columns
+ * Breakpoint 4 : 2 columns
+ * ----------------
+*/
+@layer grids.grid-11222 {
+    .grid-11222 {
+        grid-template-columns: var(--karma-grid-11222-gtc);
+        gap: var(--karma-grid-11222-gap);
+    }
+    .grid-11222 {
+        @container (min-width: 1141px) {
+            --karma-grid-11222-gap: 100px;
+            --karma-grid-11222-gtc: repeat(2, 1fr);
+        }
+     
+        @container (min-width: 961px) and (max-width: 1140px) {
+            --karma-grid-11222-gap: 60px;
+            --karma-grid-11222-gtc: repeat(2, 1fr);
+        }
+     
+        @container (min-width: 721px) and (max-width: 960px) {
+            --karma-grid-11222-gap: 40px;
+            --karma-grid-11222-gtc: repeat(2, 1fr);
+        }
+     
+        @container (min-width: 541px) and (max-width: 720px) {
+            --karma-grid-11222-gap: 30px;
         }
     
         /* @container (max-width: 540px) {

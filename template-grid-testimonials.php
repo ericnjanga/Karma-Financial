@@ -11,7 +11,10 @@
     </div>
 </header>
 
+<main class="main-content-wrapper" role="main">
+    <section class="card">
+        <?php displayTestimonial('grid grid-11222'); ?>
+    </section>
+</main>
 
-<section class="card">
-    <?php displayTestimonial(); ?>
-</section>
+<?php get_footer(); ?>

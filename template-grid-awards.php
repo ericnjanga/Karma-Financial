@@ -11,7 +11,10 @@
     </div>
 </header>
 
+<main class="main-content-wrapper" role="main">
+    <div>
+        <?php displayAward('grid grid-11222', null, null, null); ?>
+    </div>
+</main>
 
-<div>
-    <?php displayAward('grid grid-22222', null, null, null); ?>
-</div>
+<?php get_footer(); ?>
