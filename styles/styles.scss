@@ -9,6 +9,7 @@
     @import 'base/decorators';
     @import 'base/grids';
     @import 'base/theme-switch';
+    @import 'base/form';
 }
 
 @layer components {
@@ -23,6 +24,7 @@
     @import 'components/blockquote';
     @import 'components/post-navigation';
     @import 'components/pagination';
+    @import 'components/cta-btn-container';
 }
 
 @layer component-groups {
@@ -42,6 +44,7 @@
     @import 'pages/about';
     @import 'pages/about.awards';
     @import 'pages/testimonials';
+    @import 'pages/contact';
 }
 
 @layer base {

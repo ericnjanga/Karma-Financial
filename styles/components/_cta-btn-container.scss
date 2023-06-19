@@ -1,0 +1,50 @@
+/**
+ * Bottom page CTA button styling:
+ * Used on the: Contact page, Service page templates
+*/
+
+:root {
+    --karma-contact-form-footer-display: flex;
+    --karma-contact-form-footer-flex-dir: column;
+    --karma-contact-form-footer-row-gap: 20px;
+    --karma-contact-form-footer-just-content: flex-end;
+    --karma-contact-form-footer-btn-secondary-order: 1;
+}
+
+@layer cta-btn-container {
+    .cta-btn-container {
+        p {
+            margin: 0;
+            display: var(--karma-contact-form-footer-display);
+            flex-direction: var(--karma-contact-form-footer-flex-dir);
+            gap: var(--karma-contact-form-footer-row-gap);
+
+            br {
+                display: none;
+            }
+        }
+
+        &.flex-end {
+            p {
+                justify-content: var(--karma-contact-form-footer-just-content);
+            }
+        }
+
+        &.invert {
+            .btn-secondary {
+                order: var(--karma-contact-form-footer-btn-secondary-order);
+            }
+        }
+        
+
+        @container (min-width: 541px) {
+            border: 10px solid blue;
+            --karma-contact-form-footer-flex-dir: row;
+            --karma-contact-form-footer-btn-secondary-order: -1;
+        }
+
+        @container (max-width: 540px) {
+            border: 10px solid turquoise;
+        } 
+    }
+}
