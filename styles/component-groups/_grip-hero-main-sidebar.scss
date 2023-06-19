@@ -1,0 +1,51 @@
+/**
+ * Grid layout formed by the header, the main content and the sidebar
+ * Note: Some classes like "sidebar-is-open" are used in "karma-responsive-sidebar.js" to toggle the sidebar visibility
+ * -----------------
+*/
+:root {
+    // Mobile fist
+    --karma-global-wrapper-display: grid;
+    --karma-global-wrapper-sidebar-closed-gtc: 1fr 45px;
+    --karma-global-wrapper-sidebar-open-gtc: 50px 1fr; // 1fr 250px;
+    --karma-hero-grid-column: 1 / span 2;
+    --karma-global-wrapper-row-gap: 20px;
+}
+
+
+
+.hero {
+    border: 1px solid red;
+}
+.main-content-wrapper {
+    overflow: hidden;
+    border: 1px solid green;
+}
+.sidebar {
+    border: 1px solid orange;
+}
+
+// Apply only the grid on the following pages:
+.blog, 
+.single, 
+.archive, // Including sub pages like category, author, ...
+.page-template-template-service,
+.page-template-template-contact {
+    .karma-global-container {
+        display: var(--karma-global-wrapper-display);
+        grid-template-columns: var(--karma-global-wrapper-sidebar-closed-gtc);
+        grid-column-gap: var(--karma-global-wrapper-row-gap);
+    }
+    .karma-global-container.sidebar-is-open {
+        grid-template-columns: var(--karma-global-wrapper-sidebar-open-gtc);
+    }
+    .hero {
+        grid-column: var(--karma-hero-grid-column);
+    }
+}
+
+
+
+.yyy {
+    border: 10px solid purple;
+}

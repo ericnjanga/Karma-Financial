@@ -17,6 +17,7 @@
 
 <aside class="sidebar" id="sidebar" role="complementary">
     <div id="primary" class="widget-area">
+        <button id="karma-btn-sidebar-toggle" class="btn btn-secondary"></button>
         <?php 
             // Services page template ...
             if ($template_slug === 'template-service.php') { ?>

@@ -226,27 +226,41 @@ register_sidebar( array(
     'after_title' => '</h3>',
 ) );
 
-
-
-
-
-
-
-
-
 }
+
+
 add_action( 'wp_head', 'generic_pingback_header' );
 function generic_pingback_header() {
-if ( is_singular() && pings_open() ) {
-printf( '<link rel="pingback" href="%s" />' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
+    if ( is_singular() && pings_open() ) {
+        printf( '<link rel="pingback" href="%s" />' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
+    }
 }
-}
+
 add_action( 'comment_form_before', 'generic_enqueue_comment_reply_script' );
 function generic_enqueue_comment_reply_script() {
-if ( get_option( 'thread_comments' ) ) {
-wp_enqueue_script( 'comment-reply' );
+    if ( get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
 }
+
+
+function enqueue_custom_script() {
+    // Register jQuery as a dependency
+    wp_enqueue_script('jquery');
+
+    // Enqueue custom script
+    wp_enqueue_script('karma-responsive-sidebar.js', get_template_directory_uri() . '/js/karma-responsive-sidebar.js', array('jquery'), '1.0', true);
 }
+add_action('wp_enqueue_scripts', 'enqueue_custom_script');
+
+
+
+
+
+
+
+
+
 function generic_custom_pings( $comment ) {
 ?>
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo esc_url( comment_author_link() ); ?></li>

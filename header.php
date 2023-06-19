@@ -39,7 +39,7 @@
 </head>
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <div id="wrapper" class="hfeed">
+    <div id="karma-global-wrapper" class="karma-global-wrapper hfeed">
         <header class="main-header" id="header" role="banner">
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
@@ -98,7 +98,7 @@
             </nav>
         </header>
 
-        <div id="container" class="container bx-container">
+        <div id="karma-global-container" class="karma-global-container container bx-container">
             <?php
                 // Inject helpers (needed all over the application)
                 include '_fct-helpers.php';

@@ -1,5 +1,6 @@
 @layer sidebar {
     .sidebar {
+        overflow: hidden;
         background-color: var(--karma-clr-primary-100);
     }
 }
