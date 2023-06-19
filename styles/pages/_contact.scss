@@ -1,0 +1,23 @@
+:root {
+    // (mobile first) ...
+    --karma-contact-form-grid1: grid;
+    --karma-contact-form-grid1-gtc: 1fr 1fr;
+    --karma-contact-form-grid1-gap: 30px;
+}
+
+@layer contact {
+    .page-template-template-contact {
+        .contact-grid-1 {
+            // From this breakpoint, display 2 fields in a 2 column row
+            // The design needs it
+            @container (min-width: 541px) {
+                border: 10px solid lime;
+
+                display: var(--karma-contact-form-grid1);
+                grid-template-columns: var(--karma-contact-form-grid1-gtc);
+                gap: var(--karma-contact-form-grid1-gap);
+            }
+        }
+    }
+}
+
