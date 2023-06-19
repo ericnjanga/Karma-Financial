@@ -1,0 +1,34 @@
+:root {
+    --karma-post-navigation-display: grid;
+    --karma-post-navigation-gtc: auto auto;
+    --karma-post-navigation-row-gap: 30px;
+}
+
+// Mobile first styling needed
+// ....
+
+@layer post-navigation {
+    .post-navigation .nav-links {
+        display: var(--karma-post-navigation-display);
+        grid-template-columns: var(--karma-post-navigation-gtc);
+        grid-row-gap: var(--karma-post-navigation-row-gap);
+
+        a {
+            position: relative;
+        }
+        .meta-nav {
+            position: absolute;
+            top: -20px;
+        }
+        .nav-previous {
+            .meta-nav {
+                left: 100px;
+            }
+        }
+        .nav-next {
+            .meta-nav {
+                right: 100px;
+            }
+        }
+    }
+}

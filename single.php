@@ -10,6 +10,7 @@
 
 <header class="hero">
     <div class="text-wrapper">
+        <span class="fs-7">Article page</span>
         <h1 class="underlined"><?php the_title(); ?></h1>
         <div>
             <?php get_template_part( 'entry', 'meta' ); ?>
