@@ -1,0 +1,10 @@
+
+@layer testimonials {
+    .page-template-template-grid-testimonials {
+        // Ensure the card fills the grid cell's height
+        // (this will equalize the height of every cards of the same row
+        .testimonial.card {
+            height: 100%;
+        }
+    }
+}
