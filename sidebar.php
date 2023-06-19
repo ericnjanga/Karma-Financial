@@ -6,60 +6,48 @@
     $activePostCat = getCurrentPageSlug();
 
     // Sidebar is not needed on:
-    // - Front page template
-    // - About page templates
-    if (!is_front_page() && $template_slug !== 'template-about.php' ) {
+    
+    
+    if (!is_front_page()                        // - Front page template
+    && $template_slug !== 'template-about.php' // - About page templates
+    && $template_slug !== 'template-grid-testimonials.php'  // - Testimonials page templates
+    && $template_slug !== 'template-grid-awards.php' ) {    // - Awards page templates
 ?>
 
+    <aside class="sidebar" id="sidebar" role="complementary">
+        <div id="primary" class="widget-area">
+            <button id="karma-btn-sidebar-toggle" class="btn btn-secondary btn-sidebar-trigger"></button>
+            <?php 
+                // Services page template ...
+                if ($template_slug === 'template-service.php') { ?>
+                <div class="yyy rrr">
+                    <?php include 'sidebar-template-services.php'; ?>
+                </div>
 
+            <?php } 
+                // Contact page template ...
+                elseif ($template_slug === 'template-contact.php') { ?>
+                <div class="yyy aaa">
+                    <?php include 'sidebar-template-contact.php'; ?>
+                </div>
 
-
-
-<aside class="sidebar" id="sidebar" role="complementary">
-    <div id="primary" class="widget-area">
-        <button id="karma-btn-sidebar-toggle" class="btn btn-secondary btn-sidebar-trigger"></button>
-        <?php 
-            // Services page template ...
-            if ($template_slug === 'template-service.php') { ?>
-            <div class="yyy rrr">
-                <?php include 'sidebar-template-services.php'; ?>
-            </div>
-
-        <?php } 
-            // Contact page template ...
-            elseif ($template_slug === 'template-contact.php') { ?>
-            <div class="yyy aaa">
-                <?php include 'sidebar-template-contact.php'; ?>
-            </div>
-
-        <?php } 
-            // Blog and article pages ...
-            elseif (is_home() || is_single()) { ?>
-            <div class="yyy bbb">
-                <?php include 'sidebar-template-blog.php'; ?>
-            </div>
-            
-        <?php } 
-            // Any other pages ...
-            else { ?>
-            <div class="yyy ccc">
-                <?php include 'sidebar-template-blog.php'; ?>
-                <?php //dynamic_sidebar( 'primary-widget-area' ); ?>
-            </div>
-        <?php } ?>
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-
-
-
+            <?php } 
+                // Blog and article pages ...
+                elseif (is_home() || is_single()) { ?>
+                <div class="yyy bbb">
+                    <?php include 'sidebar-template-blog.php'; ?>
+                </div>
+                
+            <?php } 
+                // Any other pages ...
+                else { ?>
+                <div class="yyy ccc">
+                    <?php include 'sidebar-template-blog.php'; ?>
+                    <?php //dynamic_sidebar( 'primary-widget-area' ); ?>
+                </div>
+            <?php } ?>
+        </div>
+    </aside>
 
 <?php
     }
