@@ -1,0 +1,13 @@
+:root {
+    --karma-pagination-display: grid;
+    --karma-pagination-gap: 20px;
+    --karma-pagination-gtc: repeat(15, auto);
+}
+
+@layer pagination {
+    .pagination {
+        display: var(--karma-pagination-display);
+        gap: var(--karma-pagination-gap);
+        grid-template-columns: var(--karma-pagination-gtc);
+    }
+}
