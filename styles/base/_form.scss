@@ -1,0 +1,13 @@
+@layer form {
+    .form-label {
+        width: 100%;
+    }
+    .form-control,
+    .form-select {
+        border-radius: 0;
+        background-color: #F5F5F5;
+        border-width: 0 0 1px 0;
+        border-bottom: 1px solid #939393;
+        padding: 13px 20px;
+    }
+}
