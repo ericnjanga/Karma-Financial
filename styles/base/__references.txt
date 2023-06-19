@@ -9,6 +9,7 @@
      width 2: 720px
      width 3: 960px
      width 4: 1140px
+     width 5: 1320px
 */
 
 .yy-container {
