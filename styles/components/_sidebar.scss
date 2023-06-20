@@ -1,6 +1,40 @@
+:root {
+    --karma-sidebar-content-wrapper-padding: 20px;
+    --karma-sidebar-content-wrapper-font-size: 0.9rem;
+    --karma-sidebar-content-wrapper-hr-padding: 25px 0;
+}
+
 @layer sidebar {
     .sidebar {
         overflow: hidden;
         background-color: var(--karma-clr-primary-100);
+
+
+        .content-wrapper {
+            padding: var(--karma-sidebar-content-wrapper-padding);
+            font-size: var(--karma-sidebar-content-wrapper-font-size);
+            ul {
+                padding-left: 13px;
+            }
+
+            hr {
+                margin: var(--karma-sidebar-content-wrapper-hr-padding);
+            }
+
+            .content-title {
+                margin-bottom: 15px;
+            }
+
+            @container (min-width: 301px) {
+                --karma-sidebar-content-wrapper-padding: 40px;
+                --karma-sidebar-content-wrapper-font-size: 1rem;
+                --karma-sidebar-content-wrapper-hr-padding: 40px 0;
+            } 
+
+            @container (min-width: 251px) and (max-width: 300px) {
+                --karma-sidebar-content-wrapper-padding: 30px;
+                --karma-sidebar-content-wrapper-hr-padding: 30px 0;
+            } 
+        }
     }
 }
