@@ -1,0 +1,17 @@
+/**
+ * Set of components used in the blog
+ * -----------
+*/
+
+.blog-footer {
+    position: relative;
+    &:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: '';
+        width: 100px;
+        background-color: green;
+        height: 1px;
+    }
+}
