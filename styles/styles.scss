@@ -5,68 +5,53 @@
 
 @layer base {
     @import 'base/variables';
+}
+
+@layer layouts {
+
+    @import 'layouts/base/countainer-queries';
+    @import 'base/theme-switch';
+
+    @layer grids {
+        @import 'layouts/grids/galleries';
+        @import 'layouts/grids/hero-main-sidebar';
+    }
+    @layer pages {
+        @import 'layouts/pages/home';
+        @import 'layouts/pages/home.awards';
+        @import 'layouts/pages/home.testimonials';
+        @import 'layouts/pages/home.latest-posts';
+        @import 'layouts/pages/about';
+        @import 'layouts/pages/about.awards';
+        @import 'layouts/pages/testimonials';
+        @import 'layouts/pages/contact';
+    }
+}
+
+@layer aesthetics {
+
+    @import 'aesthetics/base/body';
     @import 'base/headings';
     @import 'base/decorators';
-    @import 'base/grids';
-    @import 'base/theme-switch';
-    @import 'base/form';
-}
+    @import 'base/forms';
 
-@layer components {
-    @import 'components/header';
-    @import 'components/hero';
-    @import 'components/buttons';
-    @import 'components/award';
-    @import 'components/boxes';
-    @import 'components/menu';
-    @import 'components/sidebar';
-    @import 'components/footer';
-    @import 'components/blockquote';
-    @import 'components/post-navigation';
-    @import 'components/pagination';
-    @import 'components/cta-btn-container';
-    @import 'components/blog-items';
-}
-
-@layer component-groups {
-    @import 'component-groups/grip-hero-main-sidebar';
-}
-
-@layer framework-overrides {
-    @import 'framework-overrides/bs-components-card';
-    @import 'framework-overrides/bs-utilities';
-}
-
-@layer pages {
-    @import 'pages/home';
-    @import 'pages/home.awards';
-    @import 'pages/home.testimonials';
-    @import 'pages/home.latest-posts';
-    @import 'pages/about';
-    @import 'pages/about.awards';
-    @import 'pages/testimonials';
-    @import 'pages/contact';
-}
-
-@layer base {
-
-    /* CSS reset */
-    /* @import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'); */
-    body {
-        font-family: var(--karma-font-family-body);
-        color: var(--karma-clr-txt-neutral-400);
-        background-color: var(--karma-clr-body-background);
+    @layer framework-overrides {
+        @import 'aesthetics/framework-overrides/bs-components-card';
+        @import 'aesthetics/framework-overrides/bs-utilities';
     }
-
-    /**
-    *
-    * CONTAINER QUERIES
-    * --------------------------------------------------
-    */
-    @layer utilities {
-        .bx-container {
-            container-type: inline-size;
-        }
+    @layer components {
+        @import 'aesthetics/components/header';
+        @import 'aesthetics/components/hero';
+        @import 'aesthetics/components/buttons';
+        @import 'aesthetics/components/award';
+        @import 'aesthetics/components/boxes';
+        @import 'aesthetics/components/menu';
+        @import 'aesthetics/components/sidebar';
+        @import 'aesthetics/components/footer';
+        @import 'aesthetics/components/blockquote';
+        @import 'aesthetics/components/post-navigation';
+        @import 'aesthetics/components/pagination';
+        @import 'aesthetics/components/cta-btn-container';
+        @import 'aesthetics/components/blog-items';
     }
 }
-

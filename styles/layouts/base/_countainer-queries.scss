@@ -1,0 +1,10 @@
+/**
+*
+* CONTAINER QUERIES
+* --------------------------------------------------
+*/
+@layer utilities {
+    .bx-container {
+        container-type: inline-size;
+    }
+}
