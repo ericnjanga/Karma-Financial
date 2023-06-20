@@ -9,7 +9,7 @@
 <header class="hero">
     <div class="text-wrapper">
         <span class="fs-7">Author page</span>
-        <h1 class="underlined"><?php echo get_the_author(); ?></h1>
+        <h1 class="hero-title"><?php echo get_the_author(); ?></h1>
         <div class="archive-meta" itemprop="description"><?php if ( '' != get_the_author_meta( 'user_description' ) ) { echo esc_html( get_the_author_meta( 'user_description' ) ); } ?></div>
     </div>
 </header>

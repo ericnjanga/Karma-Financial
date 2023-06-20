@@ -4,10 +4,6 @@
  * ---------
 */
 
-:root {
-    --karma-headings-underlined-max-width: 150px;
-}
-
 @layer headings {
     /* .heading-ff: Custom class to be applied to any component in need of this font-family */
     h1, h2, h3, h4, h5, h6, .main-nav, .heading-ff {
@@ -18,18 +14,6 @@
         color: var(--karma-clr-txt-neutral-800);
     }
 
-
-    h1.underlined {
-        position: relative;
-    }
-    h1.underlined::after {
-        display: block;
-        content: '';
-        height: 1px;
-        margin: 20px auto;
-        width: var(--karma-headings-underlined-max-width);
-        background-color: var(--karma-clr-primary-neutral-600);
-    }
     .pre-title {
         margin: 0;
         color: var(--karma-clr-primary-neutral-900);

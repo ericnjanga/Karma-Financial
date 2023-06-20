@@ -86,8 +86,11 @@
 
 
 
-/* Font faces */
 :root {
+
+    --karma-headings-underlined-line-width: 125px;
+
+    /* Font faces */
     --karma-font-family-headings: 'Oswald', sans-serif;
     --karma-font-family-body: 'Merriweather', serif;
 }

@@ -7,9 +7,9 @@
 
 <header class="hero">
     <div class="text-wrapper">
-        <h1 class="underlined"><?php the_title(); ?></h1>
+        <h1 class="hero-title"><?php the_title(); ?></h1>
         <?php edit_post_link(); ?>
-        <div>
+        <div class="hero-intro">
             <?php displayFieldIcon(get_the_ID()); ?>
         </div>
     </div>

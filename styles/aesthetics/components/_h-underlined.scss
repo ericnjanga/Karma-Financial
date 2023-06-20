@@ -1,0 +1,38 @@
+:root {
+    
+    --karma-h-underlined--uh: 1px;  // Underline height
+    --karma-h-underlined--umgr-top: 10px;  // Underline top margins
+    --karma-h-underlined--umgr-bot: 15px;  // Underline bottom margins
+}
+
+@layer h-underlined {
+    .h-underlined {
+        position: relative;
+        margin-bottom: 0;
+    }
+    .h-underlined::after {
+        display: block;
+        content: '';
+        height: var(--karma-h-underlined--uh);
+        margin-top: var(--karma-h-underlined--umgr-top);
+        margin-bottom: var(--karma-h-underlined--umgr-bot);
+        width: var(--karma-headings-underlined-line-width);
+        background-color: var(--karma-clr-primary-neutral-600);
+
+        @container (min-width: 1141px) {
+            --karma-h-underlined--umgr-top: 15px;
+            --karma-h-underlined--umgr-bot: 30px;
+        }
+    
+        @container (min-width: 961px) and (max-width: 1140px) {
+            --karma-h-underlined--umgr-bot: 20px;
+        }
+    
+        @container (min-width: 721px) and (max-width: 960px) {
+            --karma-h-underlined--umgr-bot: 20px;
+        }
+    
+        // @container (min-width: 541px) and (max-width: 720px) {}
+        // @container (max-width: 540px) {} 
+    }
+}

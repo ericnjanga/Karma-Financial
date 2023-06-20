@@ -31,7 +31,7 @@
 @layer aesthetics {
 
     @import 'aesthetics/base/body';
-    @import 'base/headings';
+    @import 'aesthetics/base/headings';
     @import 'base/decorators';
     @import 'base/forms';
 
@@ -48,6 +48,7 @@
         @import 'aesthetics/components/menu';
         @import 'aesthetics/components/sidebar';
         @import 'aesthetics/components/footer';
+        @import 'aesthetics/components/h-underlined';
         @import 'aesthetics/components/blockquote';
         @import 'aesthetics/components/post-navigation';
         @import 'aesthetics/components/pagination';

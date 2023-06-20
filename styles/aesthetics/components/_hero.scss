@@ -1,22 +1,78 @@
 :root {
-    --karma-hero--padding: 20px;
+    // (Mobile first) ...
+    --karma-hero-padding: 30px;
     --karma-hero-img-spacer: 30px;
     --karma-hero-txt-wrapper-max-width: 80%;
+    --karma-hero-footer-mgr: 20px; // footer margin
 }
 
+// Mobile first settings ...
 @layer hero {
     .hero {
         text-align: center;
-        padding-top: var(--karma-hero--padding);
-        padding-bottom: var(--karma-hero--padding);
+        padding-top: var(--karma-hero-padding);
+        padding-bottom: var(--karma-hero-padding);
     }
     .hero .text-wrapper {
         margin: 0 auto;
         max-width: var(--karma-hero-txt-wrapper-max-width);
     }
+    .hero-title {
+        position: relative;
+        margin: 0;
+
+        &::after {
+            display: block;
+            content: '';
+            height: 1px;
+            margin: 20px auto 0 auto;
+            width: var(--karma-headings-underlined-line-width);
+            background-color: var(--karma-clr-primary-neutral-600);
+        }
+    }
+    .hero-intro {
+        margin-top: 20px;
+    }
+    .hero-footer {
+        margin-top: var(--karma-hero-footer-mgr);
+    }
     .hero-img-wrapper {
-        margin-top: var(--karma-hero-img-spacer);
         overflow: hidden;
         max-height: 200px;
+    }
+}
+
+// Responsive settings ...
+@layer hero {
+    .hero {
+        @container (min-width: 1141px) {
+            border: 10px solid orange;
+            --karma-hero-padding: 90px;
+            --karma-hero-txt-wrapper-max-width: 50ch; // text wrapper max width
+            --karma-hero-footer-mgr: 40px; // footer top margin
+        }
+    
+        @container (min-width: 961px) and (max-width: 1140px) {
+            border: 10px solid green;
+            --karma-hero-padding: 60px;
+            --karma-hero-txt-wrapper-max-width: 50ch; // text wrapper max width
+            --karma-hero-footer-mgr: 30px; // footer top margin
+        }
+    
+        @container (min-width: 721px) and (max-width: 960px) {
+            border: 10px solid lime;
+            --karma-hero-padding: 50px;
+            --karma-hero-txt-wrapper-max-width: 50ch; // text wrapper max width
+            --karma-hero-footer-mgr: 30px; // footer top margin
+        }
+    
+        @container (min-width: 541px) and (max-width: 720px) {
+            border: 10px solid blue;
+            --karma-hero-padding: 40px;
+            --karma-hero-txt-wrapper-max-width: 50ch; // text wrapper max width
+            --karma-hero-footer-mgr: 20px; // footer top margin
+        }
+
+        // @container (max-width: 540px) {} 
     }
 }

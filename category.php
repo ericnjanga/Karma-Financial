@@ -9,7 +9,7 @@
 <header class="hero">
     <div class="text-wrapper">
         <span class="fs-7">Category page</span>
-        <h1 class="underlined"><?php single_term_title(); ?></h1>
+        <h1 class="hero-title"><?php single_term_title(); ?></h1>
         <div class="archive-meta" itemprop="description"><?php if ( '' != the_archive_description() ) { echo esc_html( the_archive_description() ); } ?></div>
     </div>
 </header>

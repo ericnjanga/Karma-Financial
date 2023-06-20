@@ -8,7 +8,7 @@
 
 <header class="hero">
     <div class="text-wrapper">
-        <h1 class="underlined">Latest news</h1>
+        <h1 class="hero-title">Latest news</h1>
         <?php edit_post_link(); ?>
     </div>
 </header>
