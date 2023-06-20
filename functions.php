@@ -179,6 +179,29 @@ register_sidebar( array(
     'after_title' => '</h3>',
 ) );
 
+register_sidebar( array(
+    'name'          => 'Opening hours',
+    'id'            => 'sidebar-opening-hours',
+    'description'   => '...',
+    // Add more sidebar options if needed
+    'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+) );
+
+
+register_sidebar( array(
+    'name'          => 'Additional contact information',
+    'id'            => 'sidebar-additional-contact-info',
+    'description'   => '...',
+    // Add more sidebar options if needed
+    'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+) );
+
 
 register_sidebar( array(
     'name'          => 'CEO image',
