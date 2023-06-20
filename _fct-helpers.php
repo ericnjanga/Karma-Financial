@@ -615,7 +615,7 @@
 
         if ($categories) {
             ?>
-                <ul class="list-unstyled">
+                <ul class="">
                     <?php
                         foreach ($categories as $category) {
                             $category_title = $category->name;
