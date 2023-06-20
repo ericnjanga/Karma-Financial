@@ -1,39 +1,150 @@
 :root {
     --karma-navbar--h1-bot-mar: 0;
-    --karma-navbar--logo-max-height: 30px;
+    --karma-navbar--logo-max-width: 81px;
     --karma-navbar--toggler-bdr-radius: 0px;
     --karma-navbar-font-size: 1.1rem;
     --karma-navbar-letter-spacing: 0.2ch;
+
+    --karma-navbar-nav-display: block;
+    --karma-navbar-nav-gap: 20px;
+
+    --karma-navbar-padding: 4px 20px;
+
+    --karma-dropdown-item-padding-x: 30px;
+    --karma-dropdown-item-padding-y: 15px;
 }
 
 
 @layer header {
-    .main-header h1 {
-        margin: var(--karma-navbar--h1-bot-mar);
-    }
-    .main-header img {
-        max-height: var(--karma-navbar--logo-max-height);
-    }
-    .main-header .navbar {
-        font-family: var(--karma-font-family-headings);
-        text-transform: uppercase;
-        letter-spacing: var(--karma-navbar-letter-spacing);
-        font-size: var(--karma-navbar-font-size); 
-    }
-    .main-header .navbar .dropdown-menu {
-        border-width: 0;
-        background-color: var(--karma-clr-bg-neutral-100);
-    }
-    .main-header .navbar a.nav-link,
-    .main-header .navbar a.dropdown-item {
-        color: var(--karma-clr-txt-neutral-400);
-    }
-    .navbar-toggler {
-        border-radius: var(--karma-navbar--toggler-bdr-radius);
-        border-color: var(--karma-clr-txt-neutral-800);
-    }
-    .navbar-toggler-icon{
-        background-image: var(--karma-navbar-toggler-icon-bg);
+    .main-header {
+        .logo {
+            max-width: var(--karma-navbar--logo-max-width);
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+            display: var(--karma-navbar-nav-display);
+            gap: var(--karma-navbar-nav-gap);
+            padding: var(--karma-navbar-padding);
+            background-color: var(--karma-clr-primary-100);
+        }
+
+        .navbar {
+            font-family: var(--karma-font-family-headings);
+            text-transform: uppercase;
+            letter-spacing: var(--karma-navbar-letter-spacing);
+            font-size: var(--karma-navbar-font-size); 
+
+            .dropdown-menu {
+                border-width: 0;
+                border-radius: 0;
+                background-color: var(--karma-clr-primary-200);
+            }
+
+            // Overriding bootstrap dropdown toggle arrow
+            .dropdown-toggle::after {
+                display: inline-block;
+                margin-left: 0.255em;
+                content: "";
+                vertical-align: 0;                    // cancelling bootstrap
+                border-top: 0 solid;                    // cancelling bootstrap
+                border-right: 0 solid rgba(0,0,0,0);    // cancelling bootstrap
+                border-bottom: 0;                           // cancelling bootstrap
+                border-left: 0 solid rgba(0,0,0,0);     // cancelling bootstrap
+                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3E%3Cpath d='M11 14.0936L5.5 8.59357L6.48542 7.60815L11 12.1457L15.5146 7.63107L16.5 8.61649L11 14.0936Z' fill='black'/%3E%3C/svg%3E");
+                width: 22px;
+                height: 22px;
+                margin-top: 0; // cancelling bootstrap
+                position: relative;
+                top: 4px;
+            }
+
+            a.nav-link,
+            a.dropdown-item {
+                color: var(--karma-clr-txt-neutral-200);
+            }
+            .dropdown-menu {
+                padding: 0;
+            }
+            a.dropdown-item {
+                position: relative;
+                padding: var(--karma-dropdown-item-padding-y) var(--karma-dropdown-item-padding-x);
+
+                &::after {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    background-color: var(--karma-clr-primary-neutral-900);
+                }
+            }
+            .current-menu-item.page_item {
+                a {
+                    color: var(--karma-clr-primary-neutral-900);
+                    text-decoration: underline;
+                }
+            }
+
+            .navbar-toggler {
+                border-radius: var(--karma-navbar--toggler-bdr-radius);
+                // border-color: var(--karma-clr-txt-neutral-800);
+            }
+            .navbar-toggler-icon{
+                background-image: var(--karma-navbar-toggler-icon-bg);
+            }
+        }
     }
 }
 
+
+
+// Responsiveness ...
+@layer header {
+    .main-header {
+        @media (min-width: 1400px) {
+            border: 4px solid orange;
+            --karma-navbar--logo-max-width: 200px;
+            --karma-navbar-nav-display: flex;
+            --karma-navbar-nav-gap: 60px;
+        }
+        @media (min-width: 1200px) and (max-width: (1400px - 1)) {
+            border: 4px solid green;
+            --karma-navbar--logo-max-width: 175px;
+            --karma-navbar-nav-display: flex;
+            --karma-navbar-nav-gap: 40px;
+        }
+        @media (min-width: 992px) and (max-width: (1200px - 1)) {
+            border: 4px solid lime;
+            --karma-navbar-nav-display: flex;
+            --karma-navbar--logo-max-width: 150px;
+        }
+
+        @media (min-width: 992px) {
+            .navbar-nav {
+                --karma-navbar-padding: 0;
+                --karma-navbar--logo-max-width: 120px;
+                background-color: var(--karma-clr-body-background);
+            }
+        }
+        @media (min-width: 768px) and (max-width: (992px - 1)) {
+            border: 4px solid blue;
+            --karma-navbar--logo-max-width: 100px;
+        }
+        // @media (min-width: 576px) and (max-width: (768px - 1)) {}
+    }
+}
+
+
+
+
+
+
+
+// menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7351 current_page_item nav-item dropdown active menu-item-7383
+
+
+// menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-has-children nav-item dropdown active menu-item-7590
+
+// menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-7358 current_page_item current_page_parent nav-item dropdown active menu-item-7384

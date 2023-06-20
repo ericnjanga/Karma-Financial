@@ -40,37 +40,14 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <div id="karma-global-wrapper" class="karma-global-wrapper hfeed">
-        <header class="main-header" id="header" role="banner">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container">
+        <div class="container">
+            <header class="main-header" id="header" role="banner">
+                <nav class="navbar navbar-expand-lg">
 
                     <div class="navbar-brand" id="branding">
                         <div id="site-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
                             <?php
-                                if ( is_front_page() || is_home() || is_front_page() && is_home() ) {
-                                echo '<h1>';
-                                }
-                                if ( has_custom_logo() ) {
-                                $custom_logo_id = get_theme_mod( 'custom_logo' );
-                                $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                                $nologo = '';
-                                } elseif ( has_site_icon() ) {
-                                $logo = get_site_icon_url();
-                                $nologo = '';
-                                } else {
-                                $logo = '';
-                                $nologo = 'no-logo';
-                                }
-                                echo '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name' ) ) . '" rel="home" itemprop="url"><span class="screen-reader-text" itemprop="name">' . esc_html( get_bloginfo( 'name' ) ) . '</span><span id="logo-container" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject"><img src="';
-                                if ( has_custom_logo() ) {
-                                echo esc_url( $logo[0] );
-                                } else {
-                                echo esc_url( $logo );
-                                }
-                                echo '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '" id="logo" class="' . esc_attr( $nologo ) . '" itemprop="url" /></span></a>';
-                                if ( is_front_page() || is_home() || is_front_page() && is_home() ) {
-                                    echo '</h1>';
-                                }
+                                include '_header-logo.php';
                             ?>
                         </div>
                         <div id="site-description"<?php if ( !is_single() ) { echo ' itemprop="description"'; } ?>>
@@ -78,11 +55,11 @@
                         </div>
                     </div>
 
-
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <?php
                             wp_nav_menu(array(
@@ -94,9 +71,20 @@
                             ));
                         ?>
                     </div>
-                </div>
-            </nav>
-        </header>
+                        
+                </nav>
+            </header>
+        </div>
+
+
+
+
+
+
+
+
+
+
 
         <div id="karma-global-container" class="karma-global-container container bx-container">
             <?php
