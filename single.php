@@ -18,7 +18,7 @@
         </div>
     </header>
 
-    <main class="main-content-wrapper" role="main">
+    <main class="main-content-wrapper section-spacer" role="main">
         <?php get_template_part( 'entry' ); ?>
         <footer class="blog-footer">
             <?php get_template_part( 'nav', 'below-single' ); ?>

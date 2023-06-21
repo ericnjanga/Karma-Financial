@@ -36,38 +36,30 @@
     .hero-footer {
         margin-top: var(--karma-hero-footer-mgr);
     }
-    .hero-img-wrapper {
-        overflow: hidden;
-        max-height: 200px;
-    }
 }
 
 // Responsive settings ...
 @layer hero {
     .hero {
         @container (min-width: 1141px) {
-            border: 10px solid orange;
             --karma-hero-padding: 90px;
             --karma-hero-txt-wrapper-max-width: 50ch; // text wrapper max width
             --karma-hero-footer-mgr: 40px; // footer top margin
         }
     
         @container (min-width: 961px) and (max-width: 1140px) {
-            border: 10px solid green;
             --karma-hero-padding: 60px;
             --karma-hero-txt-wrapper-max-width: 50ch; // text wrapper max width
             --karma-hero-footer-mgr: 30px; // footer top margin
         }
     
         @container (min-width: 721px) and (max-width: 960px) {
-            border: 10px solid lime;
             --karma-hero-padding: 50px;
             --karma-hero-txt-wrapper-max-width: 50ch; // text wrapper max width
             --karma-hero-footer-mgr: 30px; // footer top margin
         }
     
         @container (min-width: 541px) and (max-width: 720px) {
-            border: 10px solid blue;
             --karma-hero-padding: 40px;
             --karma-hero-txt-wrapper-max-width: 50ch; // text wrapper max width
             --karma-hero-footer-mgr: 20px; // footer top margin

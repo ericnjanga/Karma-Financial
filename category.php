@@ -14,7 +14,7 @@
     </div>
 </header>
 
-<main class="main-content-wrapper" role="main">
+<main class="main-content-wrapper section-spacer" role="main">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <?php get_template_part( 'entry' ); ?>
     <?php endwhile; endif; ?>

@@ -15,7 +15,7 @@
     </div>
 </header>
 
-<main class="main-content-wrapper" role="main">
+<main class="main-content-wrapper section-spacer" role="main">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="entry-content" itemprop="mainContentOfPage">

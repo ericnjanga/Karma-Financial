@@ -1,4 +1,12 @@
 :root {
+
+    --karma-body-padding-top: 70px;
+    --karma-header-fixed-container-top: 10px;
+
+    --karma-header-wrapper-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    --karma-header-wrapper-padding-left: 10px;
+    --karma-header-wrapper-padding-right: 10px;
+
     --karma-navbar--h1-bot-mar: 0;
     --karma-navbar--logo-max-width: 81px;
     --karma-navbar--toggler-bdr-radius: 0px;
@@ -16,6 +24,23 @@
 
 
 @layer header {
+    body {
+        padding-top: var(--karma-body-padding-top);
+    }
+}
+
+@layer header {
+    // Push the fixed wrapper down
+    .container.fixed-top {
+        top: var(--karma-header-fixed-container-top);
+    }
+
+    .main-header-wrapper {
+        background-color: var(--karma-clr-body-background);
+        box-shadow: var(--karma-header-wrapper-box-shadow);
+        padding-left: var(--karma-header-wrapper-padding-left);
+        padding-right: var(--karma-header-wrapper-padding-right);
+    }
     .main-header {
         .logo {
             max-width: var(--karma-navbar--logo-max-width);
@@ -102,23 +127,48 @@
 
 // Responsiveness ...
 @layer header {
+    body {
+        @media (min-width: 1200px) {
+            --karma-body-padding-top: 120px;
+        }
+        @media (min-width: 992px) and (max-width: (1200px - 1)) {
+            --karma-body-padding-top: 100px;
+        }
+    }
+}
+
+@layer header {
+    // The more the viewport spreads, Push the fixed wrapper down
+    .container.fixed-top {
+        @media (min-width: 1200px) {
+            --karma-header-fixed-container-top: 30px;
+            --karma-header-wrapper-padding-left: 30px;
+            --karma-header-wrapper-padding-right: 30px;
+        }
+        @media (min-width: 992px) and (max-width: (1200px - 1)) {
+            --karma-header-fixed-container-top: 20px;
+            --karma-header-wrapper-padding-left: 20px;
+            --karma-header-wrapper-padding-right: 20px;
+        }
+    }
+}
+
+
+@layer header {
     .main-header {
         @media (min-width: 1400px) {
-            border: 4px solid orange;
-            --karma-navbar--logo-max-width: 200px;
+            --karma-navbar--logo-max-width: 160px;
             --karma-navbar-nav-display: flex;
             --karma-navbar-nav-gap: 60px;
         }
         @media (min-width: 1200px) and (max-width: (1400px - 1)) {
-            border: 4px solid green;
-            --karma-navbar--logo-max-width: 175px;
+            --karma-navbar--logo-max-width: 155px;
             --karma-navbar-nav-display: flex;
             --karma-navbar-nav-gap: 40px;
         }
         @media (min-width: 992px) and (max-width: (1200px - 1)) {
-            border: 4px solid lime;
             --karma-navbar-nav-display: flex;
-            --karma-navbar--logo-max-width: 150px;
+            --karma-navbar--logo-max-width: 140px;
         }
 
         @media (min-width: 992px) {
@@ -129,22 +179,8 @@
             }
         }
         @media (min-width: 768px) and (max-width: (992px - 1)) {
-            border: 4px solid blue;
             --karma-navbar--logo-max-width: 100px;
         }
         // @media (min-width: 576px) and (max-width: (768px - 1)) {}
     }
 }
-
-
-
-
-
-
-
-// menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7351 current_page_item nav-item dropdown active menu-item-7383
-
-
-// menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-has-children nav-item dropdown active menu-item-7590
-
-// menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-7358 current_page_item current_page_parent nav-item dropdown active menu-item-7384

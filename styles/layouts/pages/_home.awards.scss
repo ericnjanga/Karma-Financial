@@ -41,14 +41,14 @@
     .home .section-awards {
         @container (min-width: 1141px) {
             --karma-page-home-awsct-display: grid;
-            --karma-page-home-awsct-intro-toppad: 150px;
+            --karma-page-home-awsct-intro-toppad: 80px;
             --karma-page-home-awsct-gap: 150px;
             --karma-page-home-awcnt-padd: 90px;
         }
      
         @container (min-width: 961px) and (max-width: 1140px) {
             --karma-page-home-awsct-display: grid;
-            --karma-page-home-awsct-intro-toppad: 100px;
+            --karma-page-home-awsct-intro-toppad: 80px;
             --karma-page-home-awcnt-padd: 80px;
         }
      

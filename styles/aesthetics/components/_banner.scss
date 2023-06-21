@@ -1,0 +1,30 @@
+:root {
+    --karma-banner-height: 200px;
+}
+
+@layer banner {
+    .banner {
+        overflow: hidden;
+        background-size: cover;
+        height: var(--karma-banner-height);
+
+        // Increase banner ratio based on the container
+        @container (min-width: 1141px) {
+            --karma-banner-height: 450px;
+        }
+     
+        @container (min-width: 961px) and (max-width: 1140px) {
+            --karma-banner-height: 400px;
+        }
+     
+        @container (min-width: 721px) and (max-width: 960px) {
+            --karma-banner-height: 350px;
+        }
+     
+        @container (min-width: 541px) and (max-width: 720px) {
+            --karma-banner-height: 300px;
+        }
+    
+        // @container (max-width: 540px) {} 
+    }
+}

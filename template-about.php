@@ -14,7 +14,7 @@
 
 <main class="main-content-wrapper" role="main">
 
-    <section class="pt-5 pb-5">
+    <section class="section-spacer">
         <p><?php echo getField('introduction'); ?></p>
 
         <hr>
@@ -28,7 +28,7 @@
         </div>
     </section>
 
-    <section id="section-awards" class="section-awards transparent-complementary pt-5 pb-5">
+    <section id="section-awards" class="section-awards transparent-complementary section-spacer">
         <article>
             <p class="pre-title heading-ff">Awards &amp; recognition</p>
             <blockquote class="blockquote">
@@ -39,7 +39,7 @@
         <?php displayAward('grid grid-22345', 5, true, null); ?>
     </section>
 
-    <section class="pt-5 pb-5">
+    <section class="section-spacer">
         <h2>Testimonials</h2>
         <?php displayTestimonial('grid grid-11233 testimonial-list', 4, true); ?>
     </section>

@@ -17,14 +17,15 @@
     </div>
 </header>
 
-<div class="hero-img-wrapper">
-    <?php
-        displayHero();
-    ?>
-</div>
+
+
+<?php
+    displayBanner('section-spacer');
+?>
+
 
 <main class="main-content-wrapper" role="main">
-    <section class="section-awards pt-5 pb-5">
+    <section class="section-awards section-spacer">
         <article>
             <p class="pre-title heading-ff">Awards</p>
             <blockquote class="blockquote">
@@ -45,7 +46,7 @@
         </div>
     </section>
 
-    <section id="section-services" class="pt-5 pb-5">
+    <section id="section-services" class="section-spacer">
         <h2 class="h-underlined">Services we provide</h2>
         <div id="services">
             <?php
@@ -54,21 +55,21 @@
         </div>
     </section>
 
-    <section id="section-partners" class="pt-5 pb-5">
+    <section id="section-partners" class="section-spacer">
         <h2 class="h-underlined">Partners</h2>
         <?php
             displayClientLogos();
         ?>
     </section>
 
-    <section class="pt-5 pb-5">
+    <section class="section-spacer">
         <h2 class="h-underlined">Testimonials</h2>
         <div>
             <?php displayTestimonial('grid grid-11233 testimonial-list', 2, true); ?>
         </div>
     </section>
 
-    <section class="pt-5 pb-5">
+    <section class="section-spacer">
         <h2 class="h-underlined">News and resources</h2>
         <div>
             <?php latestPosts('grid grid-11233 posts-list', '', 2, true); ?>

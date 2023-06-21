@@ -10,6 +10,7 @@
 @layer layouts {
 
     @import 'layouts/base/countainer-queries';
+    @import 'layouts/base/section-spacer';
     @import 'base/theme-switch';
 
     @layer grids {
@@ -29,7 +30,6 @@
 }
 
 @layer aesthetics {
-
     @import 'aesthetics/base/body';
     @import 'aesthetics/base/headings';
     @import 'base/decorators';
@@ -42,7 +42,9 @@
     @layer components {
         @import 'aesthetics/components/header';
         @import 'aesthetics/components/hero';
+        @import 'aesthetics/components/banner';
         @import 'aesthetics/components/buttons';
+        @import 'aesthetics/components/post';
         @import 'aesthetics/components/award';
         @import 'aesthetics/components/boxes';
         @import 'aesthetics/components/sidebar';

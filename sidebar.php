@@ -14,7 +14,7 @@
     && $template_slug !== 'template-grid-awards.php' ) {    // - Awards page templates
 ?>
 
-    <aside class="sidebar bx-container" id="sidebar" role="complementary">
+    <aside class="sidebar bx-container section-spacer" id="sidebar" role="complementary">
         <div id="primary" class="widget-area">
             <button id="karma-btn-sidebar-toggle" class="btn btn-secondary btn-sidebar-trigger"></button>
             <div class="content-wrapper">

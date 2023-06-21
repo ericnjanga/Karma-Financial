@@ -194,7 +194,7 @@
 ?>
 
 <?php
-    function displayHero() {
+    function displayBanner($cssClass) {
         global $post;
 
         // Get the light theme image URL
@@ -203,9 +203,8 @@
         // Display the hero images
         if ($theme_image) {
             ?>
-            <div class="header">
-                <img class="img-hero" src="<?php echo $theme_image["url"]; ?>" alt="<?php echo $theme_image["alt"]; ?>">
-            </div>
+            <section class="banner <?php echo $cssClass; ?>" style="background-image: url(<?php echo $theme_image["url"]; ?>);">
+            </section>
             <?php
         } else {
             ?>

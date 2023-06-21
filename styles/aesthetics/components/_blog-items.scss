@@ -3,8 +3,11 @@
  * -----------
 */
 
-.blog-footer {
+.blog-footer,
+.entry-footer {
     position: relative;
+    padding-top: 30px; 
+    
     &:after {
         position: absolute;
         left: 0;

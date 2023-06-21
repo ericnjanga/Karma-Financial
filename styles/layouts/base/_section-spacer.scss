@@ -1,0 +1,30 @@
+:root {
+    --karma-spacer-margin-bottom: 30px;
+}
+
+
+
+@layer section-spacer {
+    .section-spacer {
+        border: 3px solid turquoise;
+        margin-bottom: var(--karma-spacer-margin-bottom);
+    }
+
+    .section-spacer {
+        @container (min-width: 1141px) {
+            --karma-spacer-margin-bottom: 120px; 
+        }
+    
+        @container (min-width: 961px) and (max-width: 1140px) {
+            --karma-spacer-margin-bottom: 60px; 
+        }
+    
+        @container (min-width: 721px) and (max-width: 960px) {
+            --karma-spacer-margin-bottom: 50px; 
+        }
+    
+        @container (min-width: 541px) and (max-width: 720px) {
+            --karma-spacer-margin-bottom: 40px; 
+        }
+    }
+}

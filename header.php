@@ -40,50 +40,45 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <div id="karma-global-wrapper" class="karma-global-wrapper hfeed">
-        <div class="container">
-            <header class="main-header" id="header" role="banner">
-                <nav class="navbar navbar-expand-lg">
+        <div class="container fixed-top">
+            <div class="main-header-wrapper">
+                <header class="main-header" id="header" role="banner">
+                    <nav class="navbar navbar-expand-lg">
 
-                    <div class="navbar-brand" id="branding">
-                        <div id="site-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                        <div class="navbar-brand" id="branding">
+                            <div id="site-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+                                <?php
+                                    include '_header-logo.php';
+                                ?>
+                            </div>
+                            <div id="site-description"<?php if ( !is_single() ) { echo ' itemprop="description"'; } ?>>
+                                <?php bloginfo( 'description' ); ?>
+                            </div>
+                        </div>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarNav">
                             <?php
-                                include '_header-logo.php';
+                                wp_nav_menu(array(
+                                    'theme_location' => 'bootstrap-menu',
+                                    'menu_class' => 'navbar-nav',
+                                    'container' => false,
+                                    'depth' => 2,
+                                    'walker' => new Bootstrap_Walker_Nav_Menu(),
+                                ));
                             ?>
                         </div>
-                        <div id="site-description"<?php if ( !is_single() ) { echo ' itemprop="description"'; } ?>>
-                            <?php bloginfo( 'description' ); ?>
-                        </div>
-                    </div>
+                            
+                    </nav>
+                </header>
+            </div>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <?php
-                            wp_nav_menu(array(
-                                'theme_location' => 'bootstrap-menu',
-                                'menu_class' => 'navbar-nav',
-                                'container' => false,
-                                'depth' => 2,
-                                'walker' => new Bootstrap_Walker_Nav_Menu(),
-                            ));
-                        ?>
-                    </div>
-                        
-                </nav>
-            </header>
         </div>
-
-
-
-
-
-
-
-
-
+            
 
 
         <div id="karma-global-container" class="karma-global-container container bx-container">
