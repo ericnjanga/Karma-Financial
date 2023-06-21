@@ -9,7 +9,9 @@
             <div class="entry-meta">
                 <ul class="list-inline mb-0">
                     <li class="list-inline-item entry-category heading-ff">
-                        <?php the_category(', '); ?>
+                        <?php
+                            include '_category-link.php';
+                        ?>
                     </li>
                     <li class="list-inline-item meta-sep">
                         |
@@ -25,7 +27,7 @@
 
             <?php if ( is_singular() ) { echo '<h1 class="entry-title" itemprop="headline">'; } else { echo '<h2 class="entry-title">'; } ?>
             
-            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
+            <a class="km-link-primary" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
             
             <?php if ( is_singular() ) { echo '</h1>'; } else { echo '</h2>'; } ?>
             
