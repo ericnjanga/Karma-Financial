@@ -1,0 +1,21 @@
+:root {
+
+}
+
+@layer links {
+    .km-link-primary {
+        color: var(--karma-clr-txt-neutral-200);
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .km-link-secondary {
+        color: var(--karma-clr-primary-neutral-900);
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

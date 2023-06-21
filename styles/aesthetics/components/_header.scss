@@ -104,6 +104,11 @@
                     height: 1px;
                     background-color: var(--karma-clr-primary-neutral-900);
                 }
+
+                &:active { // When link is pressed
+                    color: var(--karma-clr-body-background);
+                    background-color: var(--karma-clr-primary-neutral-900);
+                }
             }
             .current-menu-item.page_item {
                 a {
