@@ -267,7 +267,7 @@
                                         ?>
                                     </div>
                                     <h3 class="card-title">
-                                        <a href="<?php echo $child_page_url; ?>">
+                                        <a class="km-link-primary" href="<?php echo $child_page_url; ?>">
                                             <?php echo $child_page->post_title; ?>
                                         </a>
                                     </h3>
@@ -354,9 +354,17 @@
                                     <article>
                                         <?php $categories = get_the_category(); ?>
                                         <?php if ( ! empty( $categories ) ) : ?>
-                                            <p class="pre-title heading-ff"><a href="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>"><?php echo esc_html( $categories[0]->name ); ?></a></p>
+                                            <p class="pre-title heading-ff">
+                                                <a class="km-link-secondary" href="<?php echo esc_url( get_category_link( $categories[0]->term_id ) ); ?>">
+                                                    <?php echo esc_html( $categories[0]->name ); ?>
+                                                </a>
+                                            </p>
                                         <?php endif; ?>
-                                        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                                        <h3>
+                                            <a class="km-link-primary" href="<?php the_permalink(); ?>">
+                                                <?php the_title(); ?>
+                                            </a>
+                                        </h3>
                                         <p><?php echo wp_trim_words(get_the_content(), 40); ?> ...</p>
                                     </article>
                                 </li>
