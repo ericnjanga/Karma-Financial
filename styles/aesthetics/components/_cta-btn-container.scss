@@ -38,13 +38,10 @@
         
 
         @container (min-width: 541px) {
-            border: 10px solid blue;
             --karma-contact-form-footer-flex-dir: row;
             --karma-contact-form-footer-btn-secondary-order: -1;
         }
 
-        @container (max-width: 540px) {
-            border: 10px solid turquoise;
-        } 
+        // @container (max-width: 540px) {} 
     }
 }
