@@ -12,6 +12,7 @@
     @import 'layouts/base/countainer-queries';
     @import 'layouts/base/section-spacer';
     @import 'base/theme-switch';
+    @import 'layouts/post';
 
     @layer grids {
         @import 'layouts/grids/galleries';
@@ -44,7 +45,6 @@
         @import 'aesthetics/components/hero';
         @import 'aesthetics/components/banner';
         @import 'aesthetics/components/buttons';
-        @import 'aesthetics/components/post';
         @import 'aesthetics/components/award';
         @import 'aesthetics/components/boxes';
         @import 'aesthetics/components/sidebar';

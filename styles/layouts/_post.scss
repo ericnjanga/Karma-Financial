@@ -4,8 +4,6 @@
 :root {
     --karma-h-underlined--uh: 1px;  // Underline height
     --karma-h-underlined--ubp: -15px;  // Underline bottom position
-    // --karma-h-underlined--umgr-top: 10px;  // Underline top margins
-    // --karma-h-underlined--umgr-bot: 15px;  // Underline bottom margins
 }
 
 
@@ -22,7 +20,10 @@
         display: block;
         content: '';
         height: var(--karma-h-underlined--uh);
-        width: var(--karma-headings-underlined-line-width);
+        // ...
+        width: var(--karma-article-sep-width);
+        max-width: var(--karma-article-sep-max-width);
+  
         bottom: var(--karma-h-underlined--ubp);
         background-color: var(--karma-clr-primary-neutral-600);
 

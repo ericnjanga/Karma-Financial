@@ -14,18 +14,20 @@
 
 <main class="main-content-wrapper" role="main">
 
-    <section class="section-spacer">
-        <p><?php echo getField('introduction'); ?></p>
+    <section class="content-grid section-spacer">
+        <article>
+            <div class="post">
+                <p><?php echo getField('introduction'); ?></p>
+            </div>
 
-        <hr>
+            <div class="entry-content" itemprop="mainContentOfPage">
+                <?php the_content(); ?>
+            </div>
+        </article>
 
-        <div class="entry-content" itemprop="mainContentOfPage">
-            <?php the_content(); ?>
-        </div>
-
-        <div>
+        <aside>
             <?php displayEmployee(1); ?>
-        </div>
+        </aside>
     </section>
 
     <section id="section-awards" class="section-awards transparent-complementary section-spacer">

@@ -91,10 +91,11 @@
 :root {
 
     --karma-headings-underlined-line-width: 125px;
+    --karma-article-sep-width: 50%;
+    --karma-article-sep-max-width: 300px;
 
     /* Font faces */
     --karma-font-family-headings: 'Oswald', sans-serif;
     --karma-font-family-body: 'Merriweather', serif;
 }
-
 
