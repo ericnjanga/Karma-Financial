@@ -17,6 +17,8 @@
     --karma-footer-row3-ul-display: block;
     --karma-footer-row3-ul-just-cont: center;
     --karma-footer-row3-ul-gap: 50px;
+    --karma-footer-row3-social-media-gap: 50px;
+    --karma-footer-row3-social-media-txt-display: inline-block;
     --karma-footer-row3-ul-txt-align: left;
 }
 
@@ -38,6 +40,8 @@
             }
             hr {
                 margin: 0;
+                opacity: 0.6;
+                color: var(--karma-clr-txt-neutral-500);
             }
     
             h3 {
@@ -63,6 +67,12 @@
                     display: var(--karma-footer-row3-ul-display);
                     gap: var(--karma-footer-row3-ul-gap);
                     justify-content: var(--karma-footer-row3-ul-just-cont);
+                }
+            }
+            .social-media ul {
+                gap: var(--karma-footer-row3-social-media-gap);
+                span {
+                    display: var(--karma-footer-row3-social-media-txt-display);
                 }
             }
             .sep-1 {
@@ -112,10 +122,15 @@
                 --karma-footer-social-media-gcol: 1 / span 2;
                 --karma-footer-appointment-gcol: 3 / span 2;
 
-                // social media & appointments
+                // appointments
                 --karma-footer-row3-ul-display: flex;
                 --karma-footer-row3-ul-txt-align: center;
 
+                // social media
+                --karma-footer-row3-social-media-gap: 15px; // reduce gap between icons
+                --karma-footer-row3-social-media-txt-display: none; // hide text
+
+                // increaase bottom margin
                 --karma-footer-mgr-bottom: 50px;
             }
         
@@ -129,6 +144,8 @@
                 --karma-footer-sep2-gcol: 1 / span 2;
                 --karma-footer-logo-row: 6;
                 --karma-footer-copyright-col: 2;
+
+                // increaase bottom margin
                 --karma-footer-mgr-bottom: 50px;
             }
         
@@ -142,6 +159,8 @@
                 --karma-footer-sep2-gcol: 1 / span 2;
                 --karma-footer-logo-row: 6;
                 --karma-footer-copyright-col: 2;
+
+                // increaase bottom margin
                 --karma-footer-mgr-bottom: 40px;
             }
             
