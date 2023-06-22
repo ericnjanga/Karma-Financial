@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="appointment" role="contentinfo">
-                            <h3>Book an appointment</h3>
+                            <h3>Appointment Scheduling</h3>
                             <?php dynamic_sidebar('sidebar-appointments'); ?>
                         </div>
 

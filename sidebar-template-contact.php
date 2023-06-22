@@ -1,5 +1,5 @@
 
-<h4 class="content-title">Book an appointment</h4>
+<h4 class="content-title">Appointment Scheduling</h4>
 <?php dynamic_sidebar( 'sidebar-appointments' ); ?>
 
 <hr>
