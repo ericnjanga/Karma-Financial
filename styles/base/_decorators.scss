@@ -11,6 +11,9 @@
     }
     .transparent-complementary {
         background-color: var(--karma-clr-complementary-800);
+        .blockquote {
+            color: var(--karma-clr-txt-neutral-800);
+        }
     }
     .no-bg {
         background-color: transparent;

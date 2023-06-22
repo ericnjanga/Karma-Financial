@@ -51,6 +51,16 @@
         padding-left: var(--karma-card-padd30);
     }
 
+    // Quotes (see .quote in "_blockquote.scss") create an extra left and right gap inside "card-body".
+    // To fix the issue without compromising the code's flexibility, I'm adding "has-quote" to the parent's
+    // class to freely modify the body's padding 
+    .card-padd30.has-quote {
+        .card-body {
+            padding-left: 13px;
+            padding-right: 13px;
+        }
+    }
+
     .card-header-icon {
         /* background: red; */
         width: 42px;

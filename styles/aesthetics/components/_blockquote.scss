@@ -18,6 +18,19 @@
     
         p {
             text-indent: 25px;
+
+            /**
+             * Prevent the last quotemark from overlapping 
+             *the last word of the quoted paragrah
+            */
+            &::after {
+                position: relative;
+                content: '';
+                display: block;
+                width: 15px;
+                height: 25px;
+                // background-color: aqua; (uncomment this to see it in action)
+            }
         }
     
         &::before,
