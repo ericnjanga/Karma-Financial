@@ -10,9 +10,16 @@
     .btn-secondary,
     .btn-tertiary {
         border-radius: 0;
-        padding: var(--karma-btn-padding-vertical) var(--karma-btn-padding-horizontal);
         letter-spacing: var(--karma-btn-letter-spacing);
         text-transform: uppercase;
+
+        &:not(.btn-sm) { // This rule excludes small buttons
+            padding: var(--karma-btn-padding-vertical) var(--karma-btn-padding-horizontal);
+        }
+
+        &.btn-icon:not(.btn-sm) { // This rule excludes small buttons
+            padding-right: calc(var(--karma-btn-padding-horizontal) + var(--karma-btn-icon-padding));
+        }
     }
 
     .btn-primary {
@@ -44,15 +51,17 @@
     }
 
 
-
+    /**
+     * In this type of button, the text is the primary ingrediant and the icon is additional
+    */
     .btn-icon {
         position: relative;
         display: inline-block;
-        padding-right: calc(var(--karma-btn-padding-horizontal) + var(--karma-btn-icon-padding));
+        // padding-right: calc(var(--karma-btn-padding-horizontal) + var(--karma-btn-icon-padding));
     }
     .btn-icon::after {
         position: absolute;
-        right: var(--karma-btn-icon-padding);
+        right: var(--karma-btn-icon-padding); // That's why there is a right padding
         content: '';
         width: 25px;
         height: 25px;
@@ -60,5 +69,41 @@
     .btn-arrow-down::after {
         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2225%22%20height%3D%2225%22%20viewBox%3D%220%200%2025%2025%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M12.5%2020.8333L4.16669%2012.5L5.26044%2011.4062L11.7188%2017.8645V4.16663H13.2813V17.8645L19.7396%2011.4062L20.8334%2012.5L12.5%2020.8333Z%22%20fill%3D%22black%22%2F%3E%0A%3C%2Fsvg%3E");
         background-size: cover;
+    }
+
+
+    /**
+     * This type of button, icon is the only ingredient
+    */
+    .icon-btn {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 50px;
+
+        &.btn-sm {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            svg {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        &.btn-secondary {
+            fill: var(--karma-clr-body-background);
+        }
+
+        &.is-off {
+            svg {
+                rotate: 0deg;
+            }
+        }
+
+        &.is-on {
+            svg {
+                rotate: 180deg;
+            }
+        }
     }
 }

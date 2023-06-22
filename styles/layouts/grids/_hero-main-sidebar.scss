@@ -60,7 +60,7 @@
             }
             // Expand sidebar left
             .btn-sidebar-trigger {
-                display: var(--karma-global-wrapper-btn-sidebar-trigger-display);
+                display: var(--karma-global-wrapper-btn-sidebar-trigger-display)!important; // This has to be inforced (the button implements "display" property for other purposes
             }
         }
         
