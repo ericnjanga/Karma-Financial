@@ -1,3 +1,9 @@
+/**
+ *
+ * Mostlyt dedicated to aesthetics:
+ * backgroud color, text color, paddings, ...
+*/
+
 :root {
     --karma-card-padd30: 30px;
 }
@@ -6,12 +12,18 @@
 @layer cards {
     .card-primary {
         background-color: var(--karma-clr-primary-100);
+        .card-body p {
+            color: var(--karma-clr-txt-neutral-500);
+        }
     }
     .card-primary .card-header-icon {
         background-color: var(--karma-clr-primary-200);
     }
     .card-neutral {
         background-color: var(--karma-clr-transparent);
+        .card-body p {
+            color: var(--karma-clr-txt-neutral-500);
+        }
     }
     .card-neutral .card-header-icon {
         background-color: var(--karma-clr-body-background);
@@ -49,3 +61,12 @@
         overflow: visible; /* Prevent images to be cropped */
     }
 }
+
+
+
+
+
+
+  
+  
+  

@@ -1,0 +1,16 @@
+
+
+@layer typography {
+    /* .heading-ff: Custom class to be applied to any component in need of this font-family */
+    h1, h2, h3, h4, h5, h6, 
+    .main-nav, 
+    .heading-ff, 
+    .quote::before, 
+    .quote::after,
+    .btn-primary,
+    .btn-secondary,
+    .btn-tertiary,
+    .navbar {
+        font-family: var(--karma-font-family-headings);
+    }
+}

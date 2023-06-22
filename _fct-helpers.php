@@ -445,7 +445,15 @@
                                         <?php //displayFieldIcon($child_page->ID); ?>
                                     </div>
                                     <div class="card-body">
-                                        <?php the_content(); ?>
+                                        <div class="quote">
+                                            <?php 
+                                                // // Add a custom class ...
+                                                // $content = get_the_content();
+                                                // $content_with_class = '<p class="quote">' . $content . '</p>';
+                                                // echo $content_with_class;
+                                                the_content(); 
+                                            ?>
+                                        </div>
                                     </div>
                                 </article>
                             </li>

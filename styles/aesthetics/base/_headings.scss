@@ -5,11 +5,6 @@
 */
 
 @layer headings {
-    /* .heading-ff: Custom class to be applied to any component in need of this font-family */
-    h1, h2, h3, h4, h5, h6, .main-nav, .heading-ff {
-        font-family: var(--karma-font-family-headings);
-    }
-
     h1, h2, h3, h4, h5, h6 {
         color: var(--karma-clr-txt-neutral-800);
     }
