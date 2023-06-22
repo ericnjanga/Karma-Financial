@@ -114,8 +114,19 @@
 
 
 .main-content-wrapper {
-    overflow: hidden;
+    /**
+     * Prevent children elements from overflowing when compressed by the expanding sidebar
+     * (usefull only on very small viewports, no larger than 576px);
+    **/
+    overflow: hidden; 
+
+    // Increase gap between row columns 
+    @media (min-width: 576px) {
+        overflow: visible; 
+    }
 }
+
+// (uncomment only for testing purposes) ...
 // .sidebar {
 // }
 // .content-wrapper {
