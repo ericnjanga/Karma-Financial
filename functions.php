@@ -48,6 +48,7 @@ function generic_enqueue() {
 
     /* Font families */
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Maitree:wght@400;600;700&family=Merriweather:wght@400;700&family=Oswald&display=swap', array(), null );
+    wp_enqueue_style( 'bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css', array(), null );
     
     /* CSS reset --- this cancel google fonts (Don't know why yet) */
     // wp_enqueue_style( 'css-reset', 'https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css', array(), null );
@@ -227,7 +228,7 @@ register_sidebar( array(
 
 // Quick contact
 register_sidebar( array(
-    'name'          => 'Quick contact',
+    'name'          => 'Contact',
     'id'            => 'sidebar-quick-contact',
     'description'   => 'For phone, emails, address, ...',
     // Add more sidebar options if needed
