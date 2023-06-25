@@ -3,7 +3,6 @@
     --karma-body-padding-top: 70px;
     --karma-header-fixed-container-top: 10px;
 
-    --karma-header-wrapper-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
     --karma-header-wrapper-padding-left: 10px;
     --karma-header-wrapper-padding-right: 10px;
 
@@ -75,7 +74,7 @@
                 border-right: 0 solid rgba(0,0,0,0);    // cancelling bootstrap
                 border-bottom: 0;                           // cancelling bootstrap
                 border-left: 0 solid rgba(0,0,0,0);     // cancelling bootstrap
-                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3E%3Cpath d='M11 14.0936L5.5 8.59357L6.48542 7.60815L11 12.1457L15.5146 7.63107L16.5 8.61649L11 14.0936Z' fill='black'/%3E%3C/svg%3E");
+                background: var(--karma-dropdown-toggle-arrow);
                 width: 22px;
                 height: 22px;
                 margin-top: 0; // cancelling bootstrap
@@ -101,12 +100,12 @@
                     content: '';
                     width: 100%;
                     height: 1px;
-                    background-color: var(--karma-clr-primary-neutral-900);
+                    background-color: var(--karma-dropdown-sep-color);
                 }
 
                 &:active { // When link is pressed
                     color: var(--karma-clr-body-background);
-                    background-color: var(--karma-clr-primary-neutral-900);
+                    background-color: var(--karma-dropdown-sep-color);
                 }
             }
             .current-menu-item.page_item {
