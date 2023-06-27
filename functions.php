@@ -161,6 +161,15 @@ add_action( 'widgets_init', 'generic_widgets_init' );
 function generic_widgets_init() {
 
 register_sidebar( array(
+    'name' => esc_html__( 'Email subscription Area', 'generic' ),
+    'id' => 'sidebar-email-subscription',
+    'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+    'after_widget' => '</li>',
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+) );
+
+register_sidebar( array(
     'name' => esc_html__( 'General Widget Area', 'generic' ),
     'id' => 'primary-widget-area',
     'before_widget' => '<li id="%1$s" class="widget-container %2$s">',

@@ -5,7 +5,6 @@
     get_header();
 ?>
 
-
 <header class="hero" role="region">
     <div class="text-wrapper">
         <h1 class="hero-title"><?php echo getField('title'); ?></h1>
@@ -17,12 +16,9 @@
     </div>
 </header>
 
-
-
 <?php
     displayBanner('section-spacer');
 ?>
-
 
 <main class="main-content-wrapper" role="main">
     <section class="section-awards section-spacer">
