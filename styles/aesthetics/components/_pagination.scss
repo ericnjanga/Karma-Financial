@@ -11,3 +11,14 @@
         grid-template-columns: var(--karma-pagination-gtc);
     }
 }
+
+
+// Pagination link color
+@layer pagination {
+    .pagination a {
+        color: var(--karma-clr-link-800);
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

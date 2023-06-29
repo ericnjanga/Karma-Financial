@@ -30,6 +30,7 @@
             margin-bottom: var(--karma-footer-mgr-bottom);
             padding: var(--karma-footer-padding);
             background-color: var(--karma-clr-footer-background);
+            color: var(--karma-clr-footer-links);
     
             ul { // Unstyle nav list
                 margin: 0;
@@ -45,14 +46,15 @@
             }
     
             h3 {
-                color: var(--karma-clr-footer-headings);
+                color: var(--karma-clr-bg-neutral-100);
             }
             a {
                 text-decoration: none;
                 color: var(--karma-clr-footer-links);
+                text-decoration: underline;
                 &:hover {
                     color: var(--karma-clr-primary);
-                    text-decoration: underline;
+                    text-decoration: none;
                 }
             }
             .appointment {

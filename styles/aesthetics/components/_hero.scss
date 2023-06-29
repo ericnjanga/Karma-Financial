@@ -68,3 +68,17 @@
         // @container (max-width: 540px) {} 
     }
 }
+
+
+
+
+
+
+@layer hero {
+    .hero a {
+        color: var(--karma-clr-link-700);
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

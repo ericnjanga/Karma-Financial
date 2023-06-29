@@ -38,3 +38,26 @@
         }
     }
 }
+
+
+// Sidebar link color
+@layer sidebar {
+    .sidebar a {
+        color: var(--karma-clr-link-700);
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+
+// List items spacing
+@layer sidebar {
+    .sidebar ul {
+        line-height: 40px;
+    }
+}
+
+
+
+

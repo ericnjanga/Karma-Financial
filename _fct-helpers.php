@@ -44,7 +44,7 @@
 
                             <?php echo $image_markup; ?>
                         </div>
-                        <figcaption class="award-caption box-learn-more__caption">Placeholder txt meant to create space</figcaption>
+                        <figcaption class="award-caption box-learn-more__caption fs-7">Placeholder txt meant to create space</figcaption>
                     </figure>
                 </div>
             <?php
@@ -139,12 +139,18 @@
                     <figure>
                         <?php 
                             if ( has_post_thumbnail() ) {
-                                the_post_thumbnail( 'full', array( 'itemprop' => 'image', 'class' => 'img-thumbnail' ) );
+                                the_post_thumbnail( 'full', array( 'itemprop' => 'image', 'class' => 'img-thumbnail rounded-0 p-0 bg-accent border-0 mb-10' ) );
                             }
                         ?>
-                        <figcaption class="text-center">
-                            <p><b><?php the_title() ?></b></p>
-                            <p><?php the_content(); ?></p>
+                        <figcaption>
+                            <div class="employee-text text-center">
+                                <b><?php the_title() ?></b>
+                                <?php
+                                    $content = apply_filters('the_content', get_the_content());
+                                    $content = str_replace('<p>', '<p class="fs-7">', $content);
+                                    echo $content;
+                                ?>
+                            </div>
                         </figcaption>
                     </figure>
                 <?php
@@ -255,7 +261,7 @@
                 <ul class="<?php echo $gridClass; ?> list-unstyled">
                     <?php foreach ($child_pages as $child_page) { ?>
                         <li>
-                            <article class="card card-neutral card-padd30 bdr-no-radius bdr-none">
+                            <article class="card card-primary card-padd30 bdr-no-radius bdr-none">
                                 <div class="card-header bdr-no-bottom no-bg">
                                     <?php displayFieldIcon($child_page->ID, 'card-header-icon'); ?>
                                 </div>
@@ -528,7 +534,7 @@
                                                     the_post_thumbnail($imageSize, ['class' => 'img-fluid award-img']);
                                                 } ?>
                                             </div>
-                                            <figcaption class="award-caption"><?php the_title(); ?></figcaption>
+                                            <figcaption class="award-caption fs-7"><?php the_title(); ?></figcaption>
                                         </figure>
                                     </section>
                                 <?php

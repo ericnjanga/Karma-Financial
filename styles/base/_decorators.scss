@@ -9,12 +9,18 @@
     .transparent {
         background-color: var(--karma-clr-transparent);
     }
+
+    .bg-accent {
+        background-color: var(--karma-clr-accent);
+    }
+
     .transparent-complementary {
         background-color: var(--karma-clr-complementary-800);
         .blockquote {
             color: var(--karma-clr-txt-neutral-800);
         }
     }
+    
     .no-bg {
         background-color: transparent;
     }

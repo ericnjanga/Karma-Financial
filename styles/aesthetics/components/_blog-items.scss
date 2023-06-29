@@ -3,18 +3,43 @@
  * -----------
 */
 
-.blog-footer,
-.entry-footer {
-    position: relative;
-    padding-top: 30px; 
-    
-    &:after {
-        position: absolute;
-        left: 0;
-        top: 0;
-        content: '';
-        width: 100px;
-        background-color: green;
-        height: 1px;
+
+@layer blog-iems {
+    .blog-footer,
+    .entry-footer {
+        position: relative;
+        padding-top: 30px; 
+        
+        &:after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: '';
+            width: 100px;
+            background-color: green;
+            height: 1px;
+        }
+    }
+}
+
+
+// Blog item link color
+@layer blog-iems {
+    .more-link {
+        color: var(--karma-clr-link-800);
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+
+// Blog footer link color
+@layer blog-iems {
+    .blog-footer a {
+        color: var(--karma-clr-link-800);
+        &:hover {
+            text-decoration: none;
+        }
     }
 }

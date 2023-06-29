@@ -60,5 +60,9 @@
         @import 'aesthetics/components/blog-items';
         @import 'aesthetics/components/links';
     }
+
+    @layer pages {
+        @import 'aesthetics/pages/about';
+    }
 }
 

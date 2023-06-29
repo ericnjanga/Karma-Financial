@@ -1,3 +1,10 @@
+:root {
+    --karma-about-award-section-padding: 20px;
+    --karma-about-award-blockquote-max-width: 100%;
+    --karma-about-award-learn-more-elt-display: none;
+}
+
+
 /**
 * Toggle awards display based on parent container's width
 * (Elts displayed: 5)
@@ -38,8 +45,65 @@
 
 // Making sure cards inside grids occupies 
 // the cell's full height
-.page-template-template-about {
-    .grid .card {
-        height: 100%;
+@layer about.awards {
+    .page-template-template-about {
+        .grid .card {
+            height: 100%;
+        }
     }
 }
+
+
+
+/**
+ * Controlling the award section layout
+ * -----------
+*/
+@layer about.awards {
+    .page-template-template-about {
+        .section-awards {
+            padding: var(--karma-about-award-section-padding);
+
+            blockquote {
+                max-width: var(--karma-about-award-blockquote-max-width);
+            }
+
+            .box-learn-more {
+                p, hr {
+                    display: var(--karma-about-award-learn-more-elt-display);
+                }
+            }
+            
+
+            @container (min-width: 1141px) {
+                --karma-about-award-section-padding: 60px;
+                --karma-about-award-blockquote-max-width: 660px;
+                --karma-about-award-learn-more-elt-display: block;
+            }
+
+            /** Hide all awards, except the first 3 and last one (Elts displayed: 4) */
+            @container (min-width: 961px) and (max-width: 1140px) {
+                --karma-about-award-section-padding: 40px;
+                --karma-about-award-blockquote-max-width: 660px;
+                --karma-about-award-learn-more-elt-display: block;
+            }
+
+            /** Hide all awards, except the first 2 and last one (Elts displayed: 3) */
+            @container (min-width: 721px) and (max-width: 960px) {
+                --karma-about-award-section-padding: 30px;
+                --karma-about-award-blockquote-max-width: 600px;
+                --karma-about-award-learn-more-elt-display: block;
+            }
+
+            /** Hide all awards, except the first and last one (Elts displayed: 2) */
+            @container (min-width: 541px) and (max-width: 720px) {
+                --karma-about-award-blockquote-max-width: 500px;
+                --karma-about-award-learn-more-elt-display: block;
+            }
+
+            // @container (max-width: 540px) {}
+        }
+    }
+}
+
+
