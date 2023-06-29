@@ -38,6 +38,7 @@
     @import 'base/forms';
 
     @layer framework-overrides {
+        @import 'aesthetics/framework-overrides/alerts';
         @import 'aesthetics/framework-overrides/bs-components-card';
         @import 'aesthetics/framework-overrides/bs-utilities';
     }

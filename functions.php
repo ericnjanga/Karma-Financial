@@ -163,8 +163,8 @@ function generic_widgets_init() {
 register_sidebar( array(
     'name' => esc_html__( 'Email subscription Area', 'generic' ),
     'id' => 'sidebar-email-subscription',
-    'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-    'after_widget' => '</li>',
+    'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+    'after_widget' => '</div>',
     'before_title' => '<h3 class="widget-title">',
     'after_title' => '</h3>',
 ) );
@@ -283,6 +283,7 @@ function enqueue_custom_script() {
 
     // Enqueue custom script
     wp_enqueue_script('karma-responsive-sidebar.js', get_template_directory_uri() . '/js/karma-responsive-sidebar.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('karma-form-email-subscription.js', get_template_directory_uri() . '/js/karma-form-email-subscription.js', array('jquery'), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_script');
 

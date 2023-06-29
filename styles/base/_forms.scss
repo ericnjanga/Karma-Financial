@@ -4,10 +4,12 @@
     }
     .form-control,
     .form-select {
-        border-radius: 0;
         background-color: #F5F5F5;
-        border-width: 0 0 1px 0;
-        border-bottom: 1px solid #939393;
-        padding: 13px 20px;
+        // Prevent these properties to be overriden
+        // (Necessary for instance when I need to carry the same styling on WordPress generated widgets)
+        border-radius: 0!important;
+        border-width: 0 0 1px 0!important;
+        border-bottom: 1px solid #939393!important;
+        padding: 13px 20px!important;
     }
 }
