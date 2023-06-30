@@ -1,7 +1,6 @@
 
 <h4 class="content-title">Email Subscription</h4>
-<p>Stay up to date! Subscribe now and never miss the latest updates from our blog.</p>
-<?php dynamic_sidebar( 'sidebar-email-subscription' ); ?>
+<?php displayMailChimpSubscriptionForm(); ?>
 
 <hr>
 

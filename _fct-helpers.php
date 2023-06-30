@@ -1,4 +1,56 @@
 <?php
+    function displayMailChimpSubscriptionForm() {
+        ?>
+
+            <div id="mc_embed_shell">
+                <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css"> -->
+                <style type="text/css">
+                        #mc_embed_signup .optionalParent { margin-top: 10px; }
+                        #mc_embed_signup input.mce_inline_error {
+                            background-color: #febfbf;
+                        }
+                        #mc_embed_signup .optionalParent,
+                        #mc_embed_signup #mce-responses { margin-top: 10px; }
+                        #mc_embed_signup .description { opacity: 0.8; }
+                </style>
+            <div id="mc_embed_signup">
+                <form action="https://karmafinancial.us19.list-manage.com/subscribe/post?u=282e2fbe92a5c972b0b2e48de&amp;id=40363e3fc3&amp;f_id=00128ee4f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                    <div id="mc_embed_signup_scroll">
+                        <p class="description">Stay up to date! Subscribe now and never miss the latest updates from our blog.</p>
+
+                        <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                        <input type="email" class="form-control" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+                        <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span></div>
+
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response alert alert-danger" id="mce-error-response" style="display: none;"></div>
+                            <div class="response alert alert-success" id="mce-success-response" style="display: none;"></div>
+                        </div>
+
+                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                            /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                            <input type="text" name="b_282e2fbe92a5c972b0b2e48de_40363e3fc3" tabindex="-1" value="">
+                        </div>
+
+                        <div class="optionalParent">
+                            <div class="clear foot">
+                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-secondary" value="Subscribe">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]=EMAIL;ftypes[0]=merge;,fnames[1]=FNAME;ftypes[1]=merge;,fnames[2]=LNAME;ftypes[2]=merge;,fnames[3]=ADDRESS;ftypes[3]=merge;,fnames[4]=PHONE;ftypes[4]=merge;,fnames[5]=BIRTHDAY;ftypes[5]=merge;,fnames[6]=COMPANY;ftypes[6]=merge;false}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
+
+        <?php
+    }
+?>
+
+
+
+
+
+<?php
     function getPagePermalink($title = '') {
         $page_title = $title; // Replace with the actual page title you want to retrieve the permalink for
 
