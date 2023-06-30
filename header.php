@@ -39,9 +39,9 @@
 
 
 
-    <!-- (MainChimp Subscribe popup) -->
-    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/282e2fbe92a5c972b0b2e48de/779da9e9632681fea4524a075.js");</script>
-    <!-- (MainChimp Subscribe popup) -->
+    <!-- (MailChimp Subscribe popup) -->
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/282e2fbe92a5c972b0b2e48de/92eb890e30c0757a83c8b2606.js");</script>
+    <!-- (MailChimp Subscribe popup) -->
 </head>
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
