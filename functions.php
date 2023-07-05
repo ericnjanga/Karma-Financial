@@ -50,7 +50,8 @@ function generic_enqueue() {
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Maitree:wght@400;600;700&family=Merriweather:wght@400;700&family=Oswald&display=swap', array(), null );
     wp_enqueue_style( 'bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css', array(), null );
     
-    wp_enqueue_style( 'karma-financial-styles.1.7', get_template_directory_uri() . '/styles-dist/karma-financial-styles.min.css' );
+    wp_enqueue_style( 'karma-financial-styles', get_template_directory_uri() . '/styles-dist/karma-financial-styles.min.css', array(), '1.8' );
+
 
     wp_enqueue_style( 'generic-icons', get_template_directory_uri() . '/icons/icons.css' );
     wp_enqueue_script( 'jquery' );
