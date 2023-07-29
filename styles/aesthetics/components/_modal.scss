@@ -1,0 +1,13 @@
+
+
+
+@layer modal {
+    .modal {
+        a {
+            color: var(--karma-clr-link-700);
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
